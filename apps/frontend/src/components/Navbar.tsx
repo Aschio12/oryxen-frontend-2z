@@ -38,6 +38,15 @@ export default function Navbar() {
           <Link href="/community" className="transition-all duration-300 hover:text-[#C5A059]">
             Community
           </Link>
+          <Link href="/gallery" className="transition-all duration-300 hover:text-[#C5A059]">
+            Gallery
+          </Link>
+          <Link href="/resources" className="transition-all duration-300 hover:text-[#C5A059]">
+            Resources
+          </Link>
+          <Link href="/pricing" className="transition-all duration-300 hover:text-[#C5A059]">
+            Pricing
+          </Link>
           <Link href="/analytics" className="transition-all duration-300 hover:text-[#C5A059]">
             Analytics
           </Link>
