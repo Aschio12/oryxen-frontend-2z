@@ -29,11 +29,14 @@ export default function Navbar() {
           <Link href="/exercises" className="transition-all duration-300 hover:text-[#C5A059]">
             Exercises
           </Link>
-          <Link href="/nutrition" className="transition-all duration-300 hover:text-[#C5A059]">
-            Nutrition
+          <Link href="/classes" className="transition-all duration-300 hover:text-[#C5A059]">
+            Classes
           </Link>
-          <Link href="/coaches" className="transition-all duration-300 hover:text-[#C5A059]">
-            Coaches
+          <Link href="/trainers" className="transition-all duration-300 hover:text-[#C5A059]">
+            Trainers
+          </Link>
+          <Link href="/community" className="transition-all duration-300 hover:text-[#C5A059]">
+            Community
           </Link>
           <Link href="/analytics" className="transition-all duration-300 hover:text-[#C5A059]">
             Analytics
