@@ -1,0 +1,12 @@
+{
+  "name": "oryxen",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:frontend": "npm --prefix apps/frontend run dev",
+    "build:frontend": "npm --prefix apps/frontend run build",
+    "lint:frontend": "npm --prefix apps/frontend run lint"
+  }
+}
