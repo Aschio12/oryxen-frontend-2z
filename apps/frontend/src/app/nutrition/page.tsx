@@ -69,36 +69,40 @@ export default function NutritionPage() {
 
         {/* Results Grid */}
         {filteredPlans.length > 0 ? (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 motion-reveal-delayed-2">
-            {filteredPlans.map((plan) => {
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 motion-reveal-delayed-2">
+            {filteredPlans.map((plan, idx) => {
               const macroPercentages = getMacroPercentages(plan);
               return (
                 <article
                   key={plan.id}
-                  className="group relative overflow-hidden rounded-xl border border-white/5 bg-[#0A0A0A] transition-all hover:border-[#C5A059]/30"
+                  className="group relative overflow-hidden rounded-xl border border-white/5 bg-[#0A0A0A] transition-all duration-500 hover:border-[#C5A059]/50 shadow-lg hover:shadow-[0_0_30px_rgba(197,160,89,0.1)]"
+                  style={{ animationDelay: `${idx * 0.05}s` }}
                 >
                   <div className="p-8">
                     <div className="flex items-center justify-between mb-6">
-                      <span className="text-[9px] uppercase tracking-widest text-[#C5A059]">{plan.goal}</span>
+                      <span className="text-[9px] uppercase tracking-widest text-[#C5A059] bg-[#C5A059]/10 px-3 py-1.5 rounded-full font-semibold border border-[#C5A059]/20">{plan.goal}</span>
                       <button
                         onClick={() => toggleFavorite(plan.id)}
-                        className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 transition-all hover:bg-[#C5A059]/20"
+                        className={`flex h-10 w-10 items-center justify-center rounded-full border transition-all ${
+                          favoritePlans.includes(plan.id)
+                            ? "bg-[#C5A059]/20 border-[#C5A059]/50 text-[#C5A059]"
+                            : "bg-white/5 border-white/10 text-white/50 hover:border-[#C5A059]/50 hover:bg-[#C5A059]/10"
+                        }`}
                       >
                         <svg 
-                          width="14" 
-                          height="14" 
+                          width="16" 
+                          height="16" 
                           viewBox="0 0 24 24" 
                           fill={favoritePlans.includes(plan.id) ? "currentColor" : "none"}
                           stroke="currentColor" 
-                          strokeWidth="2"
-                          className={favoritePlans.includes(plan.id) ? "text-[#C5A059]" : "text-white/50"}
+                          strokeWidth="1.5"
                         >
                           <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
                         </svg>
                       </button>
                     </div>
                     
-                    <h2 className="font-serif text-3xl font-light text-white">{plan.name}</h2>
+                    <h2 className="font-serif text-3xl font-light text-white group-hover:text-[#C5A059] transition-colors">{plan.name}</h2>
                     <p className="mt-3 text-xs font-light leading-relaxed text-white/50">
                       {plan.description}
                     </p>
@@ -110,18 +114,18 @@ export default function NutritionPage() {
                     </div>
 
                     {/* Macro Breakdown with Visual */}
-                    <div className="mt-6 space-y-4">
+                    <div className="mt-8 space-y-5 border-t border-white/10 pt-6">
                       {/* Macro Bars */}
-                      <div className="space-y-3">
+                      <div className="space-y-4">
                         {/* Protein */}
                         <div>
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-xs font-light text-white/60">Protein</span>
-                            <span className="text-xs font-light text-[#C5A059]">{plan.macros.protein}g ({macroPercentages.protein}%)</span>
+                            <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">Protein</span>
+                            <span className="text-xs font-light text-[#FF6B6B]">{plan.macros.protein}g • {macroPercentages.protein}%</span>
                           </div>
-                          <div className="h-2 w-full rounded-full bg-white/10 overflow-hidden">
+                          <div className="h-2.5 w-full rounded-full bg-white/10 overflow-hidden border border-white/5">
                             <div 
-                              className="h-full bg-gradient-to-r from-[#E74C3C] to-[#C0392B]" 
+                              className="h-full bg-gradient-to-r from-[#FF6B6B] via-[#FF8C8C] to-[#FF6B6B]" 
                               style={{ width: `${macroPercentages.protein}%` }}
                             />
                           </div>
@@ -130,12 +134,12 @@ export default function NutritionPage() {
                         {/* Carbs */}
                         <div>
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-xs font-light text-white/60">Carbohydrates</span>
-                            <span className="text-xs font-light text-[#3498DB]">{plan.macros.carbs}g ({macroPercentages.carbs}%)</span>
+                            <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">Carbohydrates</span>
+                            <span className="text-xs font-light text-[#4ECDC4]">{plan.macros.carbs}g • {macroPercentages.carbs}%</span>
                           </div>
-                          <div className="h-2 w-full rounded-full bg-white/10 overflow-hidden">
+                          <div className="h-2.5 w-full rounded-full bg-white/10 overflow-hidden border border-white/5">
                             <div 
-                              className="h-full bg-gradient-to-r from-[#3498DB] to-[#2980B9]" 
+                              className="h-full bg-gradient-to-r from-[#4ECDC4] via-[#6EDDD4] to-[#4ECDC4]" 
                               style={{ width: `${macroPercentages.carbs}%` }}
                             />
                           </div>
@@ -144,12 +148,12 @@ export default function NutritionPage() {
                         {/* Fats */}
                         <div>
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-xs font-light text-white/60">Fats</span>
-                            <span className="text-xs font-light text-[#F39C12]">{plan.macros.fats}g ({macroPercentages.fats}%)</span>
+                            <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">Fats</span>
+                            <span className="text-xs font-light text-[#FFB84D]">{plan.macros.fats}g • {macroPercentages.fats}%</span>
                           </div>
-                          <div className="h-2 w-full rounded-full bg-white/10 overflow-hidden">
+                          <div className="h-2.5 w-full rounded-full bg-white/10 overflow-hidden border border-white/5">
                             <div 
-                              className="h-full bg-gradient-to-r from-[#F39C12] to-[#E67E22]" 
+                              className="h-full bg-gradient-to-r from-[#FFB84D] via-[#FFC966] to-[#FFB84D]" 
                               style={{ width: `${macroPercentages.fats}%` }}
                             />
                           </div>
