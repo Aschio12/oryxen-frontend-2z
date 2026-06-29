@@ -97,6 +97,93 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="relative z-10 py-32 px-6 lg:py-48">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-20 text-center motion-reveal">
+            <span className="mb-4 inline-block text-[10px] uppercase tracking-[0.3em] text-[#C5A059]">02 / Results</span>
+            <h2 className="font-serif text-4xl font-light leading-snug md:text-5xl lg:text-6xl">
+              Elite Athletes. Real Results.
+            </h2>
+            <p className="mt-6 mx-auto max-w-2xl text-sm font-light text-white/50">
+              Testimonials from athletes who transformed their performance through precision training and elite coaching.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                name: "Marcus Johnson",
+                role: "Strength Athlete",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+                quote: "Hit a new deadlift PR of 455 lbs with the Strength Prime program. The progression is methodical, intelligent, and produces results.",
+                metric: "+170 lbs Deadlift"
+              },
+              {
+                name: "Sarah Chen",
+                role: "Endurance Athlete",
+                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
+                quote: "Oryxen transformed my understanding of aerobic training. My VO2 max increased 18% in 12 weeks. The methodology is real.",
+                metric: "+18% VO2 Max"
+              },
+              {
+                name: "James Rodriguez",
+                role: "Combat Athlete",
+                image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80",
+                quote: "The conditioning protocols prepared me for actual competition. No platform has given me training this precise and this effective.",
+                metric: "Competition Ready"
+              },
+              {
+                name: "Maya Williams",
+                role: "Body Composition",
+                image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80",
+                quote: "Lost 8 lbs of fat while gaining muscle. The nutrition architecture is precisely calibrated. I've never felt better or stronger.",
+                metric: "-8 lbs Fat / +3 lbs Muscle"
+              },
+              {
+                name: "Alex Thompson",
+                role: "Multi-Sport",
+                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+                quote: "The variety and depth of programs means I never plateau. Every cycle brings new challenges and new adaptations.",
+                metric: "Consistent Progress"
+              },
+              {
+                name: "Jessica Park",
+                role: "Recovery Focus",
+                image: "https://images.unsplash.com/photo-1554080221-cbf9d3fb3b5e?auto=format&fit=crop&w=150&q=80",
+                quote: "The mobility protocols fixed chronic shoulder issues I had for years. The coaches understand biomechanics at the deepest level.",
+                metric: "Pain-Free Training"
+              }
+            ].map((testimonial, idx) => (
+              <div key={idx} className="group motion-reveal-delayed-1 rounded-lg border border-white/5 bg-[#0A0A0A] p-8 transition-all hover:border-[#C5A059]/30 hover:bg-[#0A0A0A]/80">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="h-12 w-12 rounded-full overflow-hidden border border-[#C5A059]/20"
+                      style={{ backgroundImage: `url(${testimonial.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                    />
+                    <div>
+                      <p className="font-semibold text-white">{testimonial.name}</p>
+                      <p className="text-[10px] uppercase tracking-wider text-white/50">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" stroke="#C5A059" strokeWidth="1">
+                        <polygon points="12 2 15.09 10.26 24 10.26 17.55 16.52 19.64 24.78 12 18.52 4.36 24.78 6.45 16.52 0 10.26 8.91 10.26" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-sm font-light text-white/70 leading-relaxed mb-6">"{testimonial.quote}"</p>
+                <div className="rounded-lg bg-[#C5A059]/10 px-3 py-2 border border-[#C5A059]/20">
+                  <p className="text-[10px] uppercase tracking-wider text-[#C5A059] font-semibold">{testimonial.metric}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Atmospheric CTA */}
       <section className="relative flex min-h-[70vh] items-center justify-center py-20">
         <div className="absolute inset-0 z-0">
