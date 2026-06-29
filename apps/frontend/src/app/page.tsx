@@ -1,8 +1,11 @@
 import { sportPrograms } from "@/data/fitness";
 
-const heroImage = sportPrograms[2]?.imageUrl || "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop";
-const abstractImage1 = "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop";
-const abstractImage2 = "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2070&auto=format&fit=crop";
+const heroImage = "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2560&auto=format&fit=crop&h=1440";
+const abstractImage1 = "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1600&auto=format&fit=crop&h=2000";
+const abstractImage2 = "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop&h=900";
+const statImage1 = "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop";
+const statImage2 = "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?q=80&w=800&auto=format&fit=crop";
+const statImage3 = "https://images.unsplash.com/photo-1577221084712-56ceb4ee3dbb?q=80&w=800&auto=format&fit=crop";
 
 export default function Home() {
   return (
@@ -53,15 +56,15 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-20 lg:grid-cols-2 lg:gap-32">
             <div className="relative motion-reveal">
-              <div className="aspect-[3/4] w-full overflow-hidden rounded-sm">
+              <div className="aspect-[3/4] w-full overflow-hidden rounded-lg border border-white/5">
                 <div 
-                  className="h-full w-full scale-105 bg-cover bg-center transition-transform duration-[20s] hover:scale-110"
+                  className="h-full w-full scale-110 bg-cover bg-center transition-transform duration-[20s] hover:scale-125"
                   style={{ backgroundImage: `url(${abstractImage1})` }}
                 />
               </div>
-              <div className="absolute -bottom-10 -right-10 hidden aspect-square w-64 overflow-hidden rounded-sm border border-white/5 lg:block motion-float-elegant" style={{ animationDelay: '2s' }}>
+              <div className="absolute -bottom-12 -right-12 hidden aspect-square w-72 overflow-hidden rounded-lg border-4 border-[#C5A059]/10 lg:block motion-float-elegant shadow-2xl" style={{ animationDelay: '2s' }}>
                 <div 
-                  className="h-full w-full bg-cover bg-center grayscale"
+                  className="h-full w-full bg-cover bg-center"
                   style={{ backgroundImage: `url(${abstractImage2})` }}
                 />
               </div>
@@ -177,6 +180,56 @@ export default function Home() {
                 <p className="text-sm font-light text-white/70 leading-relaxed mb-6">"{testimonial.quote}"</p>
                 <div className="rounded-lg bg-[#C5A059]/10 px-3 py-2 border border-[#C5A059]/20">
                   <p className="text-[10px] uppercase tracking-wider text-[#C5A059] font-semibold">{testimonial.metric}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section with Images */}
+      <section className="relative z-10 py-32 px-6 lg:py-48">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-20 text-center motion-reveal">
+            <span className="mb-4 inline-block text-[10px] uppercase tracking-[0.3em] text-[#C5A059]">03 / Performance</span>
+            <h2 className="font-serif text-4xl font-light leading-snug md:text-5xl lg:text-6xl">
+              Platform Intelligence
+            </h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3 lg:gap-12">
+            {[
+              {
+                stat: "500+",
+                label: "Athletes Trained",
+                desc: "Global performance optimization",
+                image: statImage1
+              },
+              {
+                stat: "48",
+                label: "Specializations",
+                desc: "Complete training methodologies",
+                image: statImage2
+              },
+              {
+                stat: "94%",
+                label: "Goal Achievement",
+                desc: "Verified outcome rate",
+                image: statImage3
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="group motion-reveal-delayed-1 rounded-lg border border-white/5 bg-[#0A0A0A] overflow-hidden hover:border-[#C5A059]/30 transition-all duration-500">
+                <div className="relative aspect-square overflow-hidden">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    style={{ backgroundImage: `url(${item.image})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent" />
+                </div>
+                <div className="p-6">
+                  <p className="font-serif text-4xl font-light text-[#C5A059]">{item.stat}</p>
+                  <p className="mt-2 font-semibold uppercase tracking-wider text-white">{item.label}</p>
+                  <p className="mt-3 text-xs font-light text-white/60">{item.desc}</p>
                 </div>
               </div>
             ))}
