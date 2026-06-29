@@ -10,23 +10,44 @@ export const trainers: Trainer[] = [
   {
     id: "t-001",
     name: "Alex Morgan",
-    role: "Strength & Conditioning",
-    imageUrl: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=400&q=80",
-    bio: "Former Olympic lifting coach specializing in explosive power and absolute strength development."
+    role: "Strength & Conditioning Coach",
+    imageUrl: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=600&q=90",
+    bio: "Former Olympic lifting coach with 16 years of experience. Specializes in explosive power, absolute strength, and barbell mechanics. Certified through US Weightlifting."
   },
   {
     id: "t-002",
     name: "Maya Chen",
-    role: "Mobility & Flow",
-    imageUrl: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&fit=crop&w=400&q=80",
-    bio: "Master of kinesthetics and biomechanics. Focuses on longevity, tissue health, and fluid movement."
+    role: "Mobility & Movement Specialist",
+    imageUrl: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&fit=crop&w=600&q=90",
+    bio: "Master of kinesthetics and biomechanics with 12 years of practice. Focuses on longevity, tissue resilience, and fluid movement patterns. Trained under international mobility experts."
   },
   {
     id: "t-003",
     name: "Noah Carter",
-    role: "Combat & Endurance",
-    imageUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=400&q=80",
-    bio: "Ex-professional fighter. Specializes in anaerobic threshold training and striking mechanics."
+    role: "Combat & Conditioning Coach",
+    imageUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600&q=90",
+    bio: "Ex-professional MMA fighter with 18 years in combat sports. Specializes in anaerobic conditioning, striking mechanics, and mental performance under pressure."
+  },
+  {
+    id: "t-004",
+    name: "Sarah Williams",
+    role: "Nutrition & Performance Coach",
+    imageUrl: "https://images.unsplash.com/photo-1569163139394-de4798aa62b2?auto=format&fit=crop&w=600&q=90",
+    bio: "Sports nutritionist with a degree in Exercise Science. Expert in macro programming, recovery protocols, and metabolic optimization for elite athletes."
+  },
+  {
+    id: "t-005",
+    name: "James Rodriguez",
+    role: "Endurance & Aerobic Coach",
+    imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=90",
+    bio: "Former distance runner and triathlon coach. Specializes in aerobic capacity development, mitochondrial adaptation, and sustained performance training."
+  },
+  {
+    id: "t-006",
+    name: "Jessica Park",
+    role: "Olympic Weightlifting Coach",
+    imageUrl: "https://images.unsplash.com/photo-1554080221-cbf9d3fb3b5e?auto=format&fit=crop&w=600&q=90",
+    bio: "Certified Level 2 Weightlifting Coach with 14 years of coaching experience. Has trained national and international level competitors."
   },
 ];
 
@@ -34,15 +55,15 @@ export const sportPrograms: SportProgram[] = [
   {
     id: "strength-prime",
     name: "Strength Prime",
-    description: "A calculated descent into heavy barbell mechanics. Built to maximize neuromuscular efficiency and absolute strength.",
+    description: "A calculated descent into heavy barbell mechanics. Built to maximize neuromuscular efficiency and absolute strength. Proven methodology for competitive strength athletes.",
     category: "Gym",
     level: "Intermediate",
     goal: "Muscle gain",
     duration: "8 weeks",
     intensity: 84,
-    equipment: ["Barbell", "Dumbbells", "Cable station"],
-    imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80",
-    focus: ["Progressive overload", "Hypertrophy", "Core bracing"],
+    equipment: ["Barbell", "Dumbbells", "Cable station", "Plate loaded machines"],
+    imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Progressive overload", "Hypertrophy", "Core bracing", "Barbell mastery"],
     phases: ["Foundation", "Build", "Peak", "Recovery"],
     weeklyPlan: [
       { day: "Day 1", title: "Push mechanics", type: "Strength" },
@@ -55,15 +76,15 @@ export const sportPrograms: SportProgram[] = [
   {
     id: "elite-engine",
     name: "Elite Engine",
-    description: "Push the boundaries of your aerobic and anaerobic thresholds. This is about building an unbreakable engine.",
+    description: "Push the boundaries of your aerobic and anaerobic thresholds. This is about building an unbreakable engine for elite performance and conditioning.",
     category: "HIIT",
     level: "Elite",
     goal: "Performance",
     duration: "10 weeks",
     intensity: 96,
-    equipment: ["Assault bike", "Sled", "Kettlebells"],
-    imageUrl: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=900&q=80",
-    focus: ["Power output", "Lactate tolerance", "Explosive repeatability"],
+    equipment: ["Assault bike", "Sled", "Kettlebells", "Rowing machine", "Medicine balls"],
+    imageUrl: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Power output", "Lactate tolerance", "Explosive repeatability", "Cardiovascular dominance"],
     phases: ["Build", "Peak"],
     weeklyPlan: [
       { day: "Day 1", title: "Sprint intervals", type: "Anaerobic" },
@@ -74,21 +95,84 @@ export const sportPrograms: SportProgram[] = [
   {
     id: "mobility-restore",
     name: "Mobility Restore",
-    description: "Reclaim your range of motion. Designed to undo the damage of modern living and intense training.",
+    description: "Reclaim your range of motion and joint health. Designed to undo the damage of modern living, sitting, and intense training.",
     category: "Recovery",
     level: "Beginner",
     goal: "Mobility",
     duration: "4 weeks",
     intensity: 42,
-    equipment: ["Mat", "Foam roller", "Resistance band"],
-    imageUrl: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=900&q=80",
-    focus: ["Joint control", "Breathing", "Tissue quality"],
+    equipment: ["Mat", "Foam roller", "Resistance band", "Lacrosse ball", "Mobility tools"],
+    imageUrl: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Joint control", "Breathing", "Tissue quality", "Pain-free movement"],
     phases: ["Foundation"],
     weeklyPlan: [
       { day: "Day 1", title: "Hip mobility", type: "Recovery" },
       { day: "Day 2", title: "Thoracic flow", type: "Recovery" },
+      { day: "Day 3", title: "Shoulder resilience", type: "Mobility" },
     ],
-  }
+  },
+  {
+    id: "combat-athlete",
+    name: "Combat Athlete",
+    description: "Specialized training for combat sports. Develops striking power, footwork mechanics, conditioning, and mental resilience under fatigue.",
+    category: "Combat",
+    level: "Elite",
+    goal: "Performance",
+    duration: "12 weeks",
+    intensity: 92,
+    equipment: ["Heavy bag", "Speed bag", "Hand pads", "Sparring gloves", "Conditioning tools"],
+    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Striking mechanics", "Footwork", "Anaerobic conditioning", "Mental toughness"],
+    phases: ["Foundation", "Build", "Peak"],
+    weeklyPlan: [
+      { day: "Day 1", title: "Technical striking", type: "Technique" },
+      { day: "Day 2", title: "Conditioning rounds", type: "HIIT" },
+      { day: "Day 3", title: "Footwork drills", type: "Agility" },
+      { day: "Day 4", title: "Strength & power", type: "Strength" },
+      { day: "Day 5", title: "Sparring session", type: "Combat" },
+    ],
+  },
+  {
+    id: "shred-summit",
+    name: "Shred Summit",
+    description: "Maximum fat loss protocol while preserving muscle tissue. Combines strategic cardio, strength work, and metabolic conditioning.",
+    category: "Gym",
+    level: "Intermediate",
+    goal: "Fat loss",
+    duration: "6 weeks",
+    intensity: 78,
+    equipment: ["Dumbbells", "Cardio equipment", "Battle ropes", "Med balls"],
+    imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Fat oxidation", "Metabolic elevation", "Muscle preservation", "Cardiovascular health"],
+    phases: ["Foundation", "Peak"],
+    weeklyPlan: [
+      { day: "Day 1", title: "Strength circuits", type: "Strength" },
+      { day: "Day 2", title: "Steady state cardio", type: "Cardio" },
+      { day: "Day 3", title: "Metabolic work", type: "HIIT" },
+      { day: "Day 4", title: "Active recovery", type: "Recovery" },
+      { day: "Day 5", title: "Hybrid finisher", type: "Conditioning" },
+    ],
+  },
+  {
+    id: "endurance-beast",
+    name: "Endurance Beast",
+    description: "Build aerobic capacity and endurance for tactical athletes. Focus on sustained effort, oxygen utilization, and mental fortitude.",
+    category: "Aerobics",
+    level: "Elite",
+    goal: "Endurance",
+    duration: "16 weeks",
+    intensity: 68,
+    equipment: ["Rowing machine", "Running trails", "Assault bike", "Sandbags"],
+    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Aerobic capacity", "Mitochondrial density", "Oxygen efficiency", "Mental endurance"],
+    phases: ["Foundation", "Build", "Peak", "Recovery"],
+    weeklyPlan: [
+      { day: "Day 1", title: "Long steady runs", type: "Endurance" },
+      { day: "Day 2", title: "Tempo intervals", type: "Aerobic" },
+      { day: "Day 3", title: "Maintenance strength", type: "Strength" },
+      { day: "Day 4", title: "Easy active recovery", type: "Recovery" },
+    ],
+  },
 ];
 
 export const exercises: Exercise[] = [
@@ -106,12 +190,14 @@ export const exercises: Exercise[] = [
     caloriesBurned: 45,
     intensity: 60,
     equipment: ["Dumbbell", "Kettlebell"],
-    imageUrl: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=400&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=90",
     instructions: [
-      "Hold the weight at chest height.",
-      "Keep elbows tucked and torso upright.",
-      "Descend until hips are below the knees.",
-      "Drive through the mid-foot to stand."
+      "Hold the weight at chest height with elbows pointed down.",
+      "Keep core engaged and torso upright.",
+      "Initiate descent by sending hips back and down simultaneously.",
+      "Descend until hips are slightly below knee level.",
+      "Drive through the mid-foot and heels to stand powerfully.",
+      "Maintain upright posture throughout the movement."
     ]
   },
   {
@@ -128,12 +214,182 @@ export const exercises: Exercise[] = [
     caloriesBurned: 120,
     intensity: 95,
     equipment: ["Sled", "Weights"],
-    imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=90",
     instructions: [
-      "Load the sled to 1.5x bodyweight.",
-      "Adopt a low, aggressive forward lean.",
-      "Drive powerfully through the legs, marching forward.",
-      "Do not let the sled stop moving."
+      "Load the sled to 1.5x bodyweight for maximum intensity.",
+      "Grip the handles firmly at shoulder height.",
+      "Adopt a low, aggressive forward lean at 45 degrees.",
+      "Drive explosively through the legs in a marching motion.",
+      "Maintain constant momentum - do not allow the sled to decelerate.",
+      "Complete the prescribed distance at maximum velocity."
+    ]
+  },
+  {
+    id: "barbell-bench",
+    name: "Barbell Bench Press",
+    sport: "Gym",
+    level: "Intermediate",
+    targetMuscles: ["Chest", "Shoulders", "Arms"],
+    prescription: {
+      sets: 5,
+      reps: "4-6",
+      restTime: "3 min"
+    },
+    caloriesBurned: 65,
+    intensity: 88,
+    equipment: ["Barbell", "Bench"],
+    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Load barbell with heavy weight - this is a strength movement.",
+      "Lie flat on bench with feet firmly planted on the floor.",
+      "Grip the bar slightly wider than shoulder-width.",
+      "Lower the bar to mid-chest in a controlled 3-second descent.",
+      "Pause briefly at the bottom to eliminate momentum.",
+      "Drive the bar up explosively, maintaining wrist stability."
+    ]
+  },
+  {
+    id: "deadlift",
+    name: "Conventional Deadlift",
+    sport: "Gym",
+    level: "Elite",
+    targetMuscles: ["Back", "Glutes", "Quads"],
+    prescription: {
+      sets: 3,
+      reps: "2-3",
+      restTime: "5 min"
+    },
+    caloriesBurned: 85,
+    intensity: 96,
+    equipment: ["Barbell", "Plates"],
+    imageUrl: "https://images.unsplash.com/photo-1599058917212-d217368e6919?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Position the bar over mid-foot, approximately one inch into your shoes.",
+      "Grab the bar with a shoulder-width grip, arms straight.",
+      "Drop your hips slightly while keeping your shins vertical.",
+      "Ensure your lats are engaged and chest is up.",
+      "Drive through your heels and pull the bar in a straight vertical path.",
+      "Stand at lockout with knees, hips, and shoulders aligned."
+    ]
+  },
+  {
+    id: "rowing",
+    name: "Assault Bike Sprints",
+    sport: "HIIT",
+    level: "Intermediate",
+    targetMuscles: ["Lungs", "Legs", "Core"],
+    prescription: {
+      sets: 10,
+      reps: "30 sec",
+      restTime: "30 sec"
+    },
+    caloriesBurned: 95,
+    intensity: 92,
+    equipment: ["Assault Bike"],
+    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Adjust the bike seat to hip height when standing.",
+      "Set a heavy fan resistance level for maximum difficulty.",
+      "Begin each sprint with max effort for 30 seconds.",
+      "Maintain cadence above 90 RPM throughout.",
+      "Use the full recovery period to catch your breath.",
+      "Repeat for 10 total rounds without reducing intensity."
+    ]
+  },
+  {
+    id: "pull-ups",
+    name: "Weighted Pull-ups",
+    sport: "Gym",
+    level: "Elite",
+    targetMuscles: ["Back", "Arms", "Shoulders"],
+    prescription: {
+      sets: 5,
+      reps: "6-8",
+      restTime: "2 min"
+    },
+    caloriesBurned: 52,
+    intensity: 90,
+    equipment: ["Pull-up Bar", "Weight Belt"],
+    imageUrl: "https://images.unsplash.com/photo-1534368541900-0c6688dc566e?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Attach weight to a dip belt and secure it around your waist.",
+      "Grip the bar slightly wider than shoulder-width.",
+      "Pull your body up until your chin clears the bar.",
+      "Lower yourself in a controlled 2-second eccentric.",
+      "Do not use kipping or momentum.",
+      "Complete each rep with strict form and full range of motion."
+    ]
+  },
+  {
+    id: "kettlebell-swing",
+    name: "Kettlebell Swing",
+    sport: "HIIT",
+    level: "Intermediate",
+    targetMuscles: ["Glutes", "Core", "Lungs"],
+    prescription: {
+      sets: 8,
+      reps: "20",
+      restTime: "45 sec"
+    },
+    caloriesBurned: 78,
+    intensity: 75,
+    equipment: ["Kettlebell"],
+    imageUrl: "https://images.unsplash.com/photo-1598105492230-abf695f1ddc5?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Stand with feet shoulder-width apart, kettlebell on ground in front.",
+      "Hinge at hips and grab the handle with both hands.",
+      "Explosively extend hips and drive the kettlebell to shoulder height.",
+      "Let gravity bring the bell down between your legs.",
+      "Catch in the bottom position with soft knees.",
+      "Immediately explosively extend to repeat."
+    ]
+  },
+  {
+    id: "rope-jump",
+    name: "Double-Unders",
+    sport: "Calisthenics",
+    level: "Intermediate",
+    targetMuscles: ["Calves", "Lungs", "Shoulders"],
+    prescription: {
+      sets: 10,
+      reps: "30",
+      restTime: "90 sec"
+    },
+    caloriesBurned: 68,
+    intensity: 80,
+    equipment: ["Jump Rope"],
+    imageUrl: "https://images.unsplash.com/photo-1518611505868-d7380f6f97f2?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Grip the rope handles at about waist height.",
+      "Start with a comfortable single-unders rhythm.",
+      "Explosively jump higher than usual, rotating wrists quickly.",
+      "Allow the rope to pass twice under your feet per jump.",
+      "Land softly on the balls of your feet.",
+      "Maintain rhythm and control throughout the set."
+    ]
+  },
+  {
+    id: "plank",
+    name: "Weighted Plank",
+    sport: "Gym",
+    level: "Beginner",
+    targetMuscles: ["Core", "Shoulders", "Glutes"],
+    prescription: {
+      sets: 4,
+      reps: "60 sec",
+      restTime: "90 sec"
+    },
+    caloriesBurned: 18,
+    intensity: 50,
+    equipment: ["Mat", "Weight Plate"],
+    imageUrl: "https://images.unsplash.com/photo-1608306849894-ee008c50fc8e?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Get into push-up position with forearms on the ground.",
+      "Place a weight plate on your lower back.",
+      "Ensure your body forms a straight line from head to heels.",
+      "Engage your core by drawing your navel toward your spine.",
+      "Do not let your hips sag or pike upward.",
+      "Hold this position without any movement for the prescribed time."
     ]
   }
 ];
@@ -142,7 +398,7 @@ export const nutritionPlans: NutritionPlan[] = [
   {
     id: "lean-engine",
     name: "Lean Engine",
-    description: "A calculated deficit designed to strip body fat while preserving lean tissue and athletic performance.",
+    description: "A calculated deficit designed to strip body fat while preserving lean tissue and athletic performance. Optimized for training intensity during a cut.",
     goal: "Fat loss",
     dailyCalories: 1850,
     macros: {
@@ -152,20 +408,23 @@ export const nutritionPlans: NutritionPlan[] = [
     },
     meals: [
       { name: "Protein Oats & Berries", calories: 350, protein: 30, carbs: 45, fats: 8, time: "Breakfast" },
-      { name: "Chicken & Quinoa Bowl", calories: 500, protein: 45, carbs: 55, fats: 12, time: "Lunch" },
-      { name: "Salmon & Asparagus", calories: 450, protein: 40, carbs: 10, fats: 25, time: "Dinner" },
-      { name: "Greek Yogurt & Almonds", calories: 250, protein: 25, carbs: 15, fats: 10, time: "Evening Snack" },
+      { name: "Grilled Chicken Breast & Sweet Potato", calories: 420, protein: 45, carbs: 55, fats: 5, time: "Lunch" },
+      { name: "Salmon & Asparagus with Brown Rice", calories: 520, protein: 42, carbs: 52, fats: 18, time: "Dinner" },
+      { name: "Greek Yogurt & Almonds", calories: 280, protein: 25, carbs: 18, fats: 12, time: "Evening Snack" },
+      { name: "Pre-bed: Casein Shake", calories: 200, protein: 30, carbs: 8, fats: 2, time: "Before Bed" },
     ],
     guidelines: [
-      "Prioritize protein in every meal.",
-      "Drink at least 3 liters of water daily.",
-      "Time carbohydrates around your training window."
+      "Prioritize protein in every meal to preserve muscle mass.",
+      "Drink at least 3-4 liters of water daily for satiety.",
+      "Time carbohydrates around your training window for fuel.",
+      "Incorporate high-fiber foods to maintain fullness.",
+      "Take a multivitamin due to the reduced caloric intake."
     ]
   },
   {
     id: "hypertrophy-fuel",
     name: "Hypertrophy Fuel",
-    description: "A calibrated surplus to drive muscular adaptation, recovery, and absolute strength.",
+    description: "A calibrated surplus to drive muscular adaptation, recovery, and absolute strength. Engineered for maximum anabolic state.",
     goal: "Muscle gain",
     dailyCalories: 2850,
     macros: {
@@ -174,15 +433,96 @@ export const nutritionPlans: NutritionPlan[] = [
       fats: 80
     },
     meals: [
-      { name: "Egg & Oat Stack", calories: 600, protein: 40, carbs: 65, fats: 20, time: "Breakfast" },
-      { name: "Beef & Potato Plate", calories: 800, protein: 55, carbs: 90, fats: 25, time: "Lunch" },
-      { name: "Turkey Rice Bowl", calories: 750, protein: 50, carbs: 85, fats: 20, time: "Dinner" },
-      { name: "Whey & Banana Shake", calories: 400, protein: 35, carbs: 45, fats: 8, time: "Post-Workout" },
+      { name: "Egg & Oat Stack with Honey", calories: 620, protein: 40, carbs: 70, fats: 20, time: "Breakfast" },
+      { name: "Beef Sirloin & Potato with Oil", calories: 850, protein: 55, carbs: 95, fats: 28, time: "Lunch" },
+      { name: "Turkey Rice Bowl with Avocado", calories: 780, protein: 50, carbs: 85, fats: 25, time: "Dinner" },
+      { name: "Whey & Banana with PB", calories: 480, protein: 35, carbs: 50, fats: 15, time: "Post-Workout" },
+      { name: "Casein with Granola", calories: 320, protein: 30, carbs: 35, fats: 8, time: "Evening Snack" },
     ],
     guidelines: [
-      "Ensure a caloric surplus is maintained daily.",
-      "Never miss the post-workout anabolism window.",
-      "Sleep 8+ hours to maximize growth hormone."
+      "Maintain a consistent 300-500 caloric surplus daily.",
+      "Never miss the post-workout anabolism window - consume within 2 hours.",
+      "Sleep 8-9 hours nightly to maximize growth hormone production.",
+      "Ensure adequate sodium intake to maintain fluid balance.",
+      "Track macros religiously - hit protein target every single day."
+    ]
+  },
+  {
+    id: "performance-fuel",
+    name: "Performance Fuel",
+    description: "Optimized for athletes prioritizing training output and competition performance. Balances performance, recovery, and body composition.",
+    goal: "Performance",
+    dailyCalories: 2450,
+    macros: {
+      protein: 175,
+      carbs: 280,
+      fats: 72
+    },
+    meals: [
+      { name: "Oatmeal with Protein & Blueberries", calories: 480, protein: 35, carbs: 60, fats: 12, time: "Breakfast" },
+      { name: "Chicken with Rice & Vegetables", calories: 650, protein: 50, carbs: 70, fats: 16, time: "Lunch" },
+      { name: "Fish with Sweet Potato & Greens", calories: 620, protein: 45, carbs: 65, fats: 20, time: "Dinner" },
+      { name: "Pre-Workout: Rice Cakes & Honey", calories: 250, protein: 5, carbs: 60, fats: 2, time: "Pre-Workout" },
+      { name: "Post-Workout: Whey & Dextrose", calories: 350, protein: 40, carbs: 45, fats: 3, time: "Post-Workout" },
+    ],
+    guidelines: [
+      "Front-load carbohydrates early in the day for training fuel.",
+      "Consume simple carbs around training for maximum performance.",
+      "Prioritize nutrient density in all meals.",
+      "Hydration is critical - drink electrolytes with water.",
+      "Monitor energy levels and adjust macros based on performance feedback."
+    ]
+  },
+  {
+    id: "endurance-engine",
+    name: "Endurance Engine",
+    description: "Designed for endurance athletes requiring sustained energy and optimal oxygen utilization. Higher carb emphasis for aerobic adaptation.",
+    goal: "Endurance",
+    dailyCalories: 2600,
+    macros: {
+      protein: 155,
+      carbs: 380,
+      fats: 60
+    },
+    meals: [
+      { name: "Rice Porridge with Banana & Honey", calories: 520, protein: 10, carbs: 110, fats: 4, time: "Breakfast" },
+      { name: "Pasta with Lean Meat & Tomato Sauce", calories: 720, protein: 45, carbs: 100, fats: 18, time: "Lunch" },
+      { name: "Salmon with Rice & Broccoli", calories: 640, protein: 48, carbs: 75, fats: 20, time: "Dinner" },
+      { name: "Trail Mix & Energy Bars", calories: 380, protein: 15, carbs: 55, fats: 12, time: "Snacks" },
+      { name: "Low-fat Greek Yogurt with Granola", calories: 340, protein: 30, carbs: 45, fats: 4, time: "Evening" },
+    ],
+    guidelines: [
+      "Emphasize complex carbohydrates for sustained energy release.",
+      "Time carbs before long endurance sessions for optimal performance.",
+      "Stay hydrated with electrolyte drinks during long efforts.",
+      "Consume antioxidant-rich foods to aid recovery.",
+      "Maintain consistent caloric intake across all days."
+    ]
+  },
+  {
+    id: "lean-bulk",
+    name: "Lean Bulk",
+    description: "Minimalist surplus aimed at maximizing muscle gain while limiting fat accumulation. Perfect for body-composition conscious athletes.",
+    goal: "Muscle gain",
+    dailyCalories: 2200,
+    macros: {
+      protein: 180,
+      carbs: 240,
+      fats: 65
+    },
+    meals: [
+      { name: "Egg White Omelette & Toast", calories: 420, protein: 38, carbs: 45, fats: 10, time: "Breakfast" },
+      { name: "Grilled Chicken with Quinoa & Greens", calories: 580, protein: 50, carbs: 60, fats: 14, time: "Lunch" },
+      { name: "Lean Beef with Lentils & Vegetables", calories: 620, protein: 48, carbs: 70, fats: 16, time: "Dinner" },
+      { name: "Whey Protein with Rice Cakes", calories: 350, protein: 35, carbs: 40, fats: 4, time: "Post-Workout" },
+      { name: "Casein with Berries", calories: 230, protein: 30, carbs: 25, fats: 2, time: "Evening" },
+    ],
+    guidelines: [
+      "Maintain a modest 200 caloric surplus for optimal gains.",
+      "Prioritize hitting protein targets - this is critical.",
+      "Time carbs strategically around training sessions.",
+      "Monitor body composition weekly and adjust if fat gain exceeds 0.5-1 lb per week.",
+      "Ensure consistent sleep and recovery between sessions."
     ]
   }
 ];
@@ -190,7 +530,7 @@ export const nutritionPlans: NutritionPlan[] = [
 export const classes: ClassItem[] = [
   {
     id: "class-1",
-    className: "Strength Prime",
+    className: "Strength Prime - Morning",
     startTime: "2026-06-29T06:00:00Z",
     endTime: "2026-06-29T07:00:00Z",
     category: "Gym",
@@ -201,8 +541,8 @@ export const classes: ClassItem[] = [
     trainerId: "t-001"
   },
   {
-    id: "class-3",
-    className: "Elite Engine",
+    id: "class-2",
+    className: "Elite Engine - Sprint Intervals",
     startTime: "2026-06-29T17:30:00Z",
     endTime: "2026-06-29T18:25:00Z",
     category: "HIIT",
@@ -211,5 +551,77 @@ export const classes: ClassItem[] = [
     currentEnrollment: 14,
     waitlistCount: 3,
     trainerId: "t-001"
+  },
+  {
+    id: "class-3",
+    className: "Mobility Flow - Evening",
+    startTime: "2026-06-29T18:00:00Z",
+    endTime: "2026-06-29T19:00:00Z",
+    category: "Recovery",
+    level: "Beginner",
+    capacity: 20,
+    currentEnrollment: 8,
+    waitlistCount: 0,
+    trainerId: "t-002"
+  },
+  {
+    id: "class-4",
+    className: "Combat Conditioning - Afternoon",
+    startTime: "2026-06-29T15:00:00Z",
+    endTime: "2026-06-29T16:00:00Z",
+    category: "Combat",
+    level: "Elite",
+    capacity: 12,
+    currentEnrollment: 12,
+    waitlistCount: 2,
+    trainerId: "t-003"
+  },
+  {
+    id: "class-5",
+    className: "Endurance Beast - Long Effort",
+    startTime: "2026-06-30T07:00:00Z",
+    endTime: "2026-06-30T08:30:00Z",
+    category: "Aerobics",
+    level: "Intermediate",
+    capacity: 25,
+    currentEnrollment: 18,
+    waitlistCount: 0,
+    trainerId: "t-005"
+  },
+  {
+    id: "class-6",
+    className: "Olympic Lifting - Technical",
+    startTime: "2026-06-30T09:00:00Z",
+    endTime: "2026-06-30T10:30:00Z",
+    category: "Gym",
+    level: "Elite",
+    capacity: 10,
+    currentEnrollment: 10,
+    waitlistCount: 1,
+    trainerId: "t-006"
+  },
+  {
+    id: "class-7",
+    className: "Shred Summit - Fat Loss Focus",
+    startTime: "2026-06-30T17:00:00Z",
+    endTime: "2026-06-30T18:00:00Z",
+    category: "HIIT",
+    level: "Intermediate",
+    capacity: 20,
+    currentEnrollment: 15,
+    waitlistCount: 0,
+    trainerId: "t-001"
+  },
+  {
+    id: "class-8",
+    className: "Nutrition Strategy Session",
+    startTime: "2026-07-01T18:00:00Z",
+    endTime: "2026-07-01T19:00:00Z",
+    category: "Education",
+    level: "All",
+    capacity: 30,
+    currentEnrollment: 22,
+    waitlistCount: 0,
+    trainerId: "t-004"
   }
 ];
