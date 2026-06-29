@@ -274,6 +274,12 @@ export default function Dashboard() {
             <section className="motion-reveal-delayed-2 rounded-xl border border-white/5 bg-[#0A0A0A] p-6">
               <h2 className="text-[10px] uppercase tracking-widest text-white/50 mb-4">Quick Links</h2>
               <div className="space-y-2">
+                <Link href="/workout" className="block rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 hover:bg-[#C5A059]/20 p-3 text-[10px] uppercase tracking-wider text-[#C5A059] hover:text-[#E8D099] transition-all font-semibold">
+                  Start Workout
+                </Link>
+                <Link href="/analytics" className="block rounded-lg border border-white/10 hover:border-[#C5A059]/50 bg-white/5 hover:bg-white/10 p-3 text-[10px] uppercase tracking-wider text-white/70 hover:text-[#C5A059] transition-all">
+                  Performance Analytics
+                </Link>
                 <Link href="/programs" className="block rounded-lg border border-white/10 hover:border-[#C5A059]/50 bg-white/5 hover:bg-white/10 p-3 text-[10px] uppercase tracking-wider text-white/70 hover:text-[#C5A059] transition-all">
                   View Programs
                 </Link>

@@ -35,6 +35,9 @@ export default function Navbar() {
           <Link href="/coaches" className="transition-all duration-300 hover:text-[#C5A059]">
             Coaches
           </Link>
+          <Link href="/analytics" className="transition-all duration-300 hover:text-[#C5A059]">
+            Analytics
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
