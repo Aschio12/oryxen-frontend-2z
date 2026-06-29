@@ -44,6 +44,11 @@ export default function Navbar() {
               <path d="m21 21-4.35-4.35" />
             </svg>
           </Link>
+          <Link href="/saved" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/60 hover:border-[#C5A059] hover:text-[#C5A059] transition-all" title="Saved Items">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+            </svg>
+          </Link>
           <Link href="/dashboard" className="relative overflow-hidden rounded-full border border-[#C5A059]/40 bg-transparent px-6 py-2.5 text-[10px] font-light uppercase tracking-[0.2em] text-[#C5A059] transition-all duration-500 hover:bg-[#C5A059] hover:text-black">
             Dashboard
           </Link>
