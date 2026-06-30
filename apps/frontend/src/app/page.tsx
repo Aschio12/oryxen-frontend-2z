@@ -236,23 +236,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      
-        <div className="relative z-10 flex flex-col items-center text-center motion-reveal">
-          <span className="grid h-16 w-16 place-items-center rounded-full border border-[#C5A059]/30 text-2xl text-[#C5A059]">
-            +
-          </span>
-          <h2 className="mt-10 font-serif text-4xl font-light md:text-5xl">
-            The platform is ready.
-          </h2>
-          <p className="mt-6 max-w-md text-sm font-light text-white/50">
-            Transition from the landing experience into the full Oryxen environment. Browse disciplines, nutrition, and coaching.
-          </p>
-          <button className="mt-10 border-b border-[#C5A059]/50 pb-2 text-[10px] uppercase tracking-[0.3em] text-[#C5A059] transition-all hover:border-[#C5A059] hover:text-white hover:tracking-[0.4em]">
-            Proceed to Application
-          </button>
-        </div>
-      </section>
       
       {/* Footer minimal */}
       <footer className="border-t border-white/5 py-10 px-6 text-center text-[9px] uppercase tracking-[0.2em] text-white/30">

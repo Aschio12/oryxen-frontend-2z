@@ -5,9 +5,11 @@ export type TrainingGoal =
   | "Muscle gain"
   | "Endurance"
   | "Mobility"
-  | "Performance";
+  | "Performance"
+  | "Strength"
+  | "Flexibility";
 
-export type TrainingPhase = "Foundation" | "Build" | "Peak" | "Recovery";
+export type TrainingPhase = "Foundation" | "Build" | "Peak" | "Recovery" | "Competition" | "Integration";
 
 export interface Trainer {
   id: string;
