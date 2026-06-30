@@ -9,9 +9,9 @@ const statImage3 = "https://images.unsplash.com/photo-1577221084712-56ceb4ee3dbb
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#030303] text-white selection:bg-[#C5A059]/30">
+    <main className="min-h-screen bg-[#030303] text-white selection:bg-[#C5A059]/30 pt-20">
       {/* Hero Section */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4">
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 md:px-6 lg:px-8 pb-12 md:pb-0">
         <div className="absolute inset-0 z-0">
           <div
             className="absolute inset-0 bg-cover bg-center opacity-30 motion-pan-slow"
@@ -25,11 +25,11 @@ export default function Home() {
           <span className="motion-reveal mb-6 rounded-full border border-[#C5A059]/20 bg-[#C5A059]/5 px-4 py-1.5 text-[10px] font-light uppercase tracking-[0.3em] text-[#C5A059] backdrop-blur-md">
             The Evolution of Performance
           </span>
-          <h1 className="motion-reveal-delayed-1 font-serif text-5xl font-light leading-tight tracking-wide text-white/95 md:text-7xl lg:text-8xl">
-            Sovereignty over <br />
+          <h1 className="motion-reveal-delayed-1 font-serif text-4xl font-light leading-tight tracking-wide text-white/95 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+            Sovereignty over <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A059] to-[#E8D099]">mind & body.</span>
           </h1>
-          <p className="motion-reveal-delayed-2 mt-8 max-w-2xl text-sm font-light leading-relaxed tracking-wide text-white/60 md:text-base">
+          <p className="motion-reveal-delayed-2 mt-6 sm:mt-8 max-w-2xl text-xs sm:text-sm md:text-base font-light leading-relaxed tracking-wide text-white/60">
             Oryxen is an exclusive intelligence platform designed for those who demand precision in their training, nutrition, and recovery. No noise. Only architecture for human potential.
           </p>
           
@@ -52,9 +52,9 @@ export default function Home() {
       </section>
 
       {/* Philosophy Section */}
-      <section id="philosophy" className="relative z-10 py-32 px-6 lg:py-48">
+      <section id="philosophy" className="relative z-10 py-16 sm:py-24 md:py-32 lg:py-48 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-20 lg:grid-cols-2 lg:gap-32">
+          <div className="grid gap-8 sm:gap-12 md:gap-16 lg:gap-20 lg:grid-cols-2 lg:gap-32">
             <div className="relative motion-reveal">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-lg border border-white/5">
                 <div 
@@ -188,16 +188,16 @@ export default function Home() {
       </section>
 
       {/* Stats Section with Images */}
-      <section className="relative z-10 py-32 px-6 lg:py-48">
+      <section className="relative z-10 py-16 sm:py-24 md:py-32 lg:py-48 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-20 text-center motion-reveal">
-            <span className="mb-4 inline-block text-[10px] uppercase tracking-[0.3em] text-[#C5A059]">03 / Performance</span>
-            <h2 className="font-serif text-4xl font-light leading-snug md:text-5xl lg:text-6xl">
+          <div className="mb-12 sm:mb-16 md:mb-20 text-center motion-reveal">
+            <span className="mb-4 inline-block text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-[#C5A059]">03 / Performance</span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-snug">
               Platform Intelligence
             </h2>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3 lg:gap-12">
+          <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
             {[
               {
                 stat: "500+",
