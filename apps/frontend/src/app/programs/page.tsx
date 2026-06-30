@@ -156,45 +156,7 @@ export default function ProgramsPage() {
                 </div>
               </Link>
             ))}
-          </div>
-                </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <h2 className="font-serif text-2xl font-light text-white">{program.name}</h2>
-                  <p className="mt-2 line-clamp-2 text-xs font-light leading-relaxed text-white/50">
-                    {program.description}
-                  </p>
-
-                  <div className="mt-6 grid grid-cols-2 gap-4 border-y border-white/5 py-4">
-                    <div>
-                      <p className="text-[9px] uppercase tracking-widest text-white/30">Goal</p>
-                      <p className="mt-1 text-xs font-light text-white/90">{program.goal}</p>
-                    </div>
-                    <div>
-                      <p className="text-[9px] uppercase tracking-widest text-white/30">Duration</p>
-                      <p className="mt-1 text-xs font-light text-white/90">{program.duration}</p>
-                    </div>
-                    <div>
-                      <p className="text-[9px] uppercase tracking-widest text-white/30">Intensity</p>
-                      <p className="mt-1 text-xs font-light text-[#C5A059]">{program.intensity}%</p>
-                    </div>
-                    <div>
-                      <p className="text-[9px] uppercase tracking-widest text-white/30">Phases</p>
-                      <p className="mt-1 text-xs font-light text-white/90">{program.phases.length}</p>
-                    </div>
-                  </div>
-
-                  <Link 
-                    href={`/programs/${program.id}`}
-                    className="mt-6 flex w-full justify-center rounded-sm border border-white/10 bg-white/5 py-3 text-[10px] uppercase tracking-[0.2em] text-white/70 transition-all hover:bg-white hover:text-black"
-                  >
-                    View Protocol
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
         ) : (
           <div className="flex min-h-[40vh] flex-col items-center justify-center rounded-xl border border-white/5 bg-[#0A0A0A] text-center motion-reveal-delayed-2">
             <span className="grid h-16 w-16 place-items-center rounded-full border border-white/10 text-white/30">
