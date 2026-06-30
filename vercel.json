@@ -1,7 +1,5 @@
 {
   "buildCommand": "cd apps/frontend && pnpm install && pnpm run build",
   "outputDirectory": "apps/frontend/.next",
-  "installCommand": "pnpm install",
-  "framework": "nextjs",
-  "regions": ["iad1"]
+  "framework": "nextjs"
 }
