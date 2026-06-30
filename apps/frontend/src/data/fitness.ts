@@ -173,6 +173,68 @@ export const sportPrograms: SportProgram[] = [
       { day: "Day 4", title: "Easy active recovery", type: "Recovery" },
     ],
   },
+  {
+    id: "calisthenics-mastery",
+    name: "Calisthenics Mastery",
+    description: "Master bodyweight mechanics and gymnastics strength. Build functional movement patterns with zero equipment. From basics to advanced skills.",
+    category: "Calisthenics",
+    level: "Beginner",
+    goal: "Strength",
+    duration: "12 weeks",
+    intensity: 72,
+    equipment: ["Pull-up bar", "Dip station", "Parallettes"],
+    imageUrl: "https://images.unsplash.com/photo-1577221084712-56ceb4ee3dbb?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Bodyweight control", "Core strength", "Gymnastics skills", "Functional movement"],
+    phases: ["Foundation", "Build", "Peak"],
+    weeklyPlan: [
+      { day: "Day 1", title: "Push skill work", type: "Strength" },
+      { day: "Day 2", title: "Pull development", type: "Strength" },
+      { day: "Day 3", title: "Core & balance", type: "Core" },
+      { day: "Day 4", title: "Active recovery walk", type: "Recovery" },
+      { day: "Day 5", title: "Full body integration", type: "Mixed" },
+    ],
+  },
+  {
+    id: "olympic-lifting-accelerator",
+    name: "Olympic Lifting Accelerator",
+    description: "Advanced barbell technique development focusing on the snatch and clean & jerk. For competitive weightlifters and athletes seeking explosive power.",
+    category: "Gym",
+    level: "Elite",
+    goal: "Performance",
+    duration: "14 weeks",
+    intensity: 94,
+    equipment: ["Olympic barbell", "Weight plates", "Bumper plates", "Blocks"],
+    imageUrl: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Olympic technique", "Explosive power", "Vertical displacement", "Competitive readiness"],
+    phases: ["Foundation", "Build", "Peak", "Competition"],
+    weeklyPlan: [
+      { day: "Day 1", title: "Snatch complex", type: "Technique" },
+      { day: "Day 2", title: "Clean & jerk work", type: "Technique" },
+      { day: "Day 3", title: "Accessory strength", type: "Strength" },
+      { day: "Day 4", title: "Technical refinement", type: "Technique" },
+    ],
+  },
+  {
+    id: "yoga-flow-strength",
+    name: "Yoga Flow Strength",
+    description: "Blend traditional yoga with functional strength training. Develop flexibility, balance, and body awareness while building lean muscle.",
+    category: "Recovery",
+    level: "All",
+    goal: "Flexibility",
+    duration: "8 weeks",
+    intensity: 55,
+    equipment: ["Yoga mat", "Blocks", "Strap", "Bolster"],
+    imageUrl: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Flexibility", "Body awareness", "Breath work", "Mind-body connection"],
+    phases: ["Foundation", "Integration"],
+    weeklyPlan: [
+      { day: "Day 1", title: "Morning vinyasa", type: "Mobility" },
+      { day: "Day 2", title: "Hip opening sequence", type: "Flexibility" },
+      { day: "Day 3", title: "Strength asanas", type: "Strength" },
+      { day: "Day 4", title: "Restorative practice", type: "Recovery" },
+      { day: "Day 5", title: "Full flow integration", type: "Mixed" },
+    ],
+  },
 ];
 
 export const exercises: Exercise[] = [
@@ -390,6 +452,126 @@ export const exercises: Exercise[] = [
       "Engage your core by drawing your navel toward your spine.",
       "Do not let your hips sag or pike upward.",
       "Hold this position without any movement for the prescribed time."
+    ]
+  },
+  {
+    id: "snatch",
+    name: "Power Snatch",
+    sport: "Gym",
+    level: "Elite",
+    targetMuscles: ["Full Body", "Explosive power"],
+    prescription: {
+      sets: 6,
+      reps: "2-3",
+      restTime: "3 min"
+    },
+    caloriesBurned: 72,
+    intensity: 98,
+    equipment: ["Barbell", "Olympic plates"],
+    imageUrl: "https://images.unsplash.com/photo-1554080221-cbf9d3fb3b5e?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Address the bar with feet shoulder-width apart.",
+      "Maintain a neutral spine with shoulders over the bar.",
+      "Execute a powerful triple extension: ankles, knees, hips.",
+      "Pull yourself under the bar with elbows high.",
+      "Catch in a deep quarter squat position.",
+      "Drive through the legs to achieve full lockout overhead."
+    ]
+  },
+  {
+    id: "muscle-up",
+    name: "Muscle-up",
+    sport: "Calisthenics",
+    level: "Elite",
+    targetMuscles: ["Chest", "Back", "Shoulders", "Arms"],
+    prescription: {
+      sets: 5,
+      reps: "5-8",
+      restTime: "2 min"
+    },
+    caloriesBurned: 58,
+    intensity: 92,
+    equipment: ["Pull-up bar"],
+    imageUrl: "https://images.unsplash.com/photo-1534368541900-0c6688dc566e?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Jump and grip the bar with a false grip or normal grip.",
+      "Pull up explosively, driving your elbows backward.",
+      "At chest level, press through and rotate wrists.",
+      "Transition to a dip position with arms locked out.",
+      "Lower into a controlled dip movement.",
+      "Press back up to lockout to complete the rep."
+    ]
+  },
+  {
+    id: "prowler-sprint",
+    name: "Prowler Sprint Push",
+    sport: "HIIT",
+    level: "Elite",
+    targetMuscles: ["Quads", "Glutes", "Lungs"],
+    prescription: {
+      sets: 6,
+      reps: "40 meters",
+      restTime: "90 sec"
+    },
+    caloriesBurned: 115,
+    intensity: 93,
+    equipment: ["Prowler sled"],
+    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Load the prowler sled with heavy weight.",
+      "Position hands on the handles at chest height.",
+      "Lean forward at approximately 45 degrees.",
+      "Drive explosively through the legs in a sprinting motion.",
+      "Maintain maximum velocity throughout the entire distance.",
+      "Walk back slowly to recover between sets."
+    ]
+  },
+  {
+    id: "pistol-squat",
+    name: "Pistol Squat",
+    sport: "Calisthenics",
+    level: "Elite",
+    targetMuscles: ["Quads", "Glutes", "Core", "Balance"],
+    prescription: {
+      sets: 5,
+      reps: "5 each leg",
+      restTime: "2 min"
+    },
+    caloriesBurned: 42,
+    intensity: 88,
+    equipment: ["None"],
+    imageUrl: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Stand on one leg with the other leg extended forward.",
+      "Maintain an upright torso with arms extended for counterbalance.",
+      "Lower slowly by bending the supporting leg knee.",
+      "Descend until your hip is below knee level.",
+      "Keep tension in the extended leg and core.",
+      "Drive back to standing position with power and control."
+    ]
+  },
+  {
+    id: "battle-ropes",
+    name: "Battle Rope Waves",
+    sport: "HIIT",
+    level: "Intermediate",
+    targetMuscles: ["Shoulders", "Cores", "Lungs"],
+    prescription: {
+      sets: 8,
+      reps: "30 sec",
+      restTime: "30 sec"
+    },
+    caloriesBurned: 88,
+    intensity: 85,
+    equipment: ["Battle ropes"],
+    imageUrl: "https://images.unsplash.com/photo-1598105492230-abf695f1ddc5?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Stand with feet shoulder-width apart holding both rope ends.",
+      "Maintain a slight forward lean with engaged core.",
+      "Initiate waves by explosively moving arms up and down.",
+      "Alternate creating simultaneous waves in both ropes.",
+      "Maintain maximum intensity without breaking rhythm.",
+      "Rest briefly between sets to recover breathing."
     ]
   }
 ];
