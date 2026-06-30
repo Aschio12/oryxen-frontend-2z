@@ -237,13 +237,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Atmospheric CTA */}
-      <section className="relative flex min-h-[70vh] items-center justify-center py-20">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#C5A059] opacity-[0.03] motion-pulse-glow" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#C5A059_0%,transparent_40%)] opacity-10" />
-        </div>
-        
+      
         <div className="relative z-10 flex flex-col items-center text-center motion-reveal">
           <span className="grid h-16 w-16 place-items-center rounded-full border border-[#C5A059]/30 text-2xl text-[#C5A059]">
             +
