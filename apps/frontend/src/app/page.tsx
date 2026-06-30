@@ -40,7 +40,7 @@ export default function Home() {
           </div>
 
           {/* Main heading with enhanced typography */}
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <h1 className="motion-reveal-delayed-1 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-[1.1] sm:leading-[1.15] tracking-tight text-white mb-6 sm:mb-8">
               <span className="block mb-3 sm:mb-4">Sovereignty</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A059] via-[#E8D099] to-[#C5A059] animate-pulse">
@@ -91,7 +91,7 @@ export default function Home() {
 
       {/* Philosophy Section */}
       <section id="philosophy" className="relative z-10 py-16 sm:py-24 md:py-32 lg:py-48 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-8 sm:gap-12 md:gap-16 lg:gap-20 lg:grid-cols-2 lg:gap-32">
             <div className="relative motion-reveal">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-lg border border-white/5">
@@ -227,7 +227,7 @@ export default function Home() {
 
       {/* Stats Section with Images */}
       <section className="relative z-10 py-16 sm:py-24 md:py-32 lg:py-48 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1400px]">
           <div className="mb-12 sm:mb-16 md:mb-20 text-center motion-reveal">
             <span className="mb-4 inline-block text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-[#C5A059]">03 / Performance</span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-snug">
