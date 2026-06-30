@@ -156,7 +156,7 @@ export default function ProgramsPage() {
                 </div>
               </Link>
             ))}
-
+          </div>
         ) : (
           <div className="flex min-h-[40vh] flex-col items-center justify-center rounded-xl border border-white/5 bg-[#0A0A0A] text-center motion-reveal-delayed-2">
             <span className="grid h-16 w-16 place-items-center rounded-full border border-white/10 text-white/30">
