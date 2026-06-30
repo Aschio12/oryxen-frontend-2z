@@ -1,4 +1,4 @@
-export type TrainingLevel = "Beginner" | "Intermediate" | "Elite";
+export type TrainingLevel = "Beginner" | "Intermediate" | "Elite" | "All";
 
 export type TrainingGoal =
   | "Fat loss"
