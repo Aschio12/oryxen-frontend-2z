@@ -77,65 +77,84 @@ export default function ProgramsPage() {
 
         {/* Results Grid */}
         {filteredPrograms.length > 0 ? (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 motion-reveal-delayed-2">
-            {filteredPrograms.map((program) => (
-              <article
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 motion-reveal-delayed-2">
+            {filteredPrograms.map((program, idx) => (
+              <Link
                 key={program.id}
-                className="group relative overflow-hidden rounded-xl border border-white/5 bg-[#0A0A0A] transition-all hover:border-[#C5A059]/30"
+                href={`/programs/${program.id}`}
+                className="group relative overflow-hidden rounded-xl border border-white/5 bg-[#0A0A0A] transition-all duration-500 hover:border-[#C5A059]/50 hover:shadow-[0_0_30px_rgba(197,160,89,0.1)]"
               >
-                {/* Image Header */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative aspect-[3/2] overflow-hidden bg-gradient-to-br from-[#C5A059]/20 to-[#030303]">
                   <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125"
                     style={{ backgroundImage: `url(${program.imageUrl})` }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent opacity-80" />
+                  
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-[#C5A059]/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   
                   {/* Badges */}
-                  <div className="absolute left-5 top-5 flex gap-2">
-                    <span className="rounded-sm bg-black/60 px-2 py-1 text-[9px] uppercase tracking-wider text-[#C5A059] backdrop-blur-md">
-                      {program.category}
-                    </span>
-                    <span className="rounded-sm bg-black/60 px-2 py-1 text-[9px] uppercase tracking-wider text-white backdrop-blur-md">
-                      {program.level}
-                    </span>
+                  <div className="absolute top-4 left-4 flex gap-2">
+                    <span className="rounded-lg bg-[#C5A059]/25 px-3 py-1.5 text-[9px] uppercase tracking-widest text-[#C5A059] backdrop-blur-md border border-[#C5A059]/40 font-semibold">{program.category}</span>
+                    <span className="rounded-lg bg-white/15 px-3 py-1.5 text-[9px] uppercase tracking-widest text-white/80 backdrop-blur-md border border-white/20 font-semibold">{program.level}</span>
+                  </div>
+
+                  {/* Quick Stats */}
+                  <div className="absolute bottom-4 right-4 space-y-1 text-right">
+                    <p className="text-[8px] uppercase tracking-widest text-white/50">Duration</p>
+                    <p className="text-lg font-light text-white font-serif">{program.duration}</p>
+                    <div className="mt-2 flex items-center justify-end gap-1 text-[#C5A059]">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" /></svg>
+                      <span className="text-[9px] font-semibold">{program.intensity}%</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
-                  <h2 className="font-serif text-2xl font-light text-white">{program.name}</h2>
-                  <p className="mt-2 line-clamp-2 text-xs font-light leading-relaxed text-white/50">
+                  <div className="flex items-start justify-between mb-2">
+                    <h2 className="font-serif text-2xl font-light text-white group-hover:text-[#C5A059] transition-colors flex-1">
+                      {program.name}
+                    </h2>
+                    <div className="h-8 w-8 rounded-full border border-[#C5A059]/30 flex items-center justify-center text-[#C5A059] group-hover:border-[#C5A059]/100 group-hover:bg-[#C5A059]/10 transition-all">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+                    </div>
+                  </div>
+
+                  <p className="mt-3 text-xs font-light leading-relaxed text-white/70 line-clamp-2">
                     {program.description}
                   </p>
 
-                  <div className="mt-6 grid grid-cols-2 gap-4 border-y border-white/5 py-4">
-                    <div>
-                      <p className="text-[9px] uppercase tracking-widest text-white/30">Goal</p>
-                      <p className="mt-1 text-xs font-light text-white/90">{program.goal}</p>
-                    </div>
-                    <div>
-                      <p className="text-[9px] uppercase tracking-widest text-white/30">Duration</p>
-                      <p className="mt-1 text-xs font-light text-white/90">{program.duration}</p>
-                    </div>
-                    <div>
-                      <p className="text-[9px] uppercase tracking-widest text-white/30">Intensity</p>
-                      <p className="mt-1 text-xs font-light text-[#C5A059]">{program.intensity}%</p>
-                    </div>
-                    <div>
-                      <p className="text-[9px] uppercase tracking-widest text-white/30">Phases</p>
-                      <p className="mt-1 text-xs font-light text-white/90">{program.phases.length}</p>
-                    </div>
+                  {/* Focus Areas */}
+                  <div className="mt-4 flex flex-wrap gap-1">
+                    {program.focus.slice(0, 2).map((f, i) => (
+                      <span key={i} className="text-[8px] uppercase tracking-wider text-[#C5A059]/70 bg-[#C5A059]/10 px-2 py-1 rounded">
+                        {f}
+                      </span>
+                    ))}
                   </div>
 
-                  <Link 
-                    href={`/programs/${program.id}`}
-                    className="mt-6 flex w-full justify-center rounded-sm border border-white/10 bg-white/5 py-3 text-[10px] uppercase tracking-[0.2em] text-white/70 transition-all hover:bg-white hover:text-black"
-                  >
-                    View Protocol
-                  </Link>
+                  <div className="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
+                    <div className="flex gap-4">
+                      <div>
+                        <p className="text-[9px] uppercase tracking-widest text-white/40">Intensity</p>
+                        <p className="mt-1 text-lg font-light text-[#C5A059] font-serif">{program.intensity}%</p>
+                      </div>
+                      <div>
+                        <p className="text-[9px] uppercase tracking-widest text-white/40">Phases</p>
+                        <p className="mt-1 text-lg font-light text-white font-serif">{program.phases.length}</p>
+                      </div>
+                      <div>
+                        <p className="text-[9px] uppercase tracking-widest text-white/40">Weekly</p>
+                        <p className="mt-1 text-lg font-light text-white font-serif">{program.weeklyPlan.length}x</p>
+                      </div>
+                    </div>
+                    <div className="h-10 w-10 rounded-full border border-[#C5A059]/30 flex items-center justify-center text-[#C5A059] group-hover:border-[#C5A059] group-hover:bg-[#C5A059] group-hover:text-black transition-all">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                    </div>
+                  </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         ) : (

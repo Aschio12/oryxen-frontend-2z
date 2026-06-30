@@ -160,31 +160,36 @@ export default function ExercisesPage() {
         {filteredExercises.length > 0 ? (
           <>
             {viewMode === "grid" ? (
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 motion-reveal-delayed-2">
-                {filteredExercises.map((ex) => (
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 motion-reveal-delayed-2">
+                {filteredExercises.map((ex, idx) => (
                   <article
                     key={ex.id}
-                    className="group relative overflow-hidden rounded-xl border border-white/5 bg-[#0A0A0A] transition-all hover:border-[#C5A059]/30"
+                    className="group relative overflow-hidden rounded-xl border border-white/5 bg-[#0A0A0A] transition-all duration-500 hover:border-[#C5A059]/50 shadow-lg hover:shadow-[0_0_30px_rgba(197,160,89,0.1)]"
+                    style={{ animationDelay: `${idx * 0.05}s` }}
                   >
                     {/* Image Header */}
-                    <div className="relative h-48 overflow-hidden bg-white/5">
+                    <div className="relative h-56 overflow-hidden bg-gradient-to-br from-[#C5A059]/10 to-[#030303]">
                       <div
-                        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-125"
                         style={{ backgroundImage: `url(${ex.imageUrl})` }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent" />
+                      <div className="absolute inset-0 bg-[#C5A059]/0 group-hover:bg-[#C5A059]/5 transition-all duration-500" />
                       <button
                         onClick={() => toggleFavorite(ex.id)}
-                        className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 backdrop-blur transition-all hover:bg-[#C5A059]"
+                        className={`absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border transition-all ${
+                          favorites.includes(ex.id)
+                            ? "bg-[#C5A059]/20 border-[#C5A059]/50 text-[#C5A059]"
+                            : "bg-black/60 border-white/10 backdrop-blur hover:border-[#C5A059]/50 hover:bg-[#C5A059]/10"
+                        }`}
                       >
                         <svg 
-                          width="16" 
-                          height="16" 
+                          width="18" 
+                          height="18" 
                           viewBox="0 0 24 24" 
                           fill={favorites.includes(ex.id) ? "currentColor" : "none"}
                           stroke="currentColor" 
-                          strokeWidth="2"
-                          className={favorites.includes(ex.id) ? "text-[#C5A059]" : ""}
+                          strokeWidth="1.5"
                         >
                           <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
                         </svg>
@@ -193,40 +198,40 @@ export default function ExercisesPage() {
 
                     {/* Content */}
                     <div className="p-6">
-                      <div className="flex items-start justify-between">
+                      <div className="flex items-start justify-between mb-2">
                         <div>
-                          <span className="text-[9px] uppercase tracking-widest text-[#C5A059]">{ex.sport}</span>
-                          <h2 className="mt-1 font-serif text-xl font-light text-white">{ex.name}</h2>
+                          <span className="text-[9px] uppercase tracking-widest text-[#C5A059] font-semibold bg-[#C5A059]/10 px-2.5 py-1 rounded-full">{ex.sport}</span>
+                          <h2 className="mt-3 font-serif text-xl font-light text-white group-hover:text-[#C5A059] transition-colors">{ex.name}</h2>
                         </div>
-                        <span className="rounded-sm border border-white/10 bg-white/5 px-2 py-1 text-[9px] uppercase tracking-widest text-white/80">
+                        <span className="rounded-lg border border-white/20 bg-white/5 px-3 py-1.5 text-[9px] uppercase tracking-widest text-white/70 font-semibold">
                           {ex.level}
                         </span>
                       </div>
 
-                      <div className="mt-4 flex flex-wrap gap-1">
+                      <div className="mt-4 flex flex-wrap gap-1.5">
                         {ex.targetMuscles.map(muscle => (
-                          <span key={muscle} className="rounded-full bg-white/[0.03] px-2 py-0.5 text-[9px] text-white/50">
+                          <span key={muscle} className="rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 px-3 py-1 text-[8px] text-[#C5A059]/80 font-semibold uppercase tracking-wider">
                             {muscle}
                           </span>
                         ))}
                       </div>
 
-                      <div className="mt-6 grid grid-cols-2 gap-3 border-t border-white/5 pt-4">
-                        <div>
-                          <p className="text-[9px] uppercase tracking-widest text-white/30">Sets x Reps</p>
-                          <p className="mt-1 text-xs font-light text-white/90">{ex.prescription.sets} x {ex.prescription.reps}</p>
+                      <div className="mt-6 grid grid-cols-2 gap-4 border-t border-white/10 pt-5">
+                        <div className="rounded-lg bg-white/[0.02] border border-white/5 p-3">
+                          <p className="text-[8px] uppercase tracking-widest text-white/40 font-semibold">Sets x Reps</p>
+                          <p className="mt-2 text-sm font-light text-white/90">{ex.prescription.sets} x {ex.prescription.reps}</p>
                         </div>
-                        <div>
-                          <p className="text-[9px] uppercase tracking-widest text-white/30">Rest</p>
-                          <p className="mt-1 text-xs font-light text-white/90">{ex.prescription.restTime}</p>
+                        <div className="rounded-lg bg-white/[0.02] border border-white/5 p-3">
+                          <p className="text-[8px] uppercase tracking-widest text-white/40 font-semibold">Rest</p>
+                          <p className="mt-2 text-sm font-light text-white/90">{ex.prescription.restTime}</p>
                         </div>
-                        <div>
-                          <p className="text-[9px] uppercase tracking-widest text-white/30">Burn</p>
-                          <p className="mt-1 text-xs font-light text-[#C5A059]">{ex.caloriesBurned} kcal</p>
+                        <div className="rounded-lg bg-[#C5A059]/[0.04] border border-[#C5A059]/20 p-3">
+                          <p className="text-[8px] uppercase tracking-widest text-[#C5A059]/60 font-semibold">Burn</p>
+                          <p className="mt-2 text-sm font-light text-[#C5A059]">{ex.caloriesBurned} kcal</p>
                         </div>
-                        <div>
-                          <p className="text-[9px] uppercase tracking-widest text-white/30">Intensity</p>
-                          <p className="mt-1 text-xs font-light text-white/90">{ex.intensity}%</p>
+                        <div className="rounded-lg bg-white/[0.02] border border-white/5 p-3">
+                          <p className="text-[8px] uppercase tracking-widest text-white/40 font-semibold">Intensity</p>
+                          <p className="mt-2 text-sm font-light text-white/90">{ex.intensity}%</p>
                         </div>
                       </div>
 
