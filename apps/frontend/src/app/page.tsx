@@ -12,16 +12,24 @@ export default function Home() {
     <main className="min-h-screen bg-[#030303] text-white selection:bg-[#C5A059]/30 pt-20">
       {/* Hero Section - Premium Redesign */}
       <section className="relative min-h-[90vh] lg:min-h-screen w-full overflow-hidden">
-        {/* Animated background with gradient mesh */}
+        {/* Background images with parallax effect */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#030303] via-[#0A0505] to-[#030303]" />
+          {/* Primary hero image */}
+          <div className="absolute inset-0 bg-cover bg-center opacity-25 blur-sm" style={{
+            backgroundImage: `url(/images/hero-elite-performance.png)`,
+            backgroundAttachment: 'fixed'
+          }} />
           
-          {/* Animated orb effects */}
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-[#C5A059]/20 to-[#C5A059]/0 rounded-full blur-3xl opacity-30 animate-pulse" />
-          <div className="absolute top-1/3 -left-32 w-80 h-80 bg-gradient-to-br from-[#C5A059]/15 to-transparent rounded-full blur-3xl opacity-25 animate-pulse" style={{ animationDelay: '1s' }} />
+          {/* Animated gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#030303]/90 via-[#0A0505]/85 to-[#030303]/90" />
           
-          {/* Grid overlay */}
-          <div className="absolute inset-0 opacity-5" style={{
+          {/* Animated orb effects - enhanced */}
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-[#C5A059]/30 to-[#C5A059]/0 rounded-full blur-3xl opacity-40 animate-pulse" />
+          <div className="absolute top-1/3 -left-32 w-80 h-80 bg-gradient-to-br from-[#C5A059]/25 to-transparent rounded-full blur-3xl opacity-35 animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute bottom-20 right-1/4 w-72 h-72 bg-gradient-to-tl from-[#C5A059]/20 to-transparent rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
+          
+          {/* Enhanced grid overlay */}
+          <div className="absolute inset-0 opacity-10" style={{
             backgroundImage: `linear-gradient(rgba(197, 160, 89, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 160, 89, 0.1) 1px, transparent 1px)`,
             backgroundSize: '50px 50px'
           }} />
