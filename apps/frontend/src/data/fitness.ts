@@ -49,6 +49,27 @@ export const trainers: Trainer[] = [
     imageUrl: "https://images.unsplash.com/photo-1554080221-cbf9d3fb3b5e?auto=format&fit=crop&w=600&q=90",
     bio: "Certified Level 2 Weightlifting Coach with 14 years of coaching experience. Has trained national and international level competitors."
   },
+  {
+    id: "t-007",
+    name: "Marcus Thompson",
+    role: "Functional Fitness & Gymnastics Coach",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=90",
+    bio: "Expert in calisthenics and functional movement patterns. Specializes in upper body pushing power, muscle-up progressions, and bodyweight mastery. 20 years of teaching experience."
+  },
+  {
+    id: "t-008",
+    name: "Elena Petrov",
+    role: "Recovery & Rehabilitation Specialist",
+    imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=90",
+    bio: "Sports medicine background with focus on injury prevention and post-injury rehabilitation. Expert in myofascial release, cupping, and advanced recovery protocols."
+  },
+  {
+    id: "t-009",
+    name: "David Kim",
+    role: "Mental Performance Coach",
+    imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=90",
+    bio: "Sports psychologist specializing in peak performance, visualization, mental resilience, and competition psychology. Works with elite athletes globally."
+  },
 ];
 
 export const sportPrograms: SportProgram[] = [
