@@ -283,9 +283,65 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Footer minimal */}
-      <footer className="border-t border-white/5 py-10 px-6 text-center text-[9px] uppercase tracking-[0.2em] text-white/30">
-        Oryxen © {new Date().getFullYear()} — Human Performance Intelligence
+      {/* Premium Footer */}
+      <footer className="relative border-t border-white/10 bg-gradient-to-b from-[#030303]/50 to-[#030303] backdrop-blur-sm">
+        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          {/* Footer grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 pb-12 border-b border-white/10">
+            {/* Brand */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Oryxen</h3>
+              <p className="text-sm text-white/60 font-light leading-relaxed">
+                Elite performance intelligence for athletes who refuse mediocrity. Precision architecture for human potential.
+              </p>
+            </div>
+
+            {/* Platform */}
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-[#C5A059] mb-6">Platform</h4>
+              <ul className="space-y-3">
+                <li><a href="/programs" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">Programs</a></li>
+                <li><a href="/exercises" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">Exercises</a></li>
+                <li><a href="/classes" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">Classes</a></li>
+                <li><a href="/nutrition" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">Nutrition</a></li>
+              </ul>
+            </div>
+
+            {/* Community */}
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-[#C5A059] mb-6">Community</h4>
+              <ul className="space-y-3">
+                <li><a href="/trainers" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">Elite Trainers</a></li>
+                <li><a href="/community" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">Social Feed</a></li>
+                <li><a href="/gallery" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">Transformations</a></li>
+                <li><a href="/resources" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">Resources</a></li>
+              </ul>
+            </div>
+
+            {/* Connect */}
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-[#C5A059] mb-6">Connect</h4>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">Instagram</a></li>
+                <li><a href="#" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">Twitter</a></li>
+                <li><a href="#" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">LinkedIn</a></li>
+                <li><a href="#" className="text-sm text-white/70 hover:text-[#C5A059] transition-colors">YouTube</a></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Footer bottom */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">
+              Oryxen © {new Date().getFullYear()} — Human Performance Intelligence
+            </p>
+            <div className="flex items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-white/40">
+              <a href="#" className="hover:text-[#C5A059] transition-colors">Privacy</a>
+              <a href="#" className="hover:text-[#C5A059] transition-colors">Terms</a>
+              <a href="#" className="hover:text-[#C5A059] transition-colors">Contact</a>
+            </div>
+          </div>
+        </div>
       </footer>
     </main>
   );
