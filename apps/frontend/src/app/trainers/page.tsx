@@ -14,6 +14,9 @@ export default function TrainersPage() {
     "t-004": { rating: 4.7, reviews: 156, classesLed: 98, athletes: 84 },
     "t-005": { rating: 4.85, reviews: 221, classesLed: 167, athletes: 121 },
     "t-006": { rating: 4.88, reviews: 267, classesLed: 145, athletes: 136 },
+    "t-007": { rating: 4.92, reviews: 298, classesLed: 172, athletes: 154 },
+    "t-008": { rating: 4.86, reviews: 245, classesLed: 134, athletes: 119 },
+    "t-009": { rating: 4.91, reviews: 278, classesLed: 159, athletes: 148 },
   };
 
   const trainerSpecialties = {
@@ -23,6 +26,9 @@ export default function TrainersPage() {
     "t-004": ["Macro Calculation", "Body Composition", "Periodization", "Sport-Specific Nutrition"],
     "t-005": ["Aerobic Development", "Endurance Training", "VO2 Max Optimization", "Distance Training"],
     "t-006": ["Olympic Lifting", "Technical Coaching", "Competition Prep", "Injury Prevention"],
+    "t-007": ["Calisthenics", "Muscle-ups", "Bodyweight Mastery", "Gymnastics Skills"],
+    "t-008": ["Recovery Protocols", "Myofascial Release", "Injury Prevention", "Rehabilitation"],
+    "t-009": ["Mental Resilience", "Visualization", "Peak Performance", "Competition Psychology"],
   };
 
   return (
