@@ -2,6 +2,7 @@ import { sportPrograms } from "@/data/fitness";
 import { TestimonialSection } from "@/components/TestimonialSection";
 import { TransformationSection } from "@/components/TransformationSection";
 import { StatsDashboard } from "@/components/StatsDashboard";
+import { CtaBanner } from "@/components/CtaBanner";
 
 const heroImage = "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2560&auto=format&fit=crop&h=1440";
 const abstractImage1 = "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1600&auto=format&fit=crop&h=2000";
@@ -294,6 +295,9 @@ export default function Home() {
 
       {/* Transformations Section */}
       <TransformationSection />
+
+      {/* Premium CTA Banner */}
+      <CtaBanner />
 
       {/* Premium Footer */}
       <footer className="relative border-t border-white/10 bg-gradient-to-b from-[#030303]/50 to-[#030303] backdrop-blur-sm">
