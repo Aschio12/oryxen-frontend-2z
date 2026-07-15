@@ -3,8 +3,9 @@ import { TestimonialSection } from "@/components/TestimonialSection";
 import { TransformationSection } from "@/components/TransformationSection";
 import { StatsDashboard } from "@/components/StatsDashboard";
 import { CtaBanner } from "@/components/CtaBanner";
+import { CinematicHero } from "@/components/CinematicHero";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
-const heroImage = "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2560&auto=format&fit=crop&h=1440";
 const abstractImage1 = "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1600&auto=format&fit=crop&h=2000";
 const abstractImage2 = "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop&h=900";
 const statImage1 = "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop";
@@ -13,99 +14,16 @@ const statImage3 = "https://images.unsplash.com/photo-1577221084712-56ceb4ee3dbb
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#030303] text-white selection:bg-[#C5A059]/30 pt-20">
-      {/* Hero Section - Premium Redesign */}
-      <section className="relative min-h-[90vh] lg:min-h-screen w-full overflow-hidden">
-        {/* Background images with parallax effect */}
-        <div className="absolute inset-0 z-0">
-          {/* Primary hero image */}
-          <div className="absolute inset-0 bg-cover bg-center opacity-25 blur-sm" style={{
-            backgroundImage: `url(/images/hero-elite-performance.png)`,
-            backgroundAttachment: 'fixed'
-          }} />
-          
-          {/* Animated gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#030303]/90 via-[#0A0505]/85 to-[#030303]/90" />
-          
-          {/* Animated orb effects - enhanced */}
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-[#C5A059]/30 to-[#C5A059]/0 rounded-full blur-3xl opacity-40 animate-pulse" />
-          <div className="absolute top-1/3 -left-32 w-80 h-80 bg-gradient-to-br from-[#C5A059]/25 to-transparent rounded-full blur-3xl opacity-35 animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute bottom-20 right-1/4 w-72 h-72 bg-gradient-to-tl from-[#C5A059]/20 to-transparent rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
-          
-          {/* Enhanced grid overlay */}
-          <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `linear-gradient(rgba(197, 160, 89, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 160, 89, 0.1) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
-          }} />
-        </div>
-
-        <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
-          {/* Premium badge */}
-          <div className="motion-reveal mb-6 sm:mb-8 lg:mb-12 flex items-center gap-2 rounded-full border border-[#C5A059]/40 bg-gradient-to-r from-[#C5A059]/10 to-[#C5A059]/5 px-5 sm:px-6 py-2.5 backdrop-blur-xl">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C5A059] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C5A059]" />
-            </span>
-            <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#C5A059]">
-              Performance Intelligence
-            </span>
-          </div>
-
-          {/* Main heading with enhanced typography */}
-          <div className="max-w-6xl mx-auto text-center">
-            <h1 className="motion-reveal-delayed-1 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-[1.1] sm:leading-[1.15] tracking-tight text-white mb-6 sm:mb-8">
-              <span className="block mb-3 sm:mb-4">Sovereignty</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A059] via-[#E8D099] to-[#C5A059] animate-pulse">
-                Over Mind & Body
-              </span>
-            </h1>
-
-            <p className="motion-reveal-delayed-2 mt-8 sm:mt-10 lg:mt-12 max-w-3xl mx-auto text-sm sm:text-base md:text-lg font-light leading-relaxed tracking-wide text-white/70">
-              An exclusive intelligence platform engineered for elite athletes. Precision in every training cycle, nutrition protocol, and recovery day. No compromise. Only architectural excellence for those who refuse mediocrity.
-            </p>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="motion-reveal-delayed-3 mt-12 sm:mt-14 lg:mt-16 flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center w-full px-2">
-            <button className="group relative px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold uppercase tracking-widest text-sm sm:text-base transition-all duration-500 border-2 border-[#C5A059] bg-[#C5A059] text-black hover:bg-transparent hover:text-[#C5A059] hover:shadow-[0_0_40px_rgba(197,160,89,0.4)] w-full sm:w-auto">
-              Start Elite Training
-            </button>
-            <button className="group relative px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold uppercase tracking-widest text-sm sm:text-base transition-all duration-500 border-2 border-[#C5A059]/50 bg-transparent text-[#C5A059] hover:border-[#C5A059] hover:bg-[#C5A059]/5 hover:shadow-[0_0_30px_rgba(197,160,89,0.3)] w-full sm:w-auto">
-              Explore Programs
-            </button>
-          </div>
-
-          {/* Statistics row */}
-          <div className="motion-reveal-delayed-4 mt-16 sm:mt-20 lg:mt-24 grid grid-cols-3 gap-4 sm:gap-8 w-full max-w-3xl border-y border-white/10 py-8 sm:py-12">
-            <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#C5A059] mb-2">500+</p>
-              <p className="text-[11px] sm:text-xs uppercase tracking-widest text-white/50 font-light">Elite Athletes</p>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#C5A059] mb-2">94%</p>
-              <p className="text-[11px] sm:text-xs uppercase tracking-widest text-white/50 font-light">Goal Achievement</p>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#C5A059] mb-2">48</p>
-              <p className="text-[11px] sm:text-xs uppercase tracking-widest text-white/50 font-light">Specializations</p>
-            </div>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 motion-float-elegant opacity-60">
-            <span className="text-[9px] uppercase tracking-[0.3em] text-white/50 font-light">Scroll to explore</span>
-            <div className="w-5 h-8 border border-white/30 rounded-full flex items-start justify-center p-2">
-              <div className="w-1 h-2 bg-white/50 rounded-full animate-bounce" />
-            </div>
-          </div>
-        </div>
-      </section>
+    <main className="min-h-screen bg-[#030303] text-white selection:bg-[#C5A059]/30">
+      {/* Cinematic Hero Section */}
+      <CinematicHero />
 
       {/* Philosophy Section */}
       <section id="philosophy" className="relative z-10 py-16 sm:py-24 md:py-32 lg:py-48 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-8 sm:gap-12 md:gap-16 lg:gap-20 lg:grid-cols-2 lg:gap-32">
-            <div className="relative motion-reveal">
+            <ScrollReveal direction="left" duration={1}>
+              <div className="relative">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-lg border border-white/5">
                 <div 
                   className="h-full w-full scale-110 bg-cover bg-center transition-transform duration-[20s] hover:scale-125"
@@ -119,8 +37,10 @@ export default function Home() {
                 />
               </div>
             </div>
+            </ScrollReveal>
             
-            <div className="flex flex-col justify-center motion-reveal">
+            <ScrollReveal direction="right" duration={1} delay={200}>
+            <div className="flex flex-col justify-center">
               <span className="mb-4 text-[10px] uppercase tracking-[0.3em] text-[#C5A059]">01 / Philosophy</span>
               <h2 className="font-serif text-4xl font-light leading-snug md:text-5xl lg:text-6xl">
                 Intentional design for the human machine.
@@ -146,6 +66,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
