@@ -48,9 +48,9 @@ export default function TrainersPage() {
             const stats = trainerStats[trainer.id as keyof typeof trainerStats];
             const specialties = trainerSpecialties[trainer.id as keyof typeof trainerSpecialties] || [];
             return (
-              <div
+              <Link
                 key={trainer.id}
-                onClick={() => setSelectedTrainer(trainer)}
+                href={`/trainers/${trainer.id}`}
                 className="group cursor-pointer rounded-lg border border-white/5 bg-[#0A0A0A] overflow-hidden transition-all hover:border-[#C5A059]/30"
               >
                 {/* Image */}
@@ -123,7 +123,7 @@ export default function TrainersPage() {
                     View Profile
                   </button>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { exercises } from "@/data/fitness";
 
 const SPORTS = ["All", "Gym", "HIIT", "Recovery", "Combat", "Aerobics", "Calisthenics"];
@@ -162,8 +163,9 @@ export default function ExercisesPage() {
             {viewMode === "grid" ? (
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 motion-reveal-delayed-2">
                 {filteredExercises.map((ex, idx) => (
-                  <article
+                  <Link
                     key={ex.id}
+                    href={`/exercises/${ex.id}`}
                     className="group relative overflow-hidden rounded-xl border border-white/5 bg-[#0A0A0A] transition-all duration-500 hover:border-[#C5A059]/50 shadow-lg hover:shadow-[0_0_30px_rgba(197,160,89,0.1)]"
                     style={{ animationDelay: `${idx * 0.05}s` }}
                   >
@@ -243,7 +245,7 @@ export default function ExercisesPage() {
                         <span>Details</span>
                       </button>
                     </div>
-                  </article>
+                  </Link>
                 ))}
               </div>
             ) : (
