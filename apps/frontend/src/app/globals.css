@@ -139,3 +139,182 @@ body {
   letter-spacing: 0.15em;
   transition: letter-spacing 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* Glassmorphism Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.glass-soft {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 160, 89, 0.08);
+}
+
+.glass-premium {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  box-shadow: 0 20px 60px 0 rgba(197, 160, 89, 0.1);
+}
+
+/* Advanced Animations */
+.motion-rotate-in {
+  animation: rotate-in 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.motion-bounce-in {
+  animation: bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+}
+
+.motion-shimmer {
+  animation: shimmer 3s linear infinite;
+}
+
+.motion-glow-pulse {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+.motion-slide-up {
+  animation: slide-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.motion-slide-down {
+  animation: slide-down 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.motion-fade-in-scale {
+  animation: fade-in-scale 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.motion-stagger-1 {
+  animation: reveal-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.motion-stagger-2 {
+  animation: reveal-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.motion-stagger-3 {
+  animation: reveal-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.motion-stagger-4 {
+  animation: reveal-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
+.motion-stagger-5 {
+  animation: reveal-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+
+/* Advanced Keyframes */
+@keyframes rotate-in {
+  from { opacity: 0; transform: rotate(-180deg) scale(0.5); }
+  to { opacity: 1; transform: rotate(0) scale(1); }
+}
+
+@keyframes bounce-in {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 10px rgba(197, 160, 89, 0.3), 0 0 20px rgba(197, 160, 89, 0.2); }
+  50% { text-shadow: 0 0 20px rgba(197, 160, 89, 0.6), 0 0 40px rgba(197, 160, 89, 0.4); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-scale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.transition-fast {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.transition-slow {
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Premium Hover Effects */
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.2);
+}
+
+.hover-scale-gold {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-scale-gold:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(197, 160, 89, 0.4);
+  color: #C5A059;
+}
+
+.hover-glass {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-glass:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(197, 160, 89, 0.3) !important;
+  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.15) !important;
+}
+
+.hover-text-glow:hover {
+  color: #C5A059;
+  text-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Scroll animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.scroll-reveal.visible {
+  animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Focus states for accessibility */
+:focus-visible {
+  outline: 2px solid #C5A059;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #C5A059;
+  outline-offset: 2px;
+}
