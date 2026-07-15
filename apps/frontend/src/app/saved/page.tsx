@@ -9,7 +9,12 @@ interface SavedItem {
   name: string;
   type: "program" | "exercise" | "nutrition";
   savedAt: Date;
-  data: any;
+  data: {
+    goal?: string;
+    duration?: string;
+    dailyCalories?: number;
+    [key: string]: any;
+  };
 }
 
 export default function SavedPage() {
@@ -130,7 +135,7 @@ export default function SavedPage() {
                   </button>
                 </div>
 
-                <h3 className="font-serif text-xl font-light text-white mb-2">{item.name}</h3>
+                <h3 className="font-serif text-xl font-light text-white mb-2">{String(item.name)}</h3>
                 
                 <div className="mb-4 space-y-2 text-xs text-white/60">
                   {item.type === "program" && (
