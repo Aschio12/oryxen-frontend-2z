@@ -256,6 +256,68 @@ export const sportPrograms: SportProgram[] = [
       { day: "Day 5", title: "Full flow integration", type: "Mixed" },
     ],
   },
+  {
+    id: "combat-conditioning",
+    name: "Combat Conditioning Elite",
+    description: "Advanced conditioning designed for combat athletes. High-intensity work capacity training, striking power, and tactical cardio.",
+    category: "HIIT",
+    level: "Elite",
+    goal: "Performance",
+    duration: "12 weeks",
+    intensity: 92,
+    equipment: ["Heavy Bag", "Speed Bag", "Medicine Ball", "Boxing Gloves"],
+    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Anaerobic capacity", "Striking power", "Tactical cardio", "Mental toughness"],
+    phases: ["Foundation", "Build", "Peak"],
+    weeklyPlan: [
+      { day: "Day 1", title: "Heavy bag circuits", type: "HIIT" },
+      { day: "Day 2", title: "Speed and footwork", type: "Technique" },
+      { day: "Day 3", title: "Power development", type: "Strength" },
+      { day: "Day 4", title: "Active recovery", type: "Recovery" },
+      { day: "Day 5", title: "Sparring simulation", type: "Mixed" },
+    ],
+  },
+  {
+    id: "vegan-athlete-protocol",
+    name: "Vegan Athlete Protocol",
+    description: "Plant-based performance optimization. Complete nutrition science for vegan athletes achieving elite results without animal products.",
+    category: "Nutrition",
+    level: "All",
+    goal: "Performance",
+    duration: "12 weeks",
+    intensity: 65,
+    equipment: ["None"],
+    imageUrl: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Plant-based nutrition", "Amino acid optimization", "Recovery meals", "Performance fueling"],
+    phases: ["Foundation", "Optimization"],
+    weeklyPlan: [
+      { day: "Day 1", title: "Protein strategies", type: "Nutrition" },
+      { day: "Day 2", title: "Pre-workout fueling", type: "Nutrition" },
+      { day: "Day 3", title: "Recovery protocols", type: "Nutrition" },
+      { day: "Day 4", title: "Micronutrient focus", type: "Nutrition" },
+      { day: "Day 5", title: "Meal prep mastery", type: "Mixed" },
+    ],
+  },
+  {
+    id: "explosive-athleticism",
+    name: "Explosive Athleticism",
+    description: "Develop elite-level power, speed, and reactivity. For athletes seeking superior athletic performance and explosive capabilities.",
+    category: "HIIT",
+    level: "Elite",
+    goal: "Performance",
+    duration: "16 weeks",
+    intensity: 88,
+    equipment: ["Jump Box", "Medicine Ball", "Plyometric Blocks"],
+    imageUrl: "https://images.unsplash.com/photo-1552707881-20efab892c0b?auto=format&fit=crop&w=1200&q=90",
+    focus: ["Explosive power", "Rate of force development", "Speed", "Reactivity"],
+    phases: ["Foundation", "Build", "Peak", "Deload"],
+    weeklyPlan: [
+      { day: "Day 1", title: "Plyometric foundation", type: "Power" },
+      { day: "Day 2", title: "Olympic lifting", type: "Power" },
+      { day: "Day 3", title: "Sprint mechanics", type: "Speed" },
+      { day: "Day 4", title: "Reactive training", type: "Power" },
+    ],
+  },
 ];
 
 export const exercises: Exercise[] = [
@@ -593,6 +655,126 @@ export const exercises: Exercise[] = [
       "Alternate creating simultaneous waves in both ropes.",
       "Maintain maximum intensity without breaking rhythm.",
       "Rest briefly between sets to recover breathing."
+    ]
+  },
+  {
+    id: "kettlebell-swing",
+    name: "Kettlebell Swing",
+    sport: "Gym",
+    level: "Intermediate",
+    targetMuscles: ["Glutes", "Hamstrings", "Back", "Core"],
+    prescription: {
+      sets: 5,
+      reps: "20-30",
+      restTime: "90 sec"
+    },
+    caloriesBurned: 95,
+    intensity: 80,
+    equipment: ["Kettlebell"],
+    imageUrl: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Stand with feet hip-width apart, kettlebell in front.",
+      "Hinge at hips and grab kettlebell with both hands.",
+      "Drive through heels explosively, using hip extension.",
+      "Swing kettlebell to eye level using momentum.",
+      "Control descent back to starting position.",
+      "Maintain neutral spine throughout movement."
+    ]
+  },
+  {
+    id: "front-lever",
+    name: "Front Lever Hold",
+    sport: "Calisthenics",
+    level: "Elite",
+    targetMuscles: ["Back", "Core", "Shoulders", "Arms"],
+    prescription: {
+      sets: 6,
+      reps: "15-30 sec",
+      restTime: "2 min"
+    },
+    caloriesBurned: 75,
+    intensity: 95,
+    equipment: ["Pull-up bar"],
+    imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Hang from bar with straight arms, shoulders over bar.",
+      "Lean forward while keeping body straight and rigid.",
+      "Depress shoulders and engage latissimus dorsi.",
+      "Hold body parallel to ground in horizontal line.",
+      "Maintain tension through core, back, and shoulders.",
+      "Progress gradually from inclined to horizontal positions."
+    ]
+  },
+  {
+    id: "tire-flip",
+    name: "Tire Flip",
+    sport: "HIIT",
+    level: "Elite",
+    targetMuscles: ["Quads", "Back", "Chest", "Traps"],
+    prescription: {
+      sets: 5,
+      reps: "8-10",
+      restTime: "2 min"
+    },
+    caloriesBurned: 120,
+    intensity: 90,
+    equipment: ["Tractor Tire"],
+    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Position feet under tire edge, hands at sides.",
+      "Lower hips, engage core, prepare for explosive drive.",
+      "Drive through legs while lifting front edge upward.",
+      "Roll tire with hands over, following with body.",
+      "Complete full rotation, reset for next rep.",
+      "Breathe deeply and maintain form throughout."
+    ]
+  },
+  {
+    id: "deficit-deadlift",
+    name: "Deficit Deadlift",
+    sport: "Gym",
+    level: "Elite",
+    targetMuscles: ["Hamstrings", "Glutes", "Back", "Quads"],
+    prescription: {
+      sets: 4,
+      reps: "3-5",
+      restTime: "3 min"
+    },
+    caloriesBurned: 110,
+    intensity: 94,
+    equipment: ["Barbell", "Plates", "Platform"],
+    imageUrl: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Stand on 2-4 inch platform with barbell on ground.",
+      "Feet hip-width apart, grip just outside legs.",
+      "Lower hips, engage core, keep chest up.",
+      "Drive through heels, extend hips and knees.",
+      "Lock out at top with full hip extension.",
+      "Lower controlled to platform, maintain neutral spine."
+    ]
+  },
+  {
+    id: "handstand-hold",
+    name: "Handstand Hold",
+    sport: "Calisthenics",
+    level: "Advanced",
+    targetMuscles: ["Shoulders", "Core", "Chest", "Arms"],
+    prescription: {
+      sets: 5,
+      reps: "20-60 sec",
+      restTime: "2 min"
+    },
+    caloriesBurned: 65,
+    intensity: 85,
+    equipment: ["Wall"],
+    imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=90",
+    instructions: [
+      "Place hands at shoulder-width 6-12 inches from wall.",
+      "Kick up into handstand position against wall.",
+      "Press through shoulders, engaging core fully.",
+      "Maintain straight line from hands to toes.",
+      "Focus on shoulder stability and balance.",
+      "Progress gradually away from wall for free standing."
     ]
   }
 ];
