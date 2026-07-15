@@ -1,4 +1,4 @@
-export type TrainingLevel = "Beginner" | "Intermediate" | "Elite" | "All";
+export type TrainingLevel = "Beginner" | "Intermediate" | "Advanced" | "Elite" | "All";
 
 export type TrainingGoal =
   | "Fat loss"
@@ -9,7 +9,7 @@ export type TrainingGoal =
   | "Strength"
   | "Flexibility";
 
-export type TrainingPhase = "Foundation" | "Build" | "Peak" | "Recovery" | "Competition" | "Integration";
+export type TrainingPhase = "Foundation" | "Build" | "Peak" | "Recovery" | "Competition" | "Integration" | "Optimization" | "Deload";
 
 export interface Trainer {
   id: string;
