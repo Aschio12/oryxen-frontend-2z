@@ -464,3 +464,155 @@ a:focus-visible {
 .animate-breath {
   animation: breath-cycle 4s ease-in-out infinite;
 }
+
+/* Program Phase Progression */
+.animate-phase-progress {
+  animation: phase-progress 2s ease-in-out infinite alternate;
+}
+
+.animate-phase-pulse {
+  animation: phase-pulse 3s ease-in-out infinite;
+}
+
+@keyframes phase-progress {
+  0% { transform: scaleX(0); opacity: 0; }
+  50% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes phase-pulse {
+  0%, 100% { box-shadow: 0 0 0px rgba(197, 160, 89, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(197, 160, 89, 0.6); }
+}
+
+/* Nutrition Macro Bars */
+.animate-macro-fill {
+  animation: macro-fill 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes macro-fill {
+  from { width: 0; }
+}
+
+/* Trainer badge glint */
+.animate-glint {
+  animation: glint 3s ease-in-out infinite;
+}
+
+@keyframes glint {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Class countdown pulse */
+.animate-countdown {
+  animation: countdown 2s ease-in-out infinite;
+}
+
+@keyframes countdown {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); background-color: rgba(197, 160, 89, 0.3); }
+}
+
+/* Gallery transformation slider */
+.animate-transform-slider {
+  animation: transform-slider 4s ease-in-out infinite alternate;
+}
+
+@keyframes transform-slider {
+  0% { width: 50%; }
+  100% { width: 100%; }
+}
+
+/* Community post pulse */
+.animate-post-pulse {
+  animation: post-pulse 2s ease-in-out infinite;
+}
+
+@keyframes post-pulse {
+  0%, 100% { border-color: rgba(197, 160, 89, 0.1); }
+  50% { border-color: rgba(197, 160, 89, 0.3); }
+}
+
+/* Equipment bounce */
+.animate-equipment {
+  animation: equipment-bounce 2s ease-in-out infinite;
+}
+
+@keyframes equipment-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Calendar pulse dot */
+.animate-date-pulse {
+  animation: date-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes date-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Exercise intensity ring */
+.animate-intensity-ring {
+  animation: intensity-ring 2s ease-in-out infinite;
+}
+
+@keyframes intensity-ring {
+  0%, 100% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: -60; }
+}
+
+/* Number counter */
+.animate-counter {
+  animation: counter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes counter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card shimmer overlay */
+.animate-card-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.06), transparent);
+  background-size: 200% 100%;
+  animation: card-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes card-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Progress bar gradient shift */
+.animate-progress-shift {
+  background-size: 200% 100%;
+  animation: progress-shift 3s ease infinite;
+}
+
+@keyframes progress-shift {
+  0%, 100% { background-position: 0% 0; }
+  50% { background-position: 100% 0; }
+}
+
+/* Star rating sparkle */
+.animate-star-sparkle {
+  animation: star-sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes star-sparkle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.5); }
+}
+
+/* Testimonial quote fade */
+.animate-quote-fade {
+  animation: quote-fade 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes quote-fade {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
