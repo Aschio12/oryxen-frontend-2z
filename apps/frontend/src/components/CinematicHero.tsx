@@ -158,8 +158,9 @@ export function CinematicHero() {
               transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`,
             }}
           >
-            {/* Hero image background */}
-            <div className="absolute inset-0 bg-gradient-to-l from-[#C5A059]/20 to-transparent" />
+            {/* Gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-l from-[#C5A059]/15 via-[#030303]/30 to-[#030303]/60" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#030303]/40" />
             
             {/* Main hero image */}
             <Image
@@ -173,7 +174,7 @@ export function CinematicHero() {
             />
 
             {/* Floating glass card */}
-            <div className="absolute bottom-20 left-8 glass-premium p-5 rounded-lg max-w-xs hover-lift cursor-pointer group">
+            <div className="absolute bottom-24 left-8 glass-premium p-5 rounded-lg max-w-xs hover-lift cursor-pointer group motion-float-elegant">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-12 h-12 rounded-full bg-[#C5A059]/30 flex items-center justify-center group-hover:bg-[#C5A059]/50 transition-colors">
                   <span className="text-[#C5A059]">⚡</span>
