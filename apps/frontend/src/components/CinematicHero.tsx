@@ -55,7 +55,7 @@ export function CinematicHero() {
       </div>
 
       {/* Main content container */}
-      <div className="relative z-10 h-screen flex items-center justify-between px-6 lg:px-16">
+      <div className="relative z-10 h-screen mx-auto max-w-[1400px] flex items-center justify-between px-6 lg:px-16">
         {/* Left side - Text content */}
         <div className="w-full lg:w-1/2 space-y-8">
           {/* Main heading with staggered reveals */}
