@@ -80,6 +80,55 @@ export default function ExerciseDetail({ params }: { params: { id: string } }) {
           <div className="grid gap-12 lg:gap-16 lg:grid-cols-3">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
+
+              {/* Exercise Animation */}
+              <div className="rounded-xl border border-white/10 bg-[#0A0A0A] overflow-hidden motion-reveal">
+                <div className="relative h-[300px] md:h-[400px] bg-gradient-to-br from-[#C5A059]/5 to-[#030303] overflow-hidden">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center opacity-60"
+                    style={{ backgroundImage: `url(${exercise.imageUrl})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent" />
+                  
+                  {/* Animated Exercise Visualization */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="relative w-48 h-64 md:w-64 md:h-80">
+                      {/* Body silhouette */}
+                      <svg viewBox="0 0 120 180" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g className="animate-exercise-movement">
+                          {/* Head */}
+                          <circle cx="60" cy="18" r="12" stroke="#C5A059" strokeWidth="2" className="animate-glow-pulse" />
+                          {/* Torso */}
+                          <line x1="60" y1="30" x2="60" y2="90" stroke="#C5A059" strokeWidth="2.5" strokeLinecap="round" />
+                          {/* Arms */}
+                          <line x1="60" y1="50" x2="35" y2="70" stroke="#C5A059" strokeWidth="2" strokeLinecap="round" className="animate-arm-left" />
+                          <line x1="60" y1="50" x2="85" y2="70" stroke="#C5A059" strokeWidth="2" strokeLinecap="round" className="animate-arm-right" />
+                          {/* Legs */}
+                          <line x1="60" y1="90" x2="35" y2="145" stroke="#C5A059" strokeWidth="2" strokeLinecap="round" className="animate-leg-left" />
+                          <line x1="60" y1="90" x2="85" y2="145" stroke="#C5A059" strokeWidth="2" strokeLinecap="round" className="animate-leg-right" />
+                          {/* Weight indicator */}
+                          <circle cx="60" cy="110" r="8" stroke="#C5A059" strokeWidth="1.5" strokeDasharray="2 2" className="animate-pulse-glow" />
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Movement Label */}
+                  <div className="absolute bottom-6 left-6">
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-[#C5A059]/80 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-[#C5A059]/20">
+                      Movement Pattern
+                    </span>
+                  </div>
+                  <div className="absolute bottom-6 right-6">
+                    <div className="flex gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse" />
+                      <span className="w-2 h-2 rounded-full bg-[#C5A059]/60 animate-pulse" style={{ animationDelay: '0.3s' }} />
+                      <span className="w-2 h-2 rounded-full bg-[#C5A059]/30 animate-pulse" style={{ animationDelay: '0.6s' }} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Target Muscles */}
               <div className="rounded-xl border border-white/10 bg-[#0A0A0A] p-8 motion-reveal">
                 <h2 className="font-serif text-2xl text-white mb-6">Target Muscles</h2>

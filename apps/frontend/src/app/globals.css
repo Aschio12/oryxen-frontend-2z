@@ -404,3 +404,63 @@ a:focus-visible {
   background-size: 200% 200%;
   animation: gradient-shift 6s ease infinite;
 }
+
+/* Exercise Detail Page Animations */
+.animate-exercise-movement {
+  animation: exercise-float 3s ease-in-out infinite;
+}
+
+.animate-arm-left {
+  animation: arm-swing-left 3s ease-in-out infinite;
+  transform-origin: 60px 50px;
+}
+
+.animate-arm-right {
+  animation: arm-swing-right 3s ease-in-out infinite;
+  transform-origin: 60px 50px;
+}
+
+.animate-leg-left {
+  animation: leg-swing-left 3s ease-in-out infinite;
+  transform-origin: 60px 90px;
+}
+
+.animate-leg-right {
+  animation: leg-swing-right 3s ease-in-out infinite;
+  transform-origin: 60px 90px;
+}
+
+@keyframes exercise-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes arm-swing-left {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-15deg); }
+}
+
+@keyframes arm-swing-right {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+@keyframes leg-swing-left {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-10deg); }
+}
+
+@keyframes leg-swing-right {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+
+/* Breath animation for exercise detail */
+@keyframes breath-cycle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.animate-breath {
+  animation: breath-cycle 4s ease-in-out infinite;
+}
