@@ -131,8 +131,8 @@ export default function GalleryPage() {
     : stories.filter(story => story.category === activeFilter);
 
   return (
-    <main className="min-h-screen bg-[#030303] pt-28 pb-20 selection:bg-[#C5A059]/30">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[#030303] pt-28 pb-20 selection:bg-[#C5A059]/30 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px]">
         
         {/* Header */}
         <header className="mb-12">

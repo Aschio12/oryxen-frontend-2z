@@ -61,8 +61,8 @@ export default function AdvancedSearch() {
   }, [searchQuery, activeTab, filters]);
 
   return (
-    <div className="min-h-screen bg-[#030303] pt-32 pb-20">
-      <div className="mx-auto max-w-4xl px-6">
+    <div className="min-h-screen bg-[#030303] pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl">
         
         {/* Header */}
         <header className="mb-12 motion-fade">
