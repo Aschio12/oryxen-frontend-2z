@@ -250,40 +250,41 @@ export default function GalleryDetail({ params }: { params: { id: string } }) {
                   </div>
                 </div>
                 <div className="p-6">
-                <div className="bg-gradient-to-br from-[#C5A059]/5 to-transparent rounded-lg p-6 -mb-2 mb-6">
-                  <p className="text-[10px] uppercase tracking-wider text-[#C5A059] mb-4">Athlete Testimonial</p>
-                  <div className="relative">
-                    <span className="absolute -top-2 -left-1 text-3xl text-[#C5A059]/20 font-serif">"</span>
-                    <p className="text-sm font-light text-white/80 leading-relaxed pl-4 italic">
-                      {story.testimonial}
-                    </p>
+                  <div className="bg-gradient-to-br from-[#C5A059]/5 to-transparent rounded-lg p-6 -mb-2 mb-6">
+                    <p className="text-[10px] uppercase tracking-wider text-[#C5A059] mb-4">Athlete Testimonial</p>
+                    <div className="relative">
+                      <span className="absolute -top-2 -left-1 text-3xl text-[#C5A059]/20 font-serif">"</span>
+                      <p className="text-sm font-light text-white/80 leading-relaxed pl-4 italic">
+                        {story.testimonial}
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="space-y-4 mb-6 pb-6 border-b border-white/10">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] uppercase tracking-wider text-white/40">Program</span>
-                    <span className="text-sm font-light text-[#C5A059]">{story.program}</span>
+                  <div className="space-y-4 mb-6 pb-6 border-b border-white/10">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] uppercase tracking-wider text-white/40">Program</span>
+                      <span className="text-sm font-light text-[#C5A059]">{story.program}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] uppercase tracking-wider text-white/40">Duration</span>
+                      <span className="text-sm font-light text-white">{story.duration}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] uppercase tracking-wider text-white/40">Category</span>
+                      <span className="text-sm font-light text-white capitalize">{story.category}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] uppercase tracking-wider text-white/40">Duration</span>
-                    <span className="text-sm font-light text-white">{story.duration}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] uppercase tracking-wider text-white/40">Category</span>
-                    <span className="text-sm font-light text-white capitalize">{story.category}</span>
-                  </div>
-                </div>
 
-                <Link
-                  href="/programs"
-                  className="block w-full rounded-lg bg-gradient-to-r from-[#C5A059] to-[#d4a574] text-black font-semibold py-3 text-center text-[10px] uppercase tracking-wider hover:shadow-lg hover:shadow-[#C5A059]/50 transition-all hover:scale-[1.02]"
-                >
-                  Start {story.program}
-                </Link>
-              </div>
+                  <Link
+                    href="/programs"
+                    className="block w-full rounded-lg bg-gradient-to-r from-[#C5A059] to-[#d4a574] text-black font-semibold py-3 text-center text-[10px] uppercase tracking-wider hover:shadow-lg hover:shadow-[#C5A059]/50 transition-all hover:scale-[1.02]"
+                  >
+                    Start {story.program}
+                  </Link>
+                </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
     </main>
