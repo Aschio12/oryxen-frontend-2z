@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { sportPrograms } from "@/data/fitness";
+import { ProgramAnimation } from "@/components/ProgramAnimation";
 import { notFound } from "next/navigation";
 
 export default function ProgramDetail({ params }: { params: { id: string } }) {
@@ -53,19 +54,24 @@ export default function ProgramDetail({ params }: { params: { id: string } }) {
       <section className="sticky top-16 z-40 border-b border-white/10 bg-[#030303]/98 backdrop-blur-xl px-4 md:px-6 lg:px-8 py-5 shadow-lg shadow-black/20">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
-            <div>
+            <div className="motion-stagger-1">
               <p className="text-[9px] uppercase tracking-widest text-white/40">Intensity</p>
-              <p className="mt-1 text-lg font-light text-[#C5A059]">{program.intensity}%</p>
+              <div className="mt-1 flex items-center gap-2">
+                <p className="text-lg font-light text-[#C5A059]">{program.intensity}%</p>
+                <div className="flex-1 h-1 rounded-full bg-white/10 overflow-hidden max-w-[60px]">
+                  <div className="h-full bg-[#C5A059] rounded-full animate-progress-shift" style={{ width: `${program.intensity}%` }} />
+                </div>
+              </div>
             </div>
-            <div>
+            <div className="motion-stagger-2">
               <p className="text-[9px] uppercase tracking-widest text-white/40">Duration</p>
               <p className="mt-1 text-lg font-light text-white">{program.duration}</p>
             </div>
-            <div>
+            <div className="motion-stagger-3">
               <p className="text-[9px] uppercase tracking-widest text-white/40">Phases</p>
               <p className="mt-1 text-lg font-light text-white">{program.phases.length}</p>
             </div>
-            <div>
+            <div className="motion-stagger-4">
               <p className="text-[9px] uppercase tracking-widest text-white/40">Weekly</p>
               <p className="mt-1 text-lg font-light text-white">{program.weeklyPlan.length} sessions</p>
             </div>
@@ -120,6 +126,21 @@ export default function ProgramDetail({ params }: { params: { id: string } }) {
             {/* Overview Tab */}
             {activeTab === "overview" && (
               <div className="space-y-12 motion-reveal">
+                {/* Program Animation */}
+                <div className="rounded-xl border border-white/10 bg-[#0A0A0A] overflow-hidden">
+                  <div className="relative h-[250px] bg-gradient-to-br from-[#C5A059]/5 via-[#0A0A0A] to-[#030303] overflow-hidden">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(197,160,89,0.05),transparent_70%)]" />
+                    <div className="absolute top-4 left-4">
+                      <span className="text-[9px] uppercase tracking-[0.25em] text-[#C5A059]/60 bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#C5A059]/15">
+                        Phase Architecture
+                      </span>
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <ProgramAnimation phases={program.phases} intensity={program.intensity} duration={program.duration} />
+                    </div>
+                  </div>
+                </div>
+
                 <div className="grid gap-8 md:grid-cols-2">
                   <div className="rounded-xl border border-white/10 bg-[#0A0A0A] p-8">
                     <h3 className="mb-4 font-serif text-xl text-white">Program Focus Areas</h3>
@@ -182,18 +203,19 @@ export default function ProgramDetail({ params }: { params: { id: string } }) {
             {activeTab === "phases" && (
               <div className="space-y-6 motion-reveal">
                 {program.phases.map((phase, idx) => (
-                  <div key={idx} className="rounded-xl border border-white/10 bg-[#0A0A0A] p-8 transition-all hover:border-[#C5A059]/30">
+                  <div key={idx} className="rounded-xl border border-white/10 bg-[#0A0A0A] p-8 transition-all hover:border-[#C5A059]/30 hover:bg-[#C5A059]/[0.02] group"
+                    style={{ animationDelay: `${idx * 0.15}s` }}>
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <span className="text-[10px] uppercase tracking-wider text-[#C5A059]">Phase {idx + 1} of {program.phases.length}</span>
-                        <h3 className="mt-2 font-serif text-2xl text-white">{phase}</h3>
+                        <h3 className="mt-2 font-serif text-2xl text-white group-hover:text-[#C5A059] transition-colors">{phase}</h3>
                       </div>
-                      <div className="rounded-full bg-[#C5A059]/10 px-4 py-2 text-[10px] uppercase tracking-wider text-[#C5A059]">
+                      <div className="rounded-full bg-[#C5A059]/10 px-4 py-2 text-[10px] uppercase tracking-wider text-[#C5A059] animate-countdown">
                         {phaseWeeks} weeks
                       </div>
                     </div>
 
-                    <p className="text-sm font-light text-white/60">
+                    <p className="text-sm font-light text-white/60 group-hover:text-white/70 transition-colors">
                       {phase === "Foundation" && "Establish movement patterns, build work capacity, and create the neurological foundation for heavier loading. Focus on movement quality and consistency."}
                       {phase === "Build" && "Progressive overload period. Systematically increase volume and intensity to drive adaptation. Track your numbers religiously."}
                       {phase === "Peak" && "Culmination phase. Test your limits and demonstrate the capabilities developed through prior phases. This is your proving ground."}
@@ -203,7 +225,7 @@ export default function ProgramDetail({ params }: { params: { id: string } }) {
                     <div className="mt-6 grid gap-4 md:grid-cols-3">
                       <div>
                         <p className="text-[9px] uppercase tracking-wider text-white/40">Primary Focus</p>
-                        <p className="mt-2 text-sm text-white/80">{program.focus[idx % program.focus.length]}</p>
+                        <p className="mt-2 text-sm text-white/80 group-hover:text-white transition-colors">{program.focus[idx % program.focus.length]}</p>
                       </div>
                       <div>
                         <p className="text-[9px] uppercase tracking-wider text-white/40">Expected Outcome</p>
@@ -213,7 +235,7 @@ export default function ProgramDetail({ params }: { params: { id: string } }) {
                         <p className="text-[9px] uppercase tracking-wider text-white/40">Difficulty Progression</p>
                         <div className="mt-2 flex gap-1">
                           {Array.from({ length: Math.min(idx + 2, 5) }).map((_, i) => (
-                            <div key={i} className="h-2 w-3 rounded-sm bg-[#C5A059]" />
+                            <div key={i} className="h-2 w-3 rounded-sm bg-[#C5A059] group-hover:scale-y-125 transition-transform" style={{ animationDelay: `${i * 0.1}s` }} />
                           ))}
                         </div>
                       </div>
