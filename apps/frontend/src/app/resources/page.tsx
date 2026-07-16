@@ -109,9 +109,9 @@ export default function ResourcesPage() {
             <h2 className="mb-6 font-serif text-2xl font-light text-white">Featured</h2>
             <div className="grid gap-6 md:grid-cols-2">
               {featuredArticles.map((article) => (
-                <article key={article.id} className="group rounded-lg border border-white/5 bg-[#0A0A0A] overflow-hidden hover:border-[#C5A059]/30 transition-all cursor-pointer">
+                <Link key={article.id} href={`/resources/${article.id}`} className="group rounded-lg border border-white/5 bg-[#0A0A0A] overflow-hidden hover:border-[#C5A059]/30 transition-all cursor-pointer block">
                   <div className="relative h-64 overflow-hidden bg-white/5">
-                    <img src={article.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={article.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#030303]/80" />
                   </div>
                   <div className="p-6">
@@ -119,11 +119,11 @@ export default function ResourcesPage() {
                       <span className="text-[10px] uppercase tracking-wider text-[#C5A059] bg-[#C5A059]/10 px-2 py-1 rounded">Featured</span>
                       <span className="text-[10px] uppercase tracking-wider text-white/40">{article.readTime} min read</span>
                     </div>
-                    <h3 className="font-serif text-2xl font-light text-white mb-3">{article.title}</h3>
+                    <h3 className="font-serif text-2xl font-light text-white mb-3 group-hover:text-[#C5A059] transition-colors">{article.title}</h3>
                     <p className="text-sm font-light text-white/70 leading-relaxed">{article.excerpt}</p>
-                    <button className="mt-4 text-[10px] uppercase tracking-wider text-[#C5A059] hover:text-white transition-all">Read Article →</button>
+                    <span className="mt-4 inline-flex text-[10px] uppercase tracking-wider text-[#C5A059] group-hover:text-white transition-all">Read Article →</span>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           </section>
@@ -153,8 +153,9 @@ export default function ResourcesPage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {filteredArticles.map((article) => (
-              <article 
+              <Link 
                 key={article.id} 
+                href={`/resources/${article.id}`}
                 className="group rounded-lg border border-white/5 bg-[#0A0A0A] overflow-hidden hover:border-[#C5A059]/30 transition-all cursor-pointer flex flex-col"
               >
                 <div className="relative h-48 overflow-hidden bg-white/5">
@@ -169,11 +170,11 @@ export default function ResourcesPage() {
                   </div>
                   <h3 className="font-serif text-lg font-light text-white mb-2 leading-snug group-hover:text-[#C5A059] transition-colors">{article.title}</h3>
                   <p className="text-sm font-light text-white/60 leading-relaxed flex-1">{article.excerpt}</p>
-                  <button className="mt-4 text-[10px] uppercase tracking-wider text-[#C5A059] hover:text-white transition-all self-start">
+                  <span className="mt-4 text-[10px] uppercase tracking-wider text-[#C5A059] group-hover:text-white transition-all self-start">
                     Read →
-                  </button>
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </section>
