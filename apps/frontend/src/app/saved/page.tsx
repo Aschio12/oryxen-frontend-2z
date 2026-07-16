@@ -34,6 +34,20 @@ export default function SavedPage() {
       savedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
       data: nutritionPlans[1],
     },
+    {
+      id: "e-001",
+      name: exercises[0]?.name || "Bench Press",
+      type: "exercise",
+      savedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
+      data: { ...exercises[0], goal: "Strength", duration: "Per session" },
+    },
+    {
+      id: "elite-engine",
+      name: "Elite Engine",
+      type: "program",
+      savedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
+      data: sportPrograms[1],
+    },
   ]);
 
   const [activeTab, setActiveTab] = useState<"all" | "programs" | "exercises" | "nutrition">("all");
@@ -145,6 +159,12 @@ export default function SavedPage() {
                       <p>Duration: <span className="text-white">{item.data.duration}</span></p>
                     </>
                   )}
+                  {item.type === "exercise" && (
+                    <>
+                      <p>Level: <span className="text-white">{item.data.level}</span></p>
+                      <p>Intensity: <span className="text-[#C5A059]">{item.data.intensity}%</span></p>
+                    </>
+                  )}
                   {item.type === "nutrition" && (
                     <>
                       <p>Daily Calories: <span className="text-[#C5A059]">{item.data.dailyCalories}</span></p>
@@ -158,12 +178,13 @@ export default function SavedPage() {
                   <Link
                     href={
                       item.type === "program" ? `/programs/${item.id}` :
-                      item.type === "exercise" ? `/exercises` :
+                      item.type === "exercise" ? `/exercises/${item.id}` :
+                      item.type === "nutrition" ? `/nutrition/${item.id}` :
                       `/nutrition`
                     }
                     className="text-[10px] uppercase tracking-wider text-[#C5A059] hover:text-white transition-colors"
                   >
-                    View →
+                    View Details →
                   </Link>
                 </div>
               </div>
