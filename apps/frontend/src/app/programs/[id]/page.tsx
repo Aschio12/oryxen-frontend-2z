@@ -112,8 +112,8 @@ export default function ProgramDetail({ params }: { params: { id: string } }) {
       </section>
 
       {/* Content Area */}
-      <section className="w-full px-4 md:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="mx-auto max-w-[1400px]">
+      <section className="w-full px-2 sm:px-4 md:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="mx-auto max-w-full lg:max-w-[1400px] w-full">
         <div className="grid gap-12 lg:gap-16 lg:grid-cols-[3fr_1.2fr]">
           
           <div>
