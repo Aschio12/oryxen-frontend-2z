@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { trainers } from '@/data/fitness';
 import { notFound } from 'next/navigation';
+import { TrainerAnimation } from '@/components/TrainerAnimation';
 
 export default function TrainerDetail({ params }: { params: { id: string } }) {
   const trainer = trainers.find(t => t.id === params.id);
@@ -19,7 +20,7 @@ export default function TrainerDetail({ params }: { params: { id: string } }) {
       {/* Hero Header */}
       <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center motion-pan-slow"
           style={{ backgroundImage: `url(${trainer.imageUrl})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/60 to-transparent" />
@@ -49,19 +50,28 @@ export default function TrainerDetail({ params }: { params: { id: string } }) {
       <section className="sticky top-16 z-40 border-b border-white/10 bg-[#030303]/98 backdrop-blur-xl px-4 md:px-6 lg:px-8 py-5 shadow-lg shadow-black/20">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <div>
+            <div className="motion-stagger-1">
               <p className="text-[9px] uppercase tracking-widest text-white/40">Role</p>
               <p className="mt-1 text-lg font-light text-[#C5A059]">{trainer.role}</p>
             </div>
-            <div>
+            <div className="motion-stagger-2">
               <p className="text-[9px] uppercase tracking-widest text-white/40">Rating</p>
-              <p className="mt-1 text-lg font-light text-white">4.9/5.0</p>
+              <div className="mt-1 flex items-center gap-2">
+                <p className="text-lg font-light text-white">4.9</p>
+                <div className="flex gap-0.5">
+                  {[1,2,3,4,5].map(i => (
+                    <svg key={i} width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-[#C5A059] animate-star-sparkle" style={{ animationDelay: `${i * 0.2}s` }}>
+                      <polygon points="12 2 15.09 10.26 23.77 10.36 17.13 16.01 19.09 24.29 12 18.59 4.91 24.29 6.87 16.01 0.23 10.36 8.91 10.26" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div>
+            <div className="motion-stagger-3">
               <p className="text-[9px] uppercase tracking-widest text-white/40">Experience</p>
               <p className="mt-1 text-lg font-light text-white">15+ years</p>
             </div>
-            <div>
+            <div className="motion-stagger-4">
               <p className="text-[9px] uppercase tracking-widest text-white/40">Athletes</p>
               <p className="mt-1 text-lg font-light text-white">500+</p>
             </div>
@@ -102,7 +112,10 @@ export default function TrainerDetail({ params }: { params: { id: string } }) {
               {activeTab === 'about' && (
                 <div className="space-y-8 motion-reveal">
                   <div className="rounded-xl border border-white/10 bg-[#0A0A0A] p-8">
-                    <h2 className="font-serif text-2xl text-white mb-6">Professional Summary</h2>
+                    <div className="flex items-center justify-between mb-6">
+                      <h2 className="font-serif text-2xl text-white">Professional Summary</h2>
+                      <span className="text-[9px] uppercase tracking-wider text-[#C5A059] bg-[#C5A059]/10 px-3 py-1 rounded-full animate-glint">Elite</span>
+                    </div>
                     <p className="text-white/80 font-light leading-relaxed">
                       {trainer.bio}
                     </p>
@@ -117,11 +130,12 @@ export default function TrainerDetail({ params }: { params: { id: string } }) {
                         'USA Weightlifting Coach',
                         'Movement Assessment Specialist'
                       ].map((cert, idx) => (
-                        <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-white/5 border border-white/5">
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[#C5A059] flex-shrink-0 mt-0.5">
+                        <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-white/5 border border-white/5 hover:border-[#C5A059]/30 hover:bg-[#C5A059]/5 transition-all group"
+                          style={{ animationDelay: `${idx * 0.1}s` }}>
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[#C5A059] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
                             <polyline points="20 6 9 17 4 12"></polyline>
                           </svg>
-                          <span className="text-white/80 font-light">{cert}</span>
+                          <span className="text-white/80 font-light group-hover:text-white transition-colors">{cert}</span>
                         </div>
                       ))}
                     </div>
@@ -141,9 +155,9 @@ export default function TrainerDetail({ params }: { params: { id: string } }) {
                         { name: 'Movement Quality', desc: 'Precision coaching for optimal biomechanics' },
                         { name: 'Recovery Protocols', desc: 'Evidence-based recovery and regeneration strategies' }
                       ].map((spec, idx) => (
-                        <div key={idx} className="border-l-2 border-[#C5A059] pl-4 py-2">
-                          <p className="text-[10px] uppercase tracking-wider text-[#C5A059] mb-2">{spec.name}</p>
-                          <p className="text-white/70 font-light text-sm">{spec.desc}</p>
+                        <div key={idx} className="border-l-2 border-[#C5A059] pl-4 py-2 hover:border-l-4 transition-all group">
+                          <p className="text-[10px] uppercase tracking-wider text-[#C5A059] mb-2 group-hover:text-white transition-colors">{spec.name}</p>
+                          <p className="text-white/70 font-light text-sm group-hover:text-white/90 transition-colors">{spec.desc}</p>
                         </div>
                       ))}
                     </div>
@@ -159,9 +173,10 @@ export default function TrainerDetail({ params }: { params: { id: string } }) {
                         'Nutritional Coaching & Meal Planning',
                         'Recovery & Mobility Work'
                       ].map((method, idx) => (
-                        <div key={idx} className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/5">
-                          <div className="w-2 h-2 rounded-full bg-[#C5A059] mt-2" />
-                          <span className="text-white/80 font-light">{method}</span>
+                        <div key={idx} className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/5 hover:border-[#C5A059]/30 hover:bg-[#C5A059]/5 transition-all group"
+                          style={{ animationDelay: `${idx * 0.1}s` }}>
+                          <div className="w-2 h-2 rounded-full bg-[#C5A059] mt-2 group-hover:scale-150 transition-transform" />
+                          <span className="text-white/80 font-light group-hover:text-white transition-colors">{method}</span>
                         </div>
                       ))}
                     </div>
@@ -184,18 +199,19 @@ export default function TrainerDetail({ params }: { params: { id: string } }) {
                       text: 'Best investment in my fitness journey. Technical expertise is unmatched.'
                     }
                   ].map((review, idx) => (
-                    <div key={idx} className="rounded-xl border border-white/10 bg-[#0A0A0A] p-8">
+                    <div key={idx} className="rounded-xl border border-white/10 bg-[#0A0A0A] p-8 hover:border-[#C5A059]/30 hover:bg-[#C5A059]/[0.02] transition-all animate-quote-fade"
+                      style={{ animationDelay: `${idx * 0.2}s` }}>
                       <div className="flex items-center justify-between mb-4">
                         <p className="font-semibold text-white">{review.name}</p>
                         <div className="flex gap-1">
                           {Array.from({ length: review.rating }).map((_, i) => (
-                            <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-[#C5A059]">
+                            <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-[#C5A059] animate-star-sparkle" style={{ animationDelay: `${i * 0.2}s` }}>
                               <polygon points="12 2 15.09 10.26 23.77 10.36 17.13 16.01 19.09 24.29 12 18.59 4.91 24.29 6.87 16.01 0.23 10.36 8.91 10.26" />
                             </svg>
                           ))}
                         </div>
                       </div>
-                      <p className="text-white/70 font-light">{review.text}</p>
+                      <p className="text-white/70 font-light leading-relaxed">&ldquo;{review.text}&rdquo;</p>
                     </div>
                   ))}
                 </div>
@@ -205,6 +221,11 @@ export default function TrainerDetail({ params }: { params: { id: string } }) {
             {/* Sidebar */}
             <div className="space-y-8">
               <div className="rounded-xl border border-white/10 bg-[#0A0A0A] p-6 motion-reveal sticky top-32">
+                {/* Trainer Animation */}
+                <div className="mb-6 -mx-2">
+                  <TrainerAnimation name={trainer.name} role={trainer.role} />
+                </div>
+
                 <div className="mb-6">
                   <p className="text-[10px] uppercase tracking-widest text-[#C5A059] mb-3">Rating</p>
                   <div className="flex items-center gap-3">
@@ -226,10 +247,10 @@ export default function TrainerDetail({ params }: { params: { id: string } }) {
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-[#C5A059] to-[#d4a574] text-black font-semibold py-3 rounded-lg hover:shadow-lg hover:shadow-[#C5A059]/50 transition-all duration-300 text-sm uppercase tracking-wider mb-3">
+                <button className="w-full bg-gradient-to-r from-[#C5A059] to-[#d4a574] text-black font-semibold py-3 rounded-lg hover:shadow-lg hover:shadow-[#C5A059]/50 transition-all duration-300 text-sm uppercase tracking-wider mb-3 hover:scale-[1.02] active:scale-[0.98]">
                   Book a Session
                 </button>
-                <button className="w-full border border-[#C5A059] text-[#C5A059] font-semibold py-3 rounded-lg hover:bg-[#C5A059]/10 transition-all duration-300 text-sm uppercase tracking-wider">
+                <button className="w-full border border-[#C5A059] text-[#C5A059] font-semibold py-3 rounded-lg hover:bg-[#C5A059]/10 transition-all duration-300 text-sm uppercase tracking-wider hover:scale-[1.02] active:scale-[0.98]">
                   Contact Coach
                 </button>
               </div>
