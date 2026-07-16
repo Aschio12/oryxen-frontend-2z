@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { trainers } from "@/data/fitness";
 import Link from "next/link";
 
 export default function TrainersPage() {
-  const [selectedTrainer, setSelectedTrainer] = useState<typeof trainers[0] | null>(null);
 
   const trainerStats = {
     "t-001": { rating: 4.9, reviews: 287, classesLed: 156, athletes: 142 },
@@ -33,7 +31,7 @@ export default function TrainersPage() {
 
   return (
     <main className="min-h-screen bg-[#030303] pt-28 pb-20 selection:bg-[#C5A059]/30">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <header className="mb-12">
@@ -119,9 +117,9 @@ export default function TrainersPage() {
                   </div>
 
                   {/* CTA */}
-                  <button className="mt-4 w-full rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 py-2 text-[10px] uppercase tracking-wider text-[#C5A059] hover:bg-[#C5A059]/20 transition-all">
+                  <Link href={`/trainers/${trainer.id}`} className="mt-4 block w-full rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 py-2 text-center text-[10px] uppercase tracking-wider text-[#C5A059] hover:bg-[#C5A059]/20 transition-all">
                     View Profile
-                  </button>
+                  </Link>
                 </div>
               </Link>
             );
@@ -129,96 +127,7 @@ export default function TrainersPage() {
         </div>
       </div>
 
-      {/* Trainer Detail Modal */}
-      {selectedTrainer && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
-          <div className="relative max-h-[90vh] max-w-3xl w-full overflow-y-auto rounded-xl border border-white/10 bg-[#030303] overflow-hidden">
-            
-            {/* Close Button */}
-            <button
-              onClick={() => setSelectedTrainer(null)}
-              className="absolute right-6 top-6 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-white/20 hover:border-[#C5A059] hover:text-[#C5A059] bg-[#030303]/80 backdrop-blur"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-            </button>
 
-            {/* Hero Image */}
-            <div className="h-96 overflow-hidden bg-white/5">
-              <img 
-                src={selectedTrainer.imageUrl} 
-                alt={selectedTrainer.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Content */}
-            <div className="p-8">
-              <div className="mb-6">
-                <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">{selectedTrainer.role}</p>
-                <h2 className="mt-2 font-serif text-4xl font-light text-white">{selectedTrainer.name}</h2>
-              </div>
-
-              {/* Bio */}
-              <p className="text-sm font-light text-white/70 leading-relaxed mb-8 max-w-2xl">
-                {selectedTrainer.bio}
-              </p>
-
-              {/* Stats */}
-              <div className="mb-8 grid gap-4 md:grid-cols-4">
-                {[
-                  { label: "Rating", value: `${trainerStats[selectedTrainer.id as keyof typeof trainerStats].rating}/5` },
-                  { label: "Reviews", value: trainerStats[selectedTrainer.id as keyof typeof trainerStats].reviews },
-                  { label: "Classes Led", value: trainerStats[selectedTrainer.id as keyof typeof trainerStats].classesLed },
-                  { label: "Athletes Trained", value: trainerStats[selectedTrainer.id as keyof typeof trainerStats].athletes },
-                ].map((stat, idx) => (
-                  <div key={idx} className="rounded-lg border border-white/10 bg-white/5 p-4">
-                    <p className="text-[10px] uppercase tracking-wider text-white/40">{stat.label}</p>
-                    <p className="mt-2 font-serif text-2xl font-light text-[#C5A059]">{stat.value}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Specialties */}
-              <div className="mb-8">
-                <h3 className="mb-4 font-serif text-lg text-white">Specialties</h3>
-                <div className="flex flex-wrap gap-2">
-                  {trainerSpecialties[selectedTrainer.id as keyof typeof trainerSpecialties].map((spec, idx) => (
-                    <span key={idx} className="text-[10px] uppercase tracking-wider text-[#C5A059] bg-[#C5A059]/10 rounded-full px-3 py-1">
-                      {spec}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* About Section */}
-              <div className="mb-8 rounded-lg border border-white/10 bg-white/5 p-6">
-                <h3 className="mb-4 font-serif text-lg text-white">Philosophy</h3>
-                <p className="text-sm font-light text-white/70 leading-relaxed">
-                  {selectedTrainer.role.includes("Strength") && "My approach centers on progressive overload and compound movement mastery. Every program is individualized based on your current strength levels and goals. I believe in meeting athletes where they are and progressing them systematically."}
-                  {selectedTrainer.role.includes("Mobility") && "Movement quality precedes load. I focus on restoring natural human movement patterns and building tissue resilience. My coaching emphasizes understanding how your body moves and why."}
-                  {selectedTrainer.role.includes("Combat") && "Combat sports require physical AND mental fortitude. I build conditioning protocols that prepare you for the demands of actual competition, not just training."}
-                  {selectedTrainer.role.includes("Nutrition") && "You cannot out-train a bad diet. I work with athletes to create sustainable, science-backed nutrition protocols that support their training and goals."}
-                  {selectedTrainer.role.includes("Endurance") && "Endurance is built through systematic aerobic development. I apply exercise physiology principles to optimize your aerobic capacity and efficiency."}
-                  {selectedTrainer.role.includes("Olympic") && "Technical precision in Olympic lifting determines both performance and longevity. I emphasize proper positioning and movement mechanics from day one."}
-                </p>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex gap-3">
-                <button className="flex-1 rounded-lg border border-[#C5A059] bg-[#C5A059] py-3 text-[10px] uppercase tracking-wider text-black font-semibold transition-all hover:bg-transparent hover:text-[#C5A059]">
-                  Book Session
-                </button>
-                <button 
-                  onClick={() => setSelectedTrainer(null)}
-                  className="flex-1 rounded-lg border border-white/20 bg-transparent py-3 text-[10px] uppercase tracking-wider text-white transition-all hover:border-white/40"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
