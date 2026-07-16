@@ -39,8 +39,13 @@ export default function CoachesPage() {
                 
                 <div className="absolute inset-0 p-8 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
-                    <span className="text-[9px] uppercase tracking-[0.3em] text-[#C5A059] bg-[#C5A059]/20 px-3 py-1.5 rounded-full backdrop-blur-md border border-[#C5A059]/30 font-semibold">
+                    <span className="text-[9px] uppercase tracking-[0.3em] text-[#C5A059] bg-[#C5A059]/20 px-3 py-1.5 rounded-full backdrop-blur-md border border-[#C5A059]/30 font-semibold animate-glint">
                       Expert Coach
+                    </span>
+                    <span className="flex gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]/60" style={{ animationDelay: '0.3s' }} />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]/30" style={{ animationDelay: '0.6s' }} />
                     </span>
                   </div>
 
