@@ -49,7 +49,7 @@ export default function PlannerPage() {
             const isRest = !workout || workout.title === "Active recovery";
             
             return (
-              <div key={dayName} className={`flex min-h-[500px] flex-col rounded-xl border p-4 transition-colors hover:border-[#C5A059]/20 ${i === 0 ? 'border-[#C5A059]/30 bg-[#C5A059]/[0.02]' : 'border-white/5 bg-[#0A0A0A]'}`}>
+              <div key={dayName} className={`flex min-h-[500px] flex-col rounded-xl border p-4 transition-colors hover:border-[#C5A059]/20 motion-stagger-${i + 1} ${i === 0 ? 'border-[#C5A059]/30 bg-[#C5A059]/[0.02]' : 'border-white/5 bg-[#0A0A0A]'}`}>
                 
                 <div className="border-b border-white/5 pb-4">
                   <span className={`text-[10px] uppercase tracking-widest ${i === 0 ? 'text-[#C5A059]' : 'text-white/30'}`}>

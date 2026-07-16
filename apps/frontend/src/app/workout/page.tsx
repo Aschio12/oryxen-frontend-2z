@@ -102,7 +102,7 @@ export default function WorkoutPage() {
               </div>
               <div className="text-right">
                 <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Elapsed Time</p>
-                <p className="mt-1 font-serif text-4xl font-light text-white">{activeWorkout.elapsedMinutes}'</p>
+                <p className="mt-1 font-serif text-4xl font-light text-white animate-countdown">{activeWorkout.elapsedMinutes}'</p>
               </div>
             </div>
 
