@@ -335,7 +335,8 @@ export const exercises: Exercise[] = [
     caloriesBurned: 45,
     intensity: 60,
     equipment: ["Dumbbell", "Kettlebell"],
-    imageUrl: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1566241142559-40e1dab266c6?auto=format&fit=crop&w=800&q=90",
+    demoUrl: "https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-goblet-squat-front.mp4",
     instructions: [
       "Hold the weight at chest height with elbows pointed down.",
       "Keep core engaged and torso upright.",
@@ -343,7 +344,10 @@ export const exercises: Exercise[] = [
       "Descend until hips are slightly below knee level.",
       "Drive through the mid-foot and heels to stand powerfully.",
       "Maintain upright posture throughout the movement."
-    ]
+    ],
+    tips: ["Push knees out over toes", "Keep chest tall throughout", "Squeeze glutes at the top"],
+    commonMistakes: ["Rounding the lower back", "Knees caving inward", "Rising onto toes"],
+    variations: ["Bodyweight Squat", "Sumo Squat", "Front Squat"]
   },
   {
     id: "sled-push",
@@ -359,7 +363,8 @@ export const exercises: Exercise[] = [
     caloriesBurned: 120,
     intensity: 95,
     equipment: ["Sled", "Weights"],
-    imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=90",
+    demoUrl: "https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-sled-push-side.mp4",
     instructions: [
       "Load the sled to 1.5x bodyweight for maximum intensity.",
       "Grip the handles firmly at shoulder height.",
@@ -367,7 +372,10 @@ export const exercises: Exercise[] = [
       "Drive explosively through the legs in a marching motion.",
       "Maintain constant momentum - do not allow the sled to decelerate.",
       "Complete the prescribed distance at maximum velocity."
-    ]
+    ],
+    tips: ["Stay low with a 45-degree body angle", "Drive through the balls of your feet", "Breathe rhythmically"],
+    commonMistakes: ["Standing too upright", "Short choppy steps", "Holding breath"],
+    variations: ["Sled Drag", "Prowler Push", "Light Speed Push"]
   },
   {
     id: "barbell-bench",
@@ -383,7 +391,8 @@ export const exercises: Exercise[] = [
     caloriesBurned: 65,
     intensity: 88,
     equipment: ["Barbell", "Bench"],
-    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=90",
+    demoUrl: "https://media.musclewiki.com/media/uploads/videos/branded/male-Barbell-bench-press-front.mp4",
     instructions: [
       "Load barbell with heavy weight - this is a strength movement.",
       "Lie flat on bench with feet firmly planted on the floor.",
@@ -391,7 +400,10 @@ export const exercises: Exercise[] = [
       "Lower the bar to mid-chest in a controlled 3-second descent.",
       "Pause briefly at the bottom to eliminate momentum.",
       "Drive the bar up explosively, maintaining wrist stability."
-    ]
+    ],
+    tips: ["Retract shoulder blades for stability", "Create an arch in your upper back", "Squeeze the bar hard"],
+    commonMistakes: ["Flaring elbows too wide", "Bouncing bar off chest", "Uneven grip width"],
+    variations: ["Incline Bench Press", "Dumbbell Bench Press", "Close-Grip Bench Press"]
   },
   {
     id: "deadlift",
@@ -407,7 +419,8 @@ export const exercises: Exercise[] = [
     caloriesBurned: 85,
     intensity: 96,
     equipment: ["Barbell", "Plates"],
-    imageUrl: "https://images.unsplash.com/photo-1599058917212-d217368e6919?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=800&q=90",
+    demoUrl: "https://media.musclewiki.com/media/uploads/videos/branded/male-Barbell-deadlift-front.mp4",
     instructions: [
       "Position the bar over mid-foot, approximately one inch into your shoes.",
       "Grab the bar with a shoulder-width grip, arms straight.",
@@ -415,7 +428,10 @@ export const exercises: Exercise[] = [
       "Ensure your lats are engaged and chest is up.",
       "Drive through your heels and pull the bar in a straight vertical path.",
       "Stand at lockout with knees, hips, and shoulders aligned."
-    ]
+    ],
+    tips: ["Keep bar close to your body", "Brace core before each rep", "Lock out hips at the top"],
+    commonMistakes: ["Rounding lower back", "Jerking the bar off the floor", "Hips rising too fast"],
+    variations: ["Sumo Deadlift", "Romanian Deadlift", "Trap Bar Deadlift"]
   },
   {
     id: "rowing",
@@ -431,7 +447,8 @@ export const exercises: Exercise[] = [
     caloriesBurned: 95,
     intensity: 92,
     equipment: ["Assault Bike"],
-    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=800&q=90",
+    demoUrl: "https://media.musclewiki.com/media/uploads/videos/branded/male-Cardio-air-bike-side.mp4",
     instructions: [
       "Adjust the bike seat to hip height when standing.",
       "Set a heavy fan resistance level for maximum difficulty.",
@@ -439,7 +456,10 @@ export const exercises: Exercise[] = [
       "Maintain cadence above 90 RPM throughout.",
       "Use the full recovery period to catch your breath.",
       "Repeat for 10 total rounds without reducing intensity."
-    ]
+    ],
+    tips: ["Use both arms and legs for maximum output", "Pace your breathing", "Go all-out from the start"],
+    commonMistakes: ["Pacing too conservatively", "Only using legs", "Inconsistent effort"],
+    variations: ["Rowing Sprints", "Bike Erg Intervals", "Ski Erg Sprints"]
   },
   {
     id: "pull-ups",
@@ -455,7 +475,8 @@ export const exercises: Exercise[] = [
     caloriesBurned: 52,
     intensity: 90,
     equipment: ["Pull-up Bar", "Weight Belt"],
-    imageUrl: "https://images.unsplash.com/photo-1534368541900-0c6688dc566e?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1598971639058-a213d72a5252?auto=format&fit=crop&w=800&q=90",
+    demoUrl: "https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-pullup-front.mp4",
     instructions: [
       "Attach weight to a dip belt and secure it around your waist.",
       "Grip the bar slightly wider than shoulder-width.",
@@ -463,7 +484,10 @@ export const exercises: Exercise[] = [
       "Lower yourself in a controlled 2-second eccentric.",
       "Do not use kipping or momentum.",
       "Complete each rep with strict form and full range of motion."
-    ]
+    ],
+    tips: ["Initiate with lat engagement", "Depress shoulders before pulling", "Full dead hang at bottom"],
+    commonMistakes: ["Using momentum or kipping", "Not going full range", "Excessive body swing"],
+    variations: ["Chin-ups", "Neutral Grip Pull-ups", "Bodyweight Pull-ups"]
   },
   {
     id: "kettlebell-swing",
@@ -479,7 +503,8 @@ export const exercises: Exercise[] = [
     caloriesBurned: 78,
     intensity: 75,
     equipment: ["Kettlebell"],
-    imageUrl: "https://images.unsplash.com/photo-1598105492230-abf695f1ddc5?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?auto=format&fit=crop&w=800&q=90",
+    demoUrl: "https://media.musclewiki.com/media/uploads/videos/branded/male-Kettlebells-kettlebell-swing-front.mp4",
     instructions: [
       "Stand with feet shoulder-width apart, kettlebell on ground in front.",
       "Hinge at hips and grab the handle with both hands.",
@@ -487,7 +512,10 @@ export const exercises: Exercise[] = [
       "Let gravity bring the bell down between your legs.",
       "Catch in the bottom position with soft knees.",
       "Immediately explosively extend to repeat."
-    ]
+    ],
+    tips: ["Power comes from the hips, not arms", "Keep arms relaxed", "Snap hips forward explosively"],
+    commonMistakes: ["Squatting instead of hinging", "Using arms to lift", "Rounding the back"],
+    variations: ["Single-Arm Swing", "American Swing", "Kettlebell Clean"]
   },
   {
     id: "rope-jump",
@@ -503,7 +531,7 @@ export const exercises: Exercise[] = [
     caloriesBurned: 68,
     intensity: 80,
     equipment: ["Jump Rope"],
-    imageUrl: "https://images.unsplash.com/photo-1518611505868-d7380f6f97f2?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1434596922112-19c563067271?auto=format&fit=crop&w=800&q=90",
     instructions: [
       "Grip the rope handles at about waist height.",
       "Start with a comfortable single-unders rhythm.",
@@ -511,7 +539,10 @@ export const exercises: Exercise[] = [
       "Allow the rope to pass twice under your feet per jump.",
       "Land softly on the balls of your feet.",
       "Maintain rhythm and control throughout the set."
-    ]
+    ],
+    tips: ["Use wrists, not arms", "Jump only high enough for the rope", "Stay on the balls of your feet"],
+    commonMistakes: ["Jumping too high", "Using shoulders to spin rope", "Piking at the hips"],
+    variations: ["Single Unders", "Triple Unders", "Crossover Jump Rope"]
   },
   {
     id: "plank",
@@ -527,7 +558,7 @@ export const exercises: Exercise[] = [
     caloriesBurned: 18,
     intensity: 50,
     equipment: ["Mat", "Weight Plate"],
-    imageUrl: "https://images.unsplash.com/photo-1608306849894-ee008c50fc8e?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1599058917765-a780eda07a3e?auto=format&fit=crop&w=800&q=90",
     instructions: [
       "Get into push-up position with forearms on the ground.",
       "Place a weight plate on your lower back.",
@@ -535,7 +566,10 @@ export const exercises: Exercise[] = [
       "Engage your core by drawing your navel toward your spine.",
       "Do not let your hips sag or pike upward.",
       "Hold this position without any movement for the prescribed time."
-    ]
+    ],
+    tips: ["Breathe steadily throughout", "Squeeze glutes for stability", "Look at the floor to keep neck neutral"],
+    commonMistakes: ["Hips sagging", "Holding breath", "Looking up and straining neck"],
+    variations: ["Side Plank", "Plank to Push-up", "RKC Plank"]
   },
   {
     id: "snatch",
@@ -551,7 +585,7 @@ export const exercises: Exercise[] = [
     caloriesBurned: 72,
     intensity: 98,
     equipment: ["Barbell", "Olympic plates"],
-    imageUrl: "https://images.unsplash.com/photo-1554080221-cbf9d3fb3b5e?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=90",
     instructions: [
       "Address the bar with feet shoulder-width apart.",
       "Maintain a neutral spine with shoulders over the bar.",
@@ -559,7 +593,10 @@ export const exercises: Exercise[] = [
       "Pull yourself under the bar with elbows high.",
       "Catch in a deep quarter squat position.",
       "Drive through the legs to achieve full lockout overhead."
-    ]
+    ],
+    tips: ["Keep bar close during pull", "Fast elbows in the turnover", "Receive in a strong position"],
+    commonMistakes: ["Early arm pull", "Not fully extending hips", "Catching with soft elbows"],
+    variations: ["Hang Snatch", "Muscle Snatch", "Snatch Balance"]
   },
   {
     id: "muscle-up",
@@ -575,7 +612,7 @@ export const exercises: Exercise[] = [
     caloriesBurned: 58,
     intensity: 92,
     equipment: ["Pull-up bar"],
-    imageUrl: "https://images.unsplash.com/photo-1534368541900-0c6688dc566e?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1605296867424-35fc25c9212a?auto=format&fit=crop&w=800&q=90",
     instructions: [
       "Jump and grip the bar with a false grip or normal grip.",
       "Pull up explosively, driving your elbows backward.",
@@ -583,7 +620,10 @@ export const exercises: Exercise[] = [
       "Transition to a dip position with arms locked out.",
       "Lower into a controlled dip movement.",
       "Press back up to lockout to complete the rep."
-    ]
+    ],
+    tips: ["Master strict pull-ups first", "Use a slight kip if needed", "Practice the transition separately"],
+    commonMistakes: ["Insufficient pull height", "Chicken-winging elbows", "No control on the descent"],
+    variations: ["Bar Muscle-up", "Ring Muscle-up", "Strict Muscle-up"]
   },
   {
     id: "prowler-sprint",
@@ -599,7 +639,7 @@ export const exercises: Exercise[] = [
     caloriesBurned: 115,
     intensity: 93,
     equipment: ["Prowler sled"],
-    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1599744331461-2c622a6ddf27?auto=format&fit=crop&w=800&q=90",
     instructions: [
       "Load the prowler sled with heavy weight.",
       "Position hands on the handles at chest height.",
@@ -607,7 +647,10 @@ export const exercises: Exercise[] = [
       "Drive explosively through the legs in a sprinting motion.",
       "Maintain maximum velocity throughout the entire distance.",
       "Walk back slowly to recover between sets."
-    ]
+    ],
+    tips: ["Keep body angle low", "Drive knees forward aggressively", "Arms locked out"],
+    commonMistakes: ["Body too upright", "Looking up instead of down", "Slowing down mid-push"],
+    variations: ["Low Handle Push", "High Handle Push", "Backward Drag"]
   },
   {
     id: "pistol-squat",
@@ -631,7 +674,10 @@ export const exercises: Exercise[] = [
       "Descend until your hip is below knee level.",
       "Keep tension in the extended leg and core.",
       "Drive back to standing position with power and control."
-    ]
+    ],
+    tips: ["Use a counterbalance weight initially", "Focus on ankle mobility", "Control the descent"],
+    commonMistakes: ["Losing balance at the bottom", "Knee collapsing inward", "Rounding back"],
+    variations: ["Assisted Pistol Squat", "Shrimp Squat", "Bulgarian Split Squat"]
   },
   {
     id: "battle-ropes",
@@ -647,7 +693,7 @@ export const exercises: Exercise[] = [
     caloriesBurned: 88,
     intensity: 85,
     equipment: ["Battle ropes"],
-    imageUrl: "https://images.unsplash.com/photo-1598105492230-abf695f1ddc5?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1434682881908-b43d0467b798?auto=format&fit=crop&w=800&q=90",
     instructions: [
       "Stand with feet shoulder-width apart holding both rope ends.",
       "Maintain a slight forward lean with engaged core.",
@@ -655,7 +701,10 @@ export const exercises: Exercise[] = [
       "Alternate creating simultaneous waves in both ropes.",
       "Maintain maximum intensity without breaking rhythm.",
       "Rest briefly between sets to recover breathing."
-    ]
+    ],
+    tips: ["Keep core tight", "Use full arm range", "Maintain consistent wave height"],
+    commonMistakes: ["Standing too upright", "Small arm movements", "Breaking rhythm"],
+    variations: ["Alternating Waves", "Slam Waves", "Circle Waves"]
   },
   {
     id: "kettlebell-swing",
@@ -703,7 +752,10 @@ export const exercises: Exercise[] = [
       "Hold body parallel to ground in horizontal line.",
       "Maintain tension through core, back, and shoulders.",
       "Progress gradually from inclined to horizontal positions."
-    ]
+    ],
+    tips: ["Start with tuck progressions", "Keep posterior pelvic tilt", "Depress and retract scapulae"],
+    commonMistakes: ["Bending at the hips", "Relaxing core", "Not depressing shoulders"],
+    variations: ["Tuck Front Lever", "One-Leg Front Lever", "Front Lever Rows"]
   },
   {
     id: "tire-flip",
@@ -719,7 +771,7 @@ export const exercises: Exercise[] = [
     caloriesBurned: 120,
     intensity: 90,
     equipment: ["Tractor Tire"],
-    imageUrl: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=800&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=90",
     instructions: [
       "Position feet under tire edge, hands at sides.",
       "Lower hips, engage core, prepare for explosive drive.",
@@ -727,7 +779,10 @@ export const exercises: Exercise[] = [
       "Roll tire with hands over, following with body.",
       "Complete full rotation, reset for next rep.",
       "Breathe deeply and maintain form throughout."
-    ]
+    ],
+    tips: ["Use legs not back", "Get low under the tire", "Explosive hip drive"],
+    commonMistakes: ["Lifting with back", "Not getting low enough", "Poor hand placement"],
+    variations: ["Tire Flip and Jump", "Partner Tire Flip", "Light Tire Conditioning"]
   },
   {
     id: "deficit-deadlift",
