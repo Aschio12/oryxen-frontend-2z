@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface TransformationStory {
   id: string;
@@ -211,9 +212,12 @@ export default function GalleryPage() {
                   ))}
                 </div>
 
-                <button className="w-full rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 py-2 text-[10px] uppercase tracking-wider text-[#C5A059] hover:bg-[#C5A059]/20 transition-all">
-                  View Story
-                </button>
+                <Link
+                  href={`/gallery/${story.id}`}
+                  className="block w-full rounded-lg border border-[#C5A059] bg-[#C5A059] py-2 text-[10px] uppercase tracking-wider text-black font-semibold text-center hover:bg-transparent hover:text-[#C5A059] transition-all"
+                >
+                  View Full Story
+                </Link>
               </div>
             </div>
           ))}
