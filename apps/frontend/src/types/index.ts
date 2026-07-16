@@ -50,7 +50,12 @@ export interface Exercise {
   intensity: number;
   equipment: string[];
   imageUrl: string;
+  demoUrl?: string;
   instructions: string[];
+  tips?: string[];
+  commonMistakes?: string[];
+  variations?: string[];
+  muscleGroupImage?: string;
 }
 
 export interface NutritionMeal {
