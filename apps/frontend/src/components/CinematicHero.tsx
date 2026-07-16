@@ -151,7 +151,7 @@ export function CinematicHero() {
         </div>
 
         {/* Right side - Hero image with parallax */}
-        <div className="hidden lg:block w-1/2 h-full relative">
+        <div className="hidden lg:block w-[45%] h-full relative">
           <div
             className="absolute inset-0 transition-transform duration-75 ease-out"
             style={{
@@ -162,12 +162,11 @@ export function CinematicHero() {
             <div className="absolute inset-0 bg-gradient-to-l from-[#C5A059]/20 to-transparent" />
             
             {/* Main hero image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#C5A059]/10 to-[#030303]" />
             <Image
               src="/images/hero-athlete-main.png"
               alt="Elite athlete"
               fill
-              className="object-contain object-right-bottom"
+              className="object-cover object-center scale-110"
               priority
               quality={95}
               sizes="50vw"
