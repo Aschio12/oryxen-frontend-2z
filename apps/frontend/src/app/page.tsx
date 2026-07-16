@@ -73,7 +73,7 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <section className="relative z-10 py-32 px-6 lg:py-48">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1400px]">
           <div className="mb-20 text-center motion-reveal">
             <span className="mb-4 inline-block text-[10px] uppercase tracking-[0.3em] text-[#C5A059]">02 / Results</span>
             <h2 className="font-serif text-4xl font-light leading-snug md:text-5xl lg:text-6xl">

@@ -14,7 +14,7 @@ export default function Schedule() {
 
   return (
     <section id="schedule" className="border-t border-white/10 bg-[#080a0c] px-4 py-20">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1400px]">
         <div className="mb-9 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="section-kicker">Live schedule</p>
