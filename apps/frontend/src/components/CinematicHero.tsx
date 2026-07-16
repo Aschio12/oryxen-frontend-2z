@@ -55,9 +55,9 @@ export function CinematicHero() {
       </div>
 
       {/* Main content container */}
-      <div className="relative z-10 h-screen mx-auto max-w-[1400px] flex items-center justify-between px-6 lg:px-16">
+      <div className="relative z-10 h-screen mx-auto max-w-[1400px] flex items-center justify-between px-6 lg:px-16 pt-24 lg:pt-28">
         {/* Left side - Text content */}
-        <div className="w-full lg:w-1/2 space-y-8">
+        <div className="w-full lg:w-1/2 space-y-8 lg:pr-12">
           {/* Main heading with staggered reveals */}
           <div className="overflow-hidden">
             <h1
@@ -151,7 +151,7 @@ export function CinematicHero() {
         </div>
 
         {/* Right side - Hero image with parallax */}
-        <div className="hidden lg:block w-1/2 h-screen relative">
+        <div className="hidden lg:block w-1/2 h-full relative">
           <div
             className="absolute inset-0 transition-transform duration-75 ease-out"
             style={{
@@ -162,17 +162,19 @@ export function CinematicHero() {
             <div className="absolute inset-0 bg-gradient-to-l from-[#C5A059]/20 to-transparent" />
             
             {/* Main hero image */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#C5A059]/10 to-[#030303]" />
             <Image
               src="/images/hero-athlete-main.png"
               alt="Elite athlete"
               fill
-              className="object-cover object-center"
+              className="object-contain object-right-bottom"
               priority
-              quality={90}
+              quality={95}
+              sizes="50vw"
             />
 
-            {/* Floating glass cards */}
-            <div className="absolute bottom-16 left-8 glass-premium p-6 rounded-lg max-w-xs hover-lift cursor-pointer group">
+            {/* Floating glass card */}
+            <div className="absolute bottom-20 left-8 glass-premium p-5 rounded-lg max-w-xs hover-lift cursor-pointer group">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-12 h-12 rounded-full bg-[#C5A059]/30 flex items-center justify-center group-hover:bg-[#C5A059]/50 transition-colors">
                   <span className="text-[#C5A059]">⚡</span>
@@ -182,15 +184,7 @@ export function CinematicHero() {
               <p className="text-white/60 text-xs">Reach your athletic potential</p>
             </div>
 
-            <div className="absolute top-16 right-8 glass-premium p-6 rounded-lg max-w-xs hover-lift cursor-pointer group">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-12 h-12 rounded-full bg-[#C5A059]/30 flex items-center justify-center group-hover:bg-[#C5A059]/50 transition-colors">
-                  <span className="text-[#C5A059]">🏆</span>
-                </div>
-                <h3 className="text-white font-semibold text-sm">World Class</h3>
-              </div>
-              <p className="text-white/60 text-xs">Train like a champion</p>
-            </div>
+
           </div>
 
           {/* Animated accent shapes */}
