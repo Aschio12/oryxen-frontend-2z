@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { notFound, useRouter } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import { useState } from 'react';
+import { GalleryAnimation } from '@/components/GalleryAnimation';
 
 interface TransformationStory {
   id: string;
@@ -240,8 +241,16 @@ export default function GalleryDetail({ params }: { params: { id: string } }) {
             {/* Sidebar */}
             <div className="space-y-8">
               {/* Testimonial */}
-              <div className="rounded-xl border border-white/10 bg-[#0A0A0A] p-6 motion-reveal sticky top-32">
-                <div className="bg-gradient-to-br from-[#C5A059]/5 to-transparent rounded-lg p-6 -m-2 mb-6">
+              <div className="rounded-xl border border-white/10 bg-[#0A0A0A] overflow-hidden motion-reveal sticky top-32">
+                {/* Gallery Animation */}
+                <div className="h-[180px] bg-gradient-to-br from-[#C5A059]/5 via-[#0A0A0A] to-[#030303] border-b border-white/5">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(46,204,113,0.05),transparent_70%)]" />
+                  <div className="w-full h-full flex items-center justify-center">
+                    <GalleryAnimation category={story.category} />
+                  </div>
+                </div>
+                <div className="p-6">
+                <div className="bg-gradient-to-br from-[#C5A059]/5 to-transparent rounded-lg p-6 -mb-2 mb-6">
                   <p className="text-[10px] uppercase tracking-wider text-[#C5A059] mb-4">Athlete Testimonial</p>
                   <div className="relative">
                     <span className="absolute -top-2 -left-1 text-3xl text-[#C5A059]/20 font-serif">"</span>

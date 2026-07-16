@@ -53,17 +53,20 @@ export default function AnalyticsPage() {
             <p className="mt-2 font-serif text-3xl text-[#C5A059]">163k</p>
             <p className="mt-1 text-xs text-white/50">lbs moved</p>
           </div>
-          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6">
+          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 motion-stagger-1">
             <p className="text-[10px] uppercase tracking-wider text-white/40">Average Intensity</p>
             <p className="mt-2 font-serif text-3xl text-white">82%</p>
             <p className="mt-1 text-xs text-white/50">+2% from last week</p>
           </div>
-          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6">
+          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 motion-stagger-2">
             <p className="text-[10px] uppercase tracking-wider text-white/40">Sessions Completed</p>
             <p className="mt-2 font-serif text-3xl text-[#2ECC71]">5</p>
+            <div className="mt-2 h-1 w-full rounded-full bg-white/10 overflow-hidden">
+              <div className="h-full w-full bg-gradient-to-r from-[#2ECC71] to-[#C5A059] animate-progress-shift rounded-full" />
+            </div>
             <p className="mt-1 text-xs text-white/50">of 5 planned</p>
           </div>
-          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6">
+          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 motion-stagger-3">
             <p className="text-[10px] uppercase tracking-wider text-white/40">Calories Burned</p>
             <p className="mt-2 font-serif text-3xl text-[#E74C3C]">2,600</p>
             <p className="mt-1 text-xs text-white/50">total this week</p>
