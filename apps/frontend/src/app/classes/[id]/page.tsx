@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { classes, trainers } from '@/data/fitness';
 import { notFound } from 'next/navigation';
+import { ClassesAnimation } from '@/components/ClassesAnimation';
 
 export default function ClassDetail({ params }: { params: { id: string } }) {
   const cls = classes.find(c => c.id === params.id);
@@ -47,10 +48,10 @@ export default function ClassDetail({ params }: { params: { id: string } }) {
       <section className="sticky top-16 z-40 border-b border-white/10 bg-[#030303]/98 backdrop-blur-xl px-4 md:px-6 lg:px-8 py-4 shadow-lg shadow-black/20">
         <div className="mx-auto max-w-[1400px] flex items-center justify-between">
           <div className="flex gap-6 text-sm">
-            <div><span className="text-[9px] uppercase tracking-widest text-white/40">Spots</span><p className="mt-1 text-[#C5A059]">{cls.capacity - cls.currentEnrollment} left</p></div>
-            <div><span className="text-[9px] uppercase tracking-widest text-white/40">Time</span><p className="mt-1 text-white">{formatTime(cls.startTime)}</p></div>
+            <div className="motion-stagger-1"><span className="text-[9px] uppercase tracking-widest text-white/40">Spots</span><p className="mt-1 text-[#C5A059] animate-countdown">{cls.capacity - cls.currentEnrollment} left</p></div>
+            <div className="motion-stagger-2"><span className="text-[9px] uppercase tracking-widest text-white/40">Time</span><p className="mt-1 text-white">{formatTime(cls.startTime)}</p></div>
           </div>
-          <button className="rounded-lg bg-[#C5A059] px-6 py-2 text-[10px] uppercase tracking-wider text-black font-semibold hover:bg-[#d4a574] transition-all">
+          <button className="rounded-lg bg-[#C5A059] px-6 py-2 text-[10px] uppercase tracking-wider text-black font-semibold hover:bg-[#d4a574] transition-all hover:scale-[1.02] active:scale-[0.98]">
             {isFull ? 'Join Waitlist' : 'Enroll Now'}
           </button>
         </div>
@@ -60,6 +61,21 @@ export default function ClassDetail({ params }: { params: { id: string } }) {
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-10">
+              {/* Class Animation */}
+              <div className="rounded-xl border border-white/10 bg-[#0A0A0A] overflow-hidden motion-reveal">
+                <div className="relative h-[280px] bg-gradient-to-br from-[#C5A059]/5 via-[#0A0A0A] to-[#030303] overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(197,160,89,0.05),transparent_70%)]" />
+                  <div className="absolute top-4 left-4">
+                    <span className="text-[9px] uppercase tracking-[0.25em] text-[#C5A059]/60 bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#C5A059]/15">
+                      Class Preview
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <ClassesAnimation category={cls.category} level={cls.level} capacityPercent={capacityPercent} />
+                  </div>
+                </div>
+              </div>
+
               <div className="rounded-xl border border-white/10 bg-[#0A0A0A] p-8 motion-reveal">
                 <h2 className="font-serif text-2xl text-white mb-4">About This Class</h2>
                 <p className="text-sm font-light text-white/70 leading-relaxed">
@@ -75,19 +91,19 @@ export default function ClassDetail({ params }: { params: { id: string } }) {
               <div className="rounded-xl border border-white/10 bg-[#0A0A0A] p-8 motion-reveal">
                 <h2 className="font-serif text-2xl text-white mb-6">Class Details</h2>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div className="border-l-2 border-[#C5A059] pl-4">
+                  <div className="border-l-2 border-[#C5A059] pl-4 motion-stagger-1">
                     <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Duration</p>
                     <p className="mt-2 text-white font-light">{duration} minutes</p>
                   </div>
-                  <div className="border-l-2 border-[#C5A059] pl-4">
+                  <div className="border-l-2 border-[#C5A059] pl-4 motion-stagger-2">
                     <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Level</p>
                     <p className="mt-2 text-white font-light capitalize">{cls.level}</p>
                   </div>
-                  <div className="border-l-2 border-[#C5A059] pl-4">
+                  <div className="border-l-2 border-[#C5A059] pl-4 motion-stagger-3">
                     <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Category</p>
                     <p className="mt-2 text-white font-light">{cls.category}</p>
                   </div>
-                  <div className="border-l-2 border-[#C5A059] pl-4">
+                  <div className="border-l-2 border-[#C5A059] pl-4 motion-stagger-4">
                     <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Capacity</p>
                     <p className="mt-2 text-white font-light">{cls.currentEnrollment}/{cls.capacity}</p>
                   </div>
@@ -97,7 +113,7 @@ export default function ClassDetail({ params }: { params: { id: string } }) {
               <div className="rounded-xl border border-white/10 bg-[#0A0A0A] p-8 motion-reveal">
                 <h2 className="font-serif text-2xl text-white mb-6">Enrollment Status</h2>
                 <div className="h-4 w-full rounded-full bg-white/10 overflow-hidden mb-3">
-                  <div className="h-full bg-gradient-to-r from-[#C5A059] to-[#E8D099] transition-all" style={{ width: `${capacityPercent}%` }} />
+                  <div className="h-full bg-gradient-to-r from-[#C5A059] to-[#E8D099] animate-progress-shift transition-all" style={{ width: `${capacityPercent}%` }} />
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-white/60">{cls.currentEnrollment} enrolled</span>
@@ -110,10 +126,10 @@ export default function ClassDetail({ params }: { params: { id: string } }) {
 
             <div className="space-y-8">
               {trainer && (
-                <Link href={`/trainers/${trainer.id}`} className="block rounded-xl border border-white/10 bg-[#0A0A0A] p-6 motion-reveal sticky top-32 hover:border-[#C5A059]/30 transition-all group">
+                <Link href={`/trainers/${trainer.id}`} className="block rounded-xl border border-white/10 bg-[#0A0A0A] p-6 motion-reveal sticky top-32 hover:border-[#C5A059]/30 transition-all group hover:shadow-lg hover:shadow-[#C5A059]/5">
                   <h3 className="font-serif text-lg text-white mb-4">Your Coach</h3>
                   <div className="flex items-center gap-4">
-                    <div className="h-16 w-16 rounded-full bg-cover bg-center flex-shrink-0" style={{ backgroundImage: `url(${trainer.imageUrl})` }} />
+                    <div className="h-16 w-16 rounded-full bg-cover bg-center flex-shrink-0 group-hover:scale-105 transition-transform" style={{ backgroundImage: `url(${trainer.imageUrl})` }} />
                     <div>
                       <p className="font-serif text-lg text-white group-hover:text-[#C5A059] transition-colors">{trainer.name}</p>
                       <p className="text-[10px] uppercase tracking-wider text-[#C5A059] mt-1">{trainer.role}</p>
