@@ -12,7 +12,6 @@ export default function ExercisesPage() {
   const [activeSport, setActiveSport] = useState("All");
   const [activeLevel, setActiveLevel] = useState("All");
   const [activeMuscle, setActiveMuscle] = useState("All");
-  const [selectedExercise, setSelectedExercise] = useState<typeof exercises[0] | null>(null);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [favorites, setFavorites] = useState<string[]>([]);
 
@@ -31,7 +30,7 @@ export default function ExercisesPage() {
 
   return (
     <main className="min-h-screen bg-[#030303] pt-32 pb-20 selection:bg-[#C5A059]/30">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <header className="mb-16 motion-fade">
@@ -178,7 +177,7 @@ export default function ExercisesPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent" />
                       <div className="absolute inset-0 bg-[#C5A059]/0 group-hover:bg-[#C5A059]/5 transition-all duration-500" />
                       <button
-                        onClick={() => toggleFavorite(ex.id)}
+                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggleFavorite(ex.id); }}
                         className={`absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border transition-all ${
                           favorites.includes(ex.id)
                             ? "bg-[#C5A059]/20 border-[#C5A059]/50 text-[#C5A059]"
@@ -237,13 +236,13 @@ export default function ExercisesPage() {
                         </div>
                       </div>
 
-                      <button 
-                        onClick={() => setSelectedExercise(ex)}
+                      <Link 
+                        href={`/exercises/${ex.id}`}
                         className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 py-3 text-[10px] uppercase tracking-[0.2em] text-[#C5A059] transition-all hover:bg-[#C5A059] hover:text-black"
                       >
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                         <span>Details</span>
-                      </button>
+                      </Link>
                     </div>
                   </Link>
                 ))}
@@ -280,7 +279,7 @@ export default function ExercisesPage() {
                         <p className="mt-1 text-sm text-[#C5A059]">{ex.caloriesBurned} kcal</p>
                       </div>
                       <button
-                        onClick={() => toggleFavorite(ex.id)}
+                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggleFavorite(ex.id); }}
                         className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-all hover:border-[#C5A059] hover:bg-[#C5A059]/10"
                       >
                         <svg 
@@ -295,12 +294,12 @@ export default function ExercisesPage() {
                           <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
                         </svg>
                       </button>
-                      <button 
-                        onClick={() => setSelectedExercise(ex)}
+                      <Link 
+                        href={`/exercises/${ex.id}`}
                         className="rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 px-4 py-2 text-[10px] uppercase tracking-wider text-[#C5A059] transition-all hover:bg-[#C5A059] hover:text-black"
                       >
                         View
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 ))}
@@ -324,102 +323,7 @@ export default function ExercisesPage() {
         )}
       </div>
 
-      {/* Exercise Detail Modal */}
-      {selectedExercise && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
-          <div className="relative max-h-[90vh] max-w-2xl overflow-y-auto rounded-xl border border-white/10 bg-[#030303] p-8">
-            <button
-              onClick={() => setSelectedExercise(null)}
-              className="absolute right-6 top-6 flex h-8 w-8 items-center justify-center rounded-full border border-white/20 hover:border-[#C5A059] hover:text-[#C5A059]"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-            </button>
 
-            <div className="mb-6 flex items-start justify-between">
-              <div>
-                <span className="text-[10px] uppercase tracking-wider text-[#C5A059]">{selectedExercise.sport}</span>
-                <h2 className="mt-2 font-serif text-3xl font-light text-white">{selectedExercise.name}</h2>
-              </div>
-              <span className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-wider text-white">
-                {selectedExercise.level}
-              </span>
-            </div>
-
-            <div className="mb-8 h-64 overflow-hidden rounded-lg bg-gradient-to-br from-[#C5A059]/10 to-transparent"
-              style={{ backgroundImage: `url(${selectedExercise.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-            />
-
-            <div className="space-y-6">
-              <div>
-                <h3 className="mb-3 font-serif text-lg text-white">Target Muscles</h3>
-                <div className="flex flex-wrap gap-2">
-                  {selectedExercise.targetMuscles.map(muscle => (
-                    <span key={muscle} className="rounded-full bg-[#C5A059]/10 px-4 py-2 text-sm text-[#C5A059]">
-                      {muscle}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                  <p className="text-[10px] uppercase tracking-wider text-white/40">Prescription</p>
-                  <p className="mt-2 text-lg text-white">{selectedExercise.prescription.sets} x {selectedExercise.prescription.reps}</p>
-                </div>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                  <p className="text-[10px] uppercase tracking-wider text-white/40">Rest Period</p>
-                  <p className="mt-2 text-lg text-white">{selectedExercise.prescription.restTime}</p>
-                </div>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                  <p className="text-[10px] uppercase tracking-wider text-white/40">Calories Burned</p>
-                  <p className="mt-2 text-lg text-[#C5A059]">{selectedExercise.caloriesBurned} kcal</p>
-                </div>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                  <p className="text-[10px] uppercase tracking-wider text-white/40">Intensity</p>
-                  <p className="mt-2 text-lg text-white">{selectedExercise.intensity}%</p>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="mb-4 font-serif text-lg text-white">Equipment</h3>
-                <div className="flex flex-wrap gap-2">
-                  {selectedExercise.equipment.map(eq => (
-                    <span key={eq} className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm text-white/70">
-                      {eq}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="mb-4 font-serif text-lg text-white">Execution Instructions</h3>
-                <ol className="space-y-3">
-                  {selectedExercise.instructions.map((instruction, idx) => (
-                    <li key={idx} className="flex gap-3 text-sm font-light text-white/70">
-                      <span className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#C5A059]/20 text-xs text-[#C5A059] font-semibold">
-                        {idx + 1}
-                      </span>
-                      <span>{instruction}</span>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-
-              <div className="flex gap-3 pt-6">
-                <button className="flex-1 rounded-lg border border-[#C5A059] bg-[#C5A059] py-3 text-[10px] uppercase tracking-wider text-black transition-all hover:bg-transparent hover:text-[#C5A059]">
-                  Add to Workout
-                </button>
-                <button 
-                  onClick={() => setSelectedExercise(null)}
-                  className="flex-1 rounded-lg border border-white/20 bg-transparent py-3 text-[10px] uppercase tracking-wider text-white transition-all hover:border-white/40"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
