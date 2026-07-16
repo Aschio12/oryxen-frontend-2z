@@ -141,7 +141,7 @@ export default function GalleryDetail({ params }: { params: { id: string } }) {
         </div>
 
         <div className="absolute inset-0 flex items-end pb-16 lg:pb-20">
-          <div className="mx-auto w-full max-w-[1400px] px-4 md:px-6 lg:px-8 z-10">
+          <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 z-10">
             <Link href="/gallery" className="mb-6 inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#C5A059] hover:text-white transition-colors motion-fade">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
               Back to gallery
@@ -157,7 +157,7 @@ export default function GalleryDetail({ params }: { params: { id: string } }) {
       </section>
 
       {/* Stats Bar */}
-      <section className="sticky top-16 z-40 border-b border-white/10 bg-[#030303]/98 backdrop-blur-xl px-4 md:px-6 lg:px-8 py-4 shadow-lg shadow-black/20">
+      <section className="sticky top-16 z-40 border-b border-white/10 bg-[#030303]/98 backdrop-blur-xl px-4 sm:px-6 lg:px-8 py-4 shadow-lg shadow-black/20">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid grid-cols-4 gap-6 text-center">
             {story.metrics.map((metric, idx) => (
@@ -171,7 +171,7 @@ export default function GalleryDetail({ params }: { params: { id: string } }) {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-6 lg:px-8 py-16 lg:py-20">
+      <section className="w-full px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-10">

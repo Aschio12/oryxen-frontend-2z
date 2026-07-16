@@ -22,7 +22,7 @@ export default function NutritionDetail({ params }: { params: { id: string } }) 
         <div className="absolute inset-0 bg-gradient-to-br from-[#C5A059]/10 via-[#030303] to-[#030303]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(197,160,89,0.1),transparent_60%)]" />
         <div className="absolute inset-0 flex items-end pb-12">
-          <div className="mx-auto w-full max-w-[1400px] px-4 md:px-6 lg:px-8">
+          <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <Link href="/nutrition" className="mb-4 inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#C5A059] hover:text-white transition-colors motion-fade">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
               Back to nutrition
@@ -37,7 +37,7 @@ export default function NutritionDetail({ params }: { params: { id: string } }) 
         </div>
       </section>
 
-      <section className="sticky top-16 z-40 border-b border-white/10 bg-[#030303]/98 backdrop-blur-xl px-4 md:px-6 lg:px-8 py-4 shadow-lg shadow-black/20">
+      <section className="sticky top-16 z-40 border-b border-white/10 bg-[#030303]/98 backdrop-blur-xl px-4 sm:px-6 lg:px-8 py-4 shadow-lg shadow-black/20">
         <div className="mx-auto max-w-[1400px] flex items-center justify-between">
           <div className="flex gap-6 text-sm">
             <div className="motion-stagger-1"><span className="text-[9px] uppercase tracking-widest text-white/40">Protein</span><p className="mt-1 text-[#FF6B6B] animate-counter">{plan.macros.protein}g</p></div>
@@ -50,7 +50,7 @@ export default function NutritionDetail({ params }: { params: { id: string } }) 
         </div>
       </section>
 
-      <section className="w-full px-4 md:px-6 lg:px-8 py-16">
+      <section className="w-full px-4 sm:px-6 lg:px-8 py-16">
         <div className="mx-auto max-w-[1400px]">
           {/* Nutrition Animation */}
           <div className="rounded-xl border border-white/10 bg-[#0A0A0A] overflow-hidden mb-12 motion-reveal">

@@ -36,7 +36,7 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 z-50 w-full transition-all duration-500 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className="mx-auto max-w-[1400px] border-b border-white/10 bg-gradient-to-b from-[#030303]/95 via-[#030303]/90 to-[#030303]/85 px-4 sm:px-6 lg:px-8 py-5 backdrop-blur-3xl shadow-2xl shadow-black/50 flex items-center justify-between gap-4 md:gap-8 lg:gap-12">
+      <div className="mx-auto w-full border-b border-white/10 bg-gradient-to-b from-[#030303]/95 via-[#030303]/90 to-[#030303]/85 px-4 sm:px-6 lg:px-8 py-5 backdrop-blur-3xl shadow-2xl shadow-black/50 flex items-center justify-between gap-4 md:gap-8 lg:gap-12">
         <Link href="/" className="group flex items-center gap-3 sm:gap-4 text-white flex-shrink-0">
           <span className="relative grid h-14 w-14 sm:h-16 sm:w-16 place-items-center rounded-full border border-[#C5A059]/50 bg-gradient-to-br from-[#C5A059]/20 to-[#C5A059]/5 font-serif text-2xl sm:text-3xl text-[#C5A059] transition-all duration-500 group-hover:border-[#C5A059] group-hover:shadow-[0_0_30px_rgba(197,160,89,0.5)] group-hover:scale-110">
             <span className="absolute inset-0 rounded-full bg-[#C5A059]/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
