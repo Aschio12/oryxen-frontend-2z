@@ -74,9 +74,61 @@ export default function ExerciseDetail({ params }: { params: { id: string } }) {
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="w-full px-4 md:px-6 lg:px-8 py-16 lg:py-20">
+      {/* Exercise Demonstration */}
+      <section className="w-full px-4 md:px-6 lg:px-8 py-16 lg:py-20 border-b border-white/10">
         <div className="mx-auto max-w-[1400px]">
+          <div className="text-center mb-16 motion-reveal">
+            <span className="inline-block text-[10px] uppercase tracking-widest text-[#C5A059] font-bold mb-4">Proper Form</span>
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-light text-white mb-6">Exercise Demonstration</h2>
+            <p className="max-w-2xl mx-auto text-sm font-light text-white/60">Study the perfect form below. Precision in movement ensures maximum safety and effectiveness.</p>
+          </div>
+          
+          <div className="grid gap-12 lg:grid-cols-2 items-start motion-reveal-delayed-1">
+            {/* Demo Image */}
+            <div className="relative rounded-xl overflow-hidden border border-white/10 bg-[#0A0A0A] shadow-2xl">
+              <div className="aspect-square bg-gradient-to-br from-[#C5A059]/10 to-[#030303] overflow-hidden">
+                <div 
+                  className="w-full h-full bg-cover bg-center"
+                  style={{ 
+                    backgroundImage: `url(/images/exercise-${exercise.name.toLowerCase().replace(/\s+/g, '-')}.png)`,
+                    backgroundColor: '#1a1a1a'
+                  }} 
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <span className="inline-block rounded-full bg-[#C5A059]/20 px-4 py-2 text-[9px] uppercase tracking-widest text-[#C5A059] backdrop-blur-md border border-[#C5A059]/40">
+                  Elite Form Reference
+                </span>
+              </div>
+            </div>
+            
+            {/* Key Points */}
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-serif text-2xl text-white mb-6">Key Performance Points</h3>
+                <div className="space-y-4">
+                  {[
+                    { title: 'Starting Position', desc: exercise.instructions[0] || 'Establish a solid foundation' },
+                    { title: 'Movement Pattern', desc: exercise.instructions[1] || 'Execute with control and precision' },
+                    { title: 'Peak Position', desc: exercise.instructions[2] || 'Reach full range of motion' },
+                    { title: 'Return Motion', desc: exercise.instructions[3] || 'Maintain tension throughout' }
+                  ].map((point, idx) => (
+                    <div key={idx} className="rounded-lg border border-[#C5A059]/20 bg-[#C5A059]/5 p-4 backdrop-blur-sm hover:border-[#C5A059]/40 transition-colors">
+                      <p className="text-[10px] uppercase tracking-widest text-[#C5A059] font-semibold mb-2">{point.title}</p>
+                      <p className="text-sm font-light text-white/80">{typeof point.desc === 'string' ? point.desc : point.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="w-full px-2 sm:px-4 md:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="mx-auto max-w-full lg:max-w-[1400px] w-full">
           <div className="grid gap-12 lg:gap-16 lg:grid-cols-3">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
