@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { nutritionPlans } from "@/data/fitness";
+import Link from "next/link";
 
 const GOALS = ["All", "Fat loss", "Muscle gain", "Endurance", "Performance"];
 
 export default function NutritionPage() {
   const [activeGoal, setActiveGoal] = useState("All");
-  const [selectedPlan, setSelectedPlan] = useState<typeof nutritionPlans[0] | null>(null);
   const [favoritePlans, setFavoritePlans] = useState<string[]>([]);
 
   const filteredPlans = nutritionPlans.filter((plan) => {
@@ -73,9 +73,10 @@ export default function NutritionPage() {
             {filteredPlans.map((plan, idx) => {
               const macroPercentages = getMacroPercentages(plan);
               return (
-                <article
+                <Link
                   key={plan.id}
-                  className="group relative overflow-hidden rounded-xl border border-white/5 bg-[#0A0A0A] transition-all duration-500 hover:border-[#C5A059]/50 shadow-lg hover:shadow-[0_0_30px_rgba(197,160,89,0.1)]"
+                  href={`/nutrition/${plan.id}`}
+                  className="group relative overflow-hidden rounded-xl border border-white/5 bg-[#0A0A0A] transition-all duration-500 hover:border-[#C5A059]/50 shadow-lg hover:shadow-[0_0_30px_rgba(197,160,89,0.1)] block"
                   style={{ animationDelay: `${idx * 0.05}s` }}
                 >
                   <div className="p-8">
@@ -162,18 +163,15 @@ export default function NutritionPage() {
                     </div>
 
                     <div className="mt-8 flex gap-3">
-                      <button 
-                        onClick={() => setSelectedPlan(plan)}
-                        className="flex-1 rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 py-3 text-[10px] uppercase tracking-[0.2em] text-[#C5A059] transition-all hover:bg-[#C5A059]/20"
-                      >
+                      <span className="flex-1 rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 py-3 text-center text-[10px] uppercase tracking-[0.2em] text-[#C5A059] group-hover:bg-[#C5A059]/20 transition-all block">
                         View Meals
-                      </button>
-                      <button className="flex-1 rounded-lg border border-[#C5A059] bg-[#C5A059] py-3 text-[10px] uppercase tracking-[0.2em] text-black transition-all hover:bg-transparent hover:text-[#C5A059]">
+                      </span>
+                      <span className="flex-1 rounded-lg border border-[#C5A059] bg-[#C5A059] py-3 text-center text-[10px] uppercase tracking-[0.2em] text-black transition-all block">
                         Adopt
-                      </button>
+                      </span>
                     </div>
                   </div>
-                </article>
+                </Link>
               );
             })}
           </div>
@@ -192,102 +190,7 @@ export default function NutritionPage() {
 
       </div>
 
-      {/* Meal Detail Modal */}
-      {selectedPlan && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 py-6">
-          <div className="relative max-h-[90vh] max-w-2xl w-full overflow-y-auto rounded-xl border border-white/10 bg-[#030303] p-8">
-            <button
-              onClick={() => setSelectedPlan(null)}
-              className="absolute right-6 top-6 flex h-8 w-8 items-center justify-center rounded-full border border-white/20 hover:border-[#C5A059] hover:text-[#C5A059]"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-            </button>
 
-            <div className="mb-8">
-              <span className="text-[10px] uppercase tracking-wider text-[#C5A059]">{selectedPlan.goal}</span>
-              <h2 className="mt-2 font-serif text-3xl font-light text-white">{selectedPlan.name}</h2>
-              <p className="mt-3 text-sm font-light text-white/60">{selectedPlan.description}</p>
-            </div>
-
-            {/* Overview Stats */}
-            <div className="mb-8 grid gap-4 md:grid-cols-3">
-              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                <p className="text-[10px] uppercase tracking-wider text-white/40">Daily Calories</p>
-                <p className="mt-2 font-serif text-2xl text-white">{selectedPlan.dailyCalories}</p>
-              </div>
-              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                <p className="text-[10px] uppercase tracking-wider text-white/40">Total Protein</p>
-                <p className="mt-2 font-serif text-2xl text-[#E74C3C]">{selectedPlan.macros.protein}g</p>
-              </div>
-              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                <p className="text-[10px] uppercase tracking-wider text-white/40">Carbs + Fats</p>
-                <p className="mt-2 font-serif text-2xl text-white">{selectedPlan.macros.carbs + selectedPlan.macros.fats}g</p>
-              </div>
-            </div>
-
-            {/* Meals */}
-            <div className="mb-8">
-              <h3 className="mb-4 font-serif text-xl text-white">Daily Meal Schedule</h3>
-              <div className="space-y-4">
-                {selectedPlan.meals.map((meal, idx) => (
-                  <div key={idx} className="rounded-lg border border-white/10 bg-white/5 p-4 hover:border-[#C5A059]/30 transition-all">
-                    <div className="flex items-start justify-between mb-3">
-                      <div>
-                        <p className="font-semibold text-white">{meal.name}</p>
-                        <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">{meal.time}</p>
-                      </div>
-                      <span className="rounded-full bg-[#C5A059]/20 px-3 py-1 text-sm font-light text-[#C5A059]">
-                        {meal.calories} cal
-                      </span>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-3 text-[10px]">
-                      <div className="border-l-2 border-[#E74C3C] pl-3">
-                        <p className="text-white/50">Protein</p>
-                        <p className="mt-1 text-white font-semibold">{meal.protein}g</p>
-                      </div>
-                      <div className="border-l-2 border-[#3498DB] pl-3">
-                        <p className="text-white/50">Carbs</p>
-                        <p className="mt-1 text-white font-semibold">{meal.carbs}g</p>
-                      </div>
-                      <div className="border-l-2 border-[#F39C12] pl-3">
-                        <p className="text-white/50">Fats</p>
-                        <p className="mt-1 text-white font-semibold">{meal.fats}g</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Guidelines */}
-            <div className="mb-8">
-              <h3 className="mb-4 font-serif text-xl text-white">Protocol Guidelines</h3>
-              <ul className="space-y-2">
-                {selectedPlan.guidelines.map((guideline, idx) => (
-                  <li key={idx} className="flex gap-3 text-sm font-light text-white/70">
-                    <span className="text-[#C5A059] flex-shrink-0">•</span>
-                    <span>{guideline}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex gap-3 pt-6 border-t border-white/10">
-              <button className="flex-1 rounded-lg border border-[#C5A059] bg-[#C5A059] py-3 text-[10px] uppercase tracking-wider text-black transition-all hover:bg-transparent hover:text-[#C5A059]">
-                Download Meal Plan
-              </button>
-              <button 
-                onClick={() => setSelectedPlan(null)}
-                className="flex-1 rounded-lg border border-white/20 bg-transparent py-3 text-[10px] uppercase tracking-wider text-white transition-all hover:border-white/40"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
