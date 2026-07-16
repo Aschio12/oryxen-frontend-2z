@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 interface Post {
   id: string;
@@ -123,7 +124,7 @@ export default function CommunityPage() {
         {/* Posts Feed */}
         <div className="space-y-6">
           {posts.map((post) => (
-            <div key={post.id} className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 transition-all hover:border-[#C5A059]/20">
+            <Link key={post.id} href={`/community/${post.id}`} className="block rounded-lg border border-white/5 bg-[#0A0A0A] p-6 transition-all hover:border-[#C5A059]/20 group">
               {/* Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
@@ -174,11 +175,11 @@ export default function CommunityPage() {
                     {post.comments}
                   </button>
                 </div>
-                <button className="text-[10px] uppercase tracking-wider text-white/50 hover:text-[#C5A059] transition-all">
+                <button className="text-[10px] uppercase tracking-wider text-white/50 group-hover:text-[#C5A059] transition-all">
                   Share
                 </button>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
