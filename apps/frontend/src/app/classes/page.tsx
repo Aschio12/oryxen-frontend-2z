@@ -5,7 +5,6 @@ import { classes } from "@/data/fitness";
 import Link from "next/link";
 
 export default function ClassesPage() {
-  const [selectedClass, setSelectedClass] = useState<typeof classes[0] | null>(null);
   const [viewMode, setViewMode] = useState<"calendar" | "list">("calendar");
 
   const upcomingClasses = classes.sort((a, b) => 
@@ -82,10 +81,10 @@ export default function ClassesPage() {
               const capacityColor = getCapacityColor(cls.currentEnrollment, cls.capacity);
               const isFull = cls.currentEnrollment >= cls.capacity;
               return (
-                <div
+                <Link
                   key={cls.id}
-                  onClick={() => setSelectedClass(cls)}
-                  className="group rounded-lg border border-white/5 bg-[#0A0A0A] p-6 transition-all hover:border-[#C5A059]/30 cursor-pointer"
+                  href={`/classes/${cls.id}`}
+                  className="group rounded-lg border border-white/5 bg-[#0A0A0A] p-6 transition-all hover:border-[#C5A059]/30 cursor-pointer block"
                 >
                   <div className="flex items-center justify-between gap-6">
                     <div className="flex-1">
@@ -93,7 +92,7 @@ export default function ClassesPage() {
                         <span className="text-[10px] uppercase tracking-wider text-[#C5A059]">{cls.category}</span>
                         <span className="text-[10px] uppercase tracking-wider text-white/50">{cls.level}</span>
                       </div>
-                      <h3 className="font-serif text-2xl font-light text-white">{cls.className}</h3>
+                      <h3 className="font-serif text-2xl font-light text-white group-hover:text-[#C5A059] transition-colors">{cls.className}</h3>
                       <div className="mt-3 flex items-center gap-4">
                         <span className="text-sm font-light text-white/70">{getDayOfWeek(cls.startTime)}</span>
                         <span className="text-sm font-light text-white/70">{formatDate(cls.startTime)}</span>
@@ -119,11 +118,11 @@ export default function ClassesPage() {
                       )}
                     </div>
 
-                    <button className="rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 px-6 py-3 text-[10px] uppercase tracking-wider text-[#C5A059] hover:bg-[#C5A059]/20 transition-all font-semibold">
+                    <span className="rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 px-6 py-3 text-[10px] uppercase tracking-wider text-[#C5A059] group-hover:bg-[#C5A059]/20 transition-all font-semibold inline-block">
                       {isFull ? "Join Waitlist" : "Enroll"}
-                    </button>
+                    </span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -133,15 +132,15 @@ export default function ClassesPage() {
               const capacityColor = getCapacityColor(cls.currentEnrollment, cls.capacity);
               const isFull = cls.currentEnrollment >= cls.capacity;
               return (
-                <div
+                <Link
                   key={cls.id}
-                  onClick={() => setSelectedClass(cls)}
-                  className="group rounded-lg border border-white/5 bg-[#0A0A0A] p-6 transition-all hover:border-[#C5A059]/30 cursor-pointer"
+                  href={`/classes/${cls.id}`}
+                  className="group rounded-lg border border-white/5 bg-[#0A0A0A] p-6 transition-all hover:border-[#C5A059]/30 cursor-pointer block"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <span className="text-[10px] uppercase tracking-wider text-[#C5A059]">{cls.category}</span>
-                      <h3 className="mt-2 font-serif text-xl font-light text-white">{cls.className}</h3>
+                      <h3 className="mt-2 font-serif text-xl font-light text-white group-hover:text-[#C5A059] transition-colors">{cls.className}</h3>
                     </div>
                     <span className="rounded-full bg-white/5 px-2 py-1 text-[9px] uppercase tracking-wider text-white/60">
                       {cls.level}
@@ -170,10 +169,10 @@ export default function ClassesPage() {
                     )}
                   </div>
 
-                  <button className="w-full rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 py-2 text-[10px] uppercase tracking-wider text-[#C5A059] hover:bg-[#C5A059]/20 transition-all font-semibold">
+                  <span className="block w-full rounded-lg border border-[#C5A059]/30 bg-[#C5A059]/10 py-2 text-center text-[10px] uppercase tracking-wider text-[#C5A059] group-hover:bg-[#C5A059]/20 transition-all font-semibold">
                     {isFull ? "Waitlist" : "Enroll"}
-                  </button>
-                </div>
+                  </span>
+                </Link>
               );
             })}
           </div>
@@ -181,93 +180,7 @@ export default function ClassesPage() {
 
       </div>
 
-      {/* Class Detail Modal */}
-      {selectedClass && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
-          <div className="relative max-h-[90vh] max-w-2xl w-full overflow-y-auto rounded-xl border border-white/10 bg-[#030303] p-8">
-            <button
-              onClick={() => setSelectedClass(null)}
-              className="absolute right-6 top-6 flex h-8 w-8 items-center justify-center rounded-full border border-white/20 hover:border-[#C5A059] hover:text-[#C5A059]"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-            </button>
 
-            <div className="mb-8">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <span className="text-[10px] uppercase tracking-wider text-[#C5A059]">{selectedClass.category}</span>
-                  <h2 className="mt-2 font-serif text-4xl font-light text-white">{selectedClass.className}</h2>
-                </div>
-                <span className="rounded-full bg-white/5 px-3 py-1 text-[10px] uppercase tracking-wider text-white/70">
-                  {selectedClass.level}
-                </span>
-              </div>
-
-              <p className="text-sm font-light text-white/70">
-                {getDayOfWeek(selectedClass.startTime)} • {formatDate(selectedClass.startTime)} • {formatTime(selectedClass.startTime)}
-              </p>
-            </div>
-
-            {/* Details Grid */}
-            <div className="mb-8 grid gap-4 md:grid-cols-2">
-              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                <p className="text-[10px] uppercase tracking-wider text-white/40">Duration</p>
-                <p className="mt-2 text-white font-light">
-                  {Math.round((new Date(selectedClass.endTime).getTime() - new Date(selectedClass.startTime).getTime()) / 60000)} minutes
-                </p>
-              </div>
-              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                <p className="text-[10px] uppercase tracking-wider text-white/40">Capacity</p>
-                <p className="mt-2 text-white font-light">{selectedClass.currentEnrollment}/{selectedClass.capacity}</p>
-              </div>
-            </div>
-
-            {/* Enrollment Bar */}
-            <div className="mb-8">
-              <p className="text-[10px] uppercase tracking-wider text-white/40 mb-2">Class Fullness</p>
-              <div className="h-3 w-full rounded-full bg-white/10 overflow-hidden mb-2">
-                <div 
-                  className="h-full bg-gradient-to-r from-[#C5A059] to-[#E8D099]"
-                  style={{ width: `${(selectedClass.currentEnrollment / selectedClass.capacity) * 100}%` }}
-                />
-              </div>
-              <p className="text-xs text-white/60">
-                {selectedClass.currentEnrollment >= selectedClass.capacity ? (
-                  <>Class Full • {selectedClass.waitlistCount} on waitlist</>
-                ) : (
-                  <>{selectedClass.capacity - selectedClass.currentEnrollment} spots available</>
-                )}
-              </p>
-            </div>
-
-            {/* Description */}
-            <div className="mb-8">
-              <h3 className="mb-3 font-serif text-lg text-white">About This Class</h3>
-              <p className="text-sm font-light text-white/70 leading-relaxed">
-                {selectedClass.category === "Gym" && "High-intensity resistance training focused on building strength and muscle mass through structured programming."}
-                {selectedClass.category === "HIIT" && "Explosive metabolic conditioning combining multiple movement patterns to maximize calorie burn and cardiovascular adaptation."}
-                {selectedClass.category === "Combat" && "Combat sports training covering striking mechanics, footwork, conditioning, and fight preparation."}
-                {selectedClass.category === "Recovery" && "Mobility-focused session designed to improve range of motion, reduce soreness, and enhance tissue quality."}
-                {selectedClass.category === "Aerobics" && "Sustained effort training building aerobic capacity and endurance for long-duration athletic performance."}
-                {selectedClass.category === "Education" && "Educational seminar covering training principles, nutrition strategies, and performance optimization."}
-              </p>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex gap-3">
-              <button className="flex-1 rounded-lg border border-[#C5A059] bg-[#C5A059] py-3 text-[10px] uppercase tracking-wider text-black font-semibold transition-all hover:bg-transparent hover:text-[#C5A059]">
-                {selectedClass.currentEnrollment >= selectedClass.capacity ? "Join Waitlist" : "Enroll Now"}
-              </button>
-              <button 
-                onClick={() => setSelectedClass(null)}
-                className="flex-1 rounded-lg border border-white/20 bg-transparent py-3 text-[10px] uppercase tracking-wider text-white transition-all hover:border-white/40"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
