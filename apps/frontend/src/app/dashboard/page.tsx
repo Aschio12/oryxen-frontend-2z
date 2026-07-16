@@ -71,9 +71,12 @@ export default function Dashboard() {
           <div className="flex flex-col gap-8 lg:col-span-2">
             
             {/* Weekly Stats Overview */}
-            <section className="motion-reveal-delayed-1 grid gap-4 md:grid-cols-3">
-              <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 hover:border-[#C5A059]/20 transition-all">
-                <p className="text-[10px] uppercase tracking-wider text-white/40">Sessions</p>
+            <section className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 hover:border-[#C5A059]/20 transition-all motion-stagger-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <p className="text-[10px] uppercase tracking-wider text-white/40">Sessions</p>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2ECC71] animate-pulse" />
+                </div>
                 <div className="mt-3 flex items-end gap-2">
                   <span className="font-serif text-3xl font-light text-[#C5A059]">{weeklyStats.sessionsCompleted}</span>
                   <span className="text-xs text-white/50">/ {weeklyStats.sessionsPlanned}</span>
@@ -83,7 +86,7 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 hover:border-[#C5A059]/20 transition-all">
+              <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 hover:border-[#C5A059]/20 transition-all motion-stagger-2">
                 <p className="text-[10px] uppercase tracking-wider text-white/40">Avg Intensity</p>
                 <div className="mt-3 flex items-end gap-2">
                   <span className="font-serif text-3xl font-light text-white">{weeklyStats.avgIntensity}</span>
@@ -92,7 +95,7 @@ export default function Dashboard() {
                 <p className="mt-3 text-xs text-white/60">Optimal for gains</p>
               </div>
 
-              <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 hover:border-[#C5A059]/20 transition-all">
+              <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 hover:border-[#C5A059]/20 transition-all motion-stagger-3">
                 <p className="text-[10px] uppercase tracking-wider text-white/40">Calories Burned</p>
                 <div className="mt-3 flex items-end gap-2">
                   <span className="font-serif text-3xl font-light text-[#E74C3C]">{weeklyStats.caloriesBurned}</span>
