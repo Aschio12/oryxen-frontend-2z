@@ -91,33 +91,33 @@ export default function StatsPage() {
 
         {/* Key Metrics */}
         <section className="mb-12 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
-          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6">
+          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 motion-stagger-1">
             <p className="text-[10px] uppercase tracking-wider text-white/40">Workouts</p>
-            <p className="mt-3 font-serif text-3xl font-light text-[#C5A059]">{currentStats.totalWorkouts}</p>
+            <p className="mt-3 font-serif text-3xl font-light text-[#C5A059] animate-counter">{currentStats.totalWorkouts}</p>
             <p className="mt-1 text-xs text-white/50">sessions</p>
           </div>
 
-          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6">
+          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 motion-stagger-2">
             <p className="text-[10px] uppercase tracking-wider text-white/40">Total Volume</p>
-            <p className="mt-3 font-serif text-3xl font-light text-white">{(currentStats.totalVolume / 1000).toFixed(0)}k</p>
+            <p className="mt-3 font-serif text-3xl font-light text-white animate-counter">{(currentStats.totalVolume / 1000).toFixed(0)}k</p>
             <p className="mt-1 text-xs text-white/50">lbs moved</p>
           </div>
 
-          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6">
+          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 motion-stagger-3">
             <p className="text-[10px] uppercase tracking-wider text-white/40">Avg Intensity</p>
             <p className="mt-3 font-serif text-3xl font-light text-white">{currentStats.avgIntensity}%</p>
             <p className="mt-1 text-xs text-white/50">average</p>
           </div>
 
-          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6">
+          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 motion-stagger-4">
             <p className="text-[10px] uppercase tracking-wider text-white/40">Calories Burned</p>
-            <p className="mt-3 font-serif text-3xl font-light text-[#E74C3C]">{currentStats.caloriesBurned.toLocaleString()}</p>
+            <p className="mt-3 font-serif text-3xl font-light text-[#E74C3C] animate-counter">{currentStats.caloriesBurned.toLocaleString()}</p>
             <p className="mt-1 text-xs text-white/50">kcal</p>
           </div>
 
-          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6">
+          <div className="rounded-lg border border-white/5 bg-[#0A0A0A] p-6 motion-stagger-5">
             <p className="text-[10px] uppercase tracking-wider text-white/40">Personal Records</p>
-            <p className="mt-3 font-serif text-3xl font-light text-[#2ECC71]">{currentStats.personalRecords}</p>
+            <p className="mt-3 font-serif text-3xl font-light text-[#2ECC71] animate-counter">{currentStats.personalRecords}</p>
             <p className="mt-1 text-xs text-white/50">achieved</p>
           </div>
 
